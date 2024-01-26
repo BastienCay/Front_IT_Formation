@@ -1,0 +1,127 @@
+h1, h2, h3, p, a{
+    font-family: "Montserrat";
+}
+
+a{
+   text-decoration: none; 
+}
+
+nav {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#nos_formation{
+    display: flex;
+    align-items: center;
+}
+
+#nos_formation img{
+    margin-left: 1vh;
+}
+
+#logo_title_header a{
+    display: flex;
+    align-items: center;
+}
+
+#logo_title_header img{
+    height: 70px;
+}
+
+#logo_title_header h1, #nos_formation{
+    color: white;
+    margin-left: 15px;
+}
+
+.nav_text{
+    display: flex;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.nav_text img{
+    margin-left: 10px;
+}
+.menu .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+
+#navigation {
+    display: flex;
+    align-items: center;
+}
+
+.separation {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.hover_ombre:hover p{
+    text-shadow: 5px 5px 10px black;
+}
+
+#User_black{
+    display: none;
+}
+
+#drop_down_espace_client button{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 160px;
+    height: 35px;
+    flex-shrink: 0;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#drop_down_espace_client button:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+#drop_down_espace_client button:hover p{
+    color: black;
+}
+
+#drop_down_espace_client button:hover #User_blanc{
+    display: none;
+}
+
+#drop_down_espace_client button:hover #User_black{
+    display: block;
+}
+
+#drop_down_espace_client{
+    display: flex;
+    flex-direction: column;
+}
+
+#drop_down {
+    display: none;
+    position: relative;
+    background : #EDF2F4;
+}
+
+#drop_down  a{
+    margin-top: 10px;
+    color: #EF233C;
+}
+
+#barre_blanche {
+    width  : 1px;
+    height : 25px;
+    background : white;
+}
