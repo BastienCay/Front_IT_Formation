@@ -8,6 +8,7 @@ import { NavBarComponent } from "./nav-bar/nav-bar.component";
     styleUrl: './header.component.css',
     imports: [NavBarComponent]
 })
+
 export class HeaderComponent {
 
 }
