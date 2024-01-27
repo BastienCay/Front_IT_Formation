@@ -1,0 +1,61 @@
+h1, h2, h3, p, a{
+    font-family: "Montserrat";
+    color: white;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    background:#2B2D42;
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+
+.liste_lien{
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+   list-style: none;
+   padding-left: 0;
+}
+
+li{
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    margin-top: 5vh;
+}
+
+@media only screen and (max-width: 750px){
+    footer{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    li{
+        margin-top: 0;
+        margin-bottom: 2vh;
+    }
+
+    p{
+        margin-top: 1vh;
+    }
+}
