@@ -1,0 +1,49 @@
+h3, p, a{
+    font-family: "Montserrat";
+}
+
+#card{
+    width: 20vw;
+    height: 50vh;
+    border-radius: 40px;
+    background-color: #EDF2F4;
+}
+
+#card a{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#card p{
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid #EF233C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EF233C;
+    font-weight: bold;
+}
+
+#card h3{
+    color: #2B2D42;
+}
+
+#card:hover{
+    background-color: #2B2D42;
+    scale: 1.03;
+    transition: 500ms;
+}
+
+#card:hover h3{
+    color: white;
+}
+
+#card:hover p{
+    background: #EF233C;
+    color: white;
+}

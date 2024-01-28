@@ -36,3 +36,28 @@ section p{
     line-height: normal;
     text-transform: uppercase;
 }
+
+#card_zone{
+    display: grid;
+    grid-template-columns: repeat(11,1fr);
+    grid-template-rows:30vh 20vh 30vh;
+    align-items: center;
+}
+
+#card_1{
+    grid-row-start:2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#card_2{
+    grid-row-start:2;
+    grid-column-start: 6;
+    grid-column-end: 7;
+}
+
+#card_3{
+    grid-row-start:2;
+    grid-column-start: 9;
+    grid-column-end: 10;
+}
