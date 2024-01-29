@@ -3,8 +3,8 @@ h3, p, a{
 }
 
 #card{
-    width: 20vw;
-    height: 50vh;
+    width: 300px;
+    height: 400px;
     border-radius: 40px;
     background-color: #EDF2F4;
 }
@@ -15,6 +15,7 @@ h3, p, a{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    text-decoration: none;
 }
 
 #card p{
@@ -33,10 +34,14 @@ h3, p, a{
     color: #2B2D42;
 }
 
+#imgCardWhite{
+    display: none;
+}
+
 #card:hover{
     background-color: #2B2D42;
     scale: 1.03;
-    transition: 500ms;
+    transition: 100ms;
 }
 
 #card:hover h3{
@@ -47,3 +52,12 @@ h3, p, a{
     background: #EF233C;
     color: white;
 }
+
+#card:hover #imgCardBlack{
+    display: none;
+}
+
+#card:hover #imgCardWhite{
+    display: block;
+}
+

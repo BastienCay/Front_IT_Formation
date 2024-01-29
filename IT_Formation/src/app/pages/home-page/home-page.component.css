@@ -61,3 +61,29 @@ section p{
     grid-column-start: 9;
     grid-column-end: 10;
 }
+
+@media only screen and (max-width: 950px){
+
+    #card_zone{
+        background-color: aqua;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows:20vh 1fr 2vh 1fr 2vh 1fr 20vh;
+        align-items: center;
+    }
+    
+    #card_1{
+        grid-row-start:2;
+        grid-column-start: 2;
+    }
+    
+    #card_2{
+        grid-row-start:4;
+        grid-column-start:2;
+    }
+    
+    #card_3{
+        grid-row-start:6;
+        grid-column-start: 2;
+    }
+}

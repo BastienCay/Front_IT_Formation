@@ -16,7 +16,11 @@ export class HomePageComponent {
     designationFormationDistanciel: String = "Nos formations en distanciel";
     designationFormationSurMesure: String = "Nos formations sur Mesure";
 
-    urlImagePresentiel: String = "../../../assets/others/multi_personnage_noir.svg";
-    urlImageDistanciel: String = "../../../assets/others/Screen_black.svg";
-    urlImageSurMesure: String = "../../../assets/others/User_time_black.svg";
+    urlImagePresentielWhite: String = "../../../assets/others/multi_personnage_white.svg";
+    urlImageDistancielWhite: String = "../../../assets/others/Screen_white.svg";
+    urlImageSurMesureWhite: String = "../../../assets/others/User_time_white.svg";
+
+    urlImagePresentielBlack: String = "../../../assets/others/multi_personnage_noir.svg";
+    urlImageDistancielBlack: String = "../../../assets/others/Screen_black.svg";
+    urlImageSurMesureBlack: String = "../../../assets/others/User_time_black.svg";
 }

@@ -13,11 +13,14 @@ export class CardHomePageTypeFormationComponent {
   title!: String;
 
   @Input()
-  urlImage!: String;
+  urlImageWhite!: String;
+  @Input()
+  urlImageBlack!: String;
 
   cheminPageFormation(title : String){
     if ( title === "Nos formations en présentiel") return "/formation-presentiel";
     else if (title === "Nos formations en distanciel") return "/formation-distanciel";
     else return "/formation-sur-mesure";
   }
+
 }
