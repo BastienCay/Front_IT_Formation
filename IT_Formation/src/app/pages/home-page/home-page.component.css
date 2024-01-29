@@ -64,22 +64,27 @@ section p{
 #partener{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 30vh 10vh 30vh;
+    grid-template-rows: 20vh 10vh 10vh 10vh 30vh;
 }
 
 #partener app-card-parteners{
-    grid-row-start:2;
+    grid-row-start:4;
     grid-column-start: 6;
 }
 
 #partener h2{
-    grid-row-start:1;
+    grid-row-start:2;
     grid-column-start: 4;
     grid-column-end: 8;
     font-size: 45px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+#notation{
+    padding-top: 15vh;
+    padding-bottom: 15vh;
 }
 
 @media only screen and (max-width: 1000px){
