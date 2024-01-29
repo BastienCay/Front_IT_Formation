@@ -7,7 +7,6 @@ h1, h2, h3, p, a{
 }
 
 #banniere{
-    background: #2B2D42;
     background-image: url("../../../assets/background/background-header-title-01.png");
     width: 100vw;
     height: 360px;
@@ -16,7 +15,7 @@ h1, h2, h3, p, a{
 .assombrir{
     position: absolute;
     background-color: rgba(43, 45, 66, 0.65);
-    width: 100vw;
+    width: 100%;
     height: 360px;
 }
 
@@ -62,6 +61,27 @@ section p{
     grid-column-end: 8;
 }
 
+#partener{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 30vh 10vh 30vh;
+}
+
+#partener app-card-parteners{
+    grid-row-start:2;
+    grid-column-start: 6;
+}
+
+#partener h2{
+    grid-row-start:1;
+    grid-column-start: 4;
+    grid-column-end: 8;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 @media only screen and (max-width: 1000px){
 
     #card_zone{
@@ -84,5 +104,25 @@ section p{
     #card_3{
         grid-row-start:6;
         grid-column-start: 1;
+    }
+
+    #partener{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 10vh 1fr 3vh 1fr 10vh;
+    }
+    
+    #partener app-card-parteners{
+        grid-row-start:4;
+        grid-column-start: 4;
+    }
+    
+    #partener h2{
+        grid-row-start:2;
+        grid-column-start: 2;
+        font-size: 4vw;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
     }
 }
