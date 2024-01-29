@@ -4,7 +4,6 @@ h1, h2, h3, p, a{
 }
 
 footer {
-    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -41,7 +40,6 @@ p{
 
 @media only screen and (max-width: 750px){
     footer{
-        position: absolute;
         left: 0;
         bottom: 0;
         flex-direction: column;

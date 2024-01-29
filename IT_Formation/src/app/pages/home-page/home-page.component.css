@@ -39,7 +39,7 @@ section p{
 
 #card_zone{
     display: grid;
-    grid-template-columns: repeat(11,1fr);
+    grid-template-columns: repeat(9,1fr);
     grid-template-rows:30vh 20vh 30vh;
     align-items: center;
 }
@@ -52,38 +52,37 @@ section p{
 
 #card_2{
     grid-row-start:2;
-    grid-column-start: 6;
-    grid-column-end: 7;
+    grid-column-start: 5;
+    grid-column-end: 6;
 }
 
 #card_3{
     grid-row-start:2;
-    grid-column-start: 9;
-    grid-column-end: 10;
+    grid-column-start: 7;
+    grid-column-end: 8;
 }
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 1000px){
 
     #card_zone{
-        background-color: aqua;
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        grid-template-rows:20vh 1fr 2vh 1fr 2vh 1fr 20vh;
-        align-items: center;
+        grid-template-rows:10vh 1fr 5vh 1fr 5vh 1fr 10vh;
+        justify-items: center;
     }
     
     #card_1{
         grid-row-start:2;
-        grid-column-start: 2;
+        grid-column-start: 1;
     }
     
     #card_2{
         grid-row-start:4;
-        grid-column-start:2;
+        grid-column-start:1;
     }
     
     #card_3{
         grid-row-start:6;
-        grid-column-start: 2;
+        grid-column-start: 1;
     }
 }
