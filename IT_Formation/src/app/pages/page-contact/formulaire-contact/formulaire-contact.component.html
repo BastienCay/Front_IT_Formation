@@ -1,39 +1,41 @@
 <div id="zone_formulaire">
-    <p>Pour toute demande d'information,
+    <p>Pour toute demande d'information,<br>
         veuillez remplir le formulaire ci-dessous.</p>
+<div id="formulaire">
     <form [formGroup]="demande" (ngSubmit)="onSubmit()">
         <!-- Désignation -->
-        <div>
-            <label> Nom : </label>
-            <input type="text" formControlName="nom"/>
+        <div class="input-group">
+            <label class="label" for="nom"> Nom </label>
+            <input class="input" required type="text" formControlName="nom" id="nom"/>
             <!-- Si submitted est true et le champ désignation est INVALIDE -->
             <!-- @if(submitted && !form['prenom'].valid){
                 <span>* Prenom Invalide</span>
             } -->
         </div>
-        <!-- Prix -->
-        <div>
-            <label> Prenom : </label>
-            <input type="text" formControlName="prenom"/>
+        
+        <div class="input-group">
+            <label class="label" for="prenom"> Prenom </label>
+            <input class="input" required type="text" formControlName="prenom" id="prenom"/>
         </div>
 
-        <div>
-            <label> Email : </label>
-            <input type="email" formControlName="email"/>
+        <div class="input-group">
+            <label class="label" for="email"> Email </label>
+            <input class="input" required type="email" formControlName="email" id="email"/>
         </div>
 
-        <div>
-            <label> Telephone : </label>
-            <input type="tel" formControlName="telephone"/>
+        <div class="input-group">
+            <label class="label" for="tel"> Telephone </label>
+            <input class="input" required type="tel" formControlName="telephone" id="tel"/>
         </div>
 
-        <div>
-            <label> Message  </label>
-            <input type="text" formControlName="message"/>
+        <div id="zone_textarea">
+            <label> Votre Message </label>
+            <textarea type="text" formControlName="message"></textarea>
         </div>
 
         <!-- Button -->
         <button type="submit">Ajouter</button>
     
     </form>
+</div>    
 </div>
