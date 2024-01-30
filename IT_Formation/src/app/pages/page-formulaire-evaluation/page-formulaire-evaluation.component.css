@@ -1,0 +1,133 @@
+h1, h2, h3, p, a{
+    font-family: "Montserrat";
+}
+
+.neutre_2{
+    background: #EDF2F4;
+}
+
+#banniere{
+    background-image: url("../../../assets/background/background-header-title-01.png");
+    width: 100vw;
+    height: 360px;
+}
+
+.assombrir{
+    position: absolute;
+    background-color: rgba(43, 45, 66, 0.65);
+    width: 100%;
+    height: 360px;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section p{
+    position: absolute;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.70);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#card_zone{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows:30vh 20vh 30vh;
+    align-items: center;
+}
+
+#card_1{
+    grid-row-start:2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+#card_2{
+    grid-row-start:2;
+    grid-column-start: 5;
+    grid-column-end: 6;
+}
+
+#card_3{
+    grid-row-start:2;
+    grid-column-start: 7;
+    grid-column-end: 8;
+}
+
+#partener{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 20vh 10vh 10vh 10vh 30vh;
+}
+
+#partener app-card-parteners{
+    grid-row-start:4;
+    grid-column-start: 6;
+}
+
+#partener h2{
+    grid-row-start:2;
+    grid-column-start: 4;
+    grid-column-end: 8;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#notation{
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+@media only screen and (max-width: 1000px){
+
+    #card_zone{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows:10vh 1fr 5vh 1fr 5vh 1fr 10vh;
+        justify-items: center;
+    }
+    
+    #card_1{
+        grid-row-start:2;
+        grid-column-start: 1;
+    }
+    
+    #card_2{
+        grid-row-start:4;
+        grid-column-start:1;
+    }
+    
+    #card_3{
+        grid-row-start:6;
+        grid-column-start: 1;
+    }
+
+    #partener{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 10vh 1fr 3vh 1fr 10vh;
+    }
+    
+    #partener app-card-parteners{
+        grid-row-start:4;
+        grid-column-start: 4;
+    }
+    
+    #partener h2{
+        grid-row-start:2;
+        grid-column-start: 2;
+        font-size: 4vw;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}

@@ -1,0 +1,47 @@
+<h2>Nom de la formation à évaluer</h2>
+
+<form action="" [formGroup]="eval" (ngSubmit)="onSubmit()">
+    <div id="card01">
+        <h3>Evaluer la salle de formation</h3>
+        <mat-radio-group
+        
+        class="card-radio-group"
+        formControlName="salle"
+        >
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+        </mat-radio-group>
+    </div>    
+    <div>
+        <h3>Evaluer le support de formation</h3>
+        <mat-radio-group 
+        class="card-radio-group"
+        formControlName="support">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+        </mat-radio-group>
+    </div>    
+    <div>
+        <h3>Evaluer le formateur</h3>
+        <mat-radio-group
+        class="card-radio-group"
+        formControlName="formateur">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div>
+        <button type="submit" class="bouton-submit">Soumettre mon évaluation</button>
+    </div>
+
+</form>
+
