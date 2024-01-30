@@ -1,0 +1,39 @@
+<div id="zone_formulaire">
+    <p>Pour toute demande d'information,
+        veuillez remplir le formulaire ci-dessous.</p>
+    <form [formGroup]="demande" (ngSubmit)="onSubmit()">
+        <!-- Désignation -->
+        <div>
+            <label> Nom : </label>
+            <input type="text" formControlName="nom"/>
+            <!-- Si submitted est true et le champ désignation est INVALIDE -->
+            <!-- @if(submitted && !form['prenom'].valid){
+                <span>* Prenom Invalide</span>
+            } -->
+        </div>
+        <!-- Prix -->
+        <div>
+            <label> Prenom : </label>
+            <input type="text" formControlName="prenom"/>
+        </div>
+
+        <div>
+            <label> Email : </label>
+            <input type="email" formControlName="email"/>
+        </div>
+
+        <div>
+            <label> Telephone : </label>
+            <input type="tel" formControlName="telephone"/>
+        </div>
+
+        <div>
+            <label> Message  </label>
+            <input type="text" formControlName="message"/>
+        </div>
+
+        <!-- Button -->
+        <button type="submit">Ajouter</button>
+    
+    </form>
+</div>
