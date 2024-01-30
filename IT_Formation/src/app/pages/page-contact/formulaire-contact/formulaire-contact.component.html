@@ -1,0 +1,51 @@
+<div id="zone_formulaire">
+    <p>Pour toute demande d'information,<br>
+        veuillez remplir le formulaire ci-dessous.</p>
+<div id="formulaire">
+    <form [formGroup]="demande" (ngSubmit)="onSubmit()">
+        <!-- Désignation -->
+        <div class="input-group">
+            <label class="label" for="nom"> Nom </label>
+            <input class="input" required type="text" formControlName="nom" id="nom"/>
+            <!-- Si submitted est true et le champ désignation est INVALIDE -->
+            @if(submitted && !form['prenom'].valid){
+                <span>* Nom Invalide</span>
+            }
+            
+        </div>
+        
+        <div class="input-group">
+            <label class="label" for="prenom"> Prenom </label>
+            <input class="input" required type="text" formControlName="prenom" id="prenom"/>
+            @if(submitted && !form['prenom'].valid){
+                <span>* Prenom Invalide</span>
+            }
+        </div>
+
+        <div class="input-group">
+            <label class="label" for="email"> Email </label>
+            <input class="input" required type="email" formControlName="email" id="email"/>
+            @if(submitted && !form['prenom'].valid){
+                <span>* Email Invalide</span>
+            }
+        </div>
+
+        <div class="input-group">
+            <label class="label" for="tel"> Telephone </label>
+            <input class="input" required type="tel" formControlName="telephone" id="tel"/>
+            @if(submitted && !form['prenom'].valid){
+                <span>* Telephone Invalide</span>
+            }
+        </div>
+
+        <div id="zone_textarea">
+            <label> Votre Message </label>
+            <textarea type="text" formControlName="message"></textarea>
+        </div>
+
+        <!-- Button -->
+        <button type="submit">Ajouter</button>
+    
+    </form>
+</div>    
+</div>
