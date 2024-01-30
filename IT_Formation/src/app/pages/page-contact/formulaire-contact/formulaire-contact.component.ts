@@ -11,11 +11,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class FormulaireContactComponent {
 
   demande: FormGroup = this.formBuilder.group({
-    nom: ['',[Validators.minLength(2),Validators.required]],
-    prenom: ['',[Validators.minLength(2),Validators.required]],
+    nom: ['',[Validators.minLength(5),Validators.required]],
+    prenom: ['',[Validators.minLength(5),Validators.required]],
     email: ['',Validators.required],
-    telephone: ['',[Validators.minLength(2),Validators.required]],
-    message: ['',[Validators.minLength(2),Validators.required]]
+    telephone: ['',[Validators.minLength(5),Validators.required]],
+    message: ['',[Validators.minLength(5),Validators.required]]
   });
 
   submitted: boolean = false;
@@ -27,6 +27,7 @@ export class FormulaireContactComponent {
   addDemande(){
     this.demandeUtilisateurs.push(this.demande.value);
     this.submitted = false;
+    console.log(this.demande.value)
     this.demande.reset();
   }
   onSubmit(): boolean{
