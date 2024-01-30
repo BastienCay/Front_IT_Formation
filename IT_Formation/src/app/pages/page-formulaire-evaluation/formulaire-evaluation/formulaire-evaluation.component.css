@@ -1,18 +1,78 @@
+/* .card-form-eval{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 10vh 200px 24px 200px 24px 200px 50px 50px 50px;
+      
+}
+form {
+    grid-row-start:2;
+    grid-row-end:7;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    background-color: #df7f88;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+} */
+.card-form-eval{
+    
+      
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 10vh 200px 24px 200px 24px 200px 50px 50px 50px;
+    
+    background-color: #EDF2F4;
+
+    
+}
+
+
 .bouton-submit{
     width: 270px;
     height: 50px;
     border-radius: 30px;
     border: 2px solid #EF233C;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    grid-row-start: 6;
+    
     
     font-weight: bold;
     background: #EF233C;
     color: white;
+
 }
 
 .bouton-submit:hover{
     color: #c81d31;
     background: #EDF2F4;
+}
+
+
+#card01 {
+    grid-row-start:2;
+    grid-row-end:7;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    background-color: aqua;
+}
+
+#card02{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 255, 94);
+}
+
+#card03{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(242, 0, 255);
+}
+
+
+h2 {
+    grid-row-start:1;
+    grid-column-start: 6;
+    grid-column-end: 9;
 }
