@@ -22,20 +22,22 @@
         <mat-radio-group 
         class="card-radio-group"
         formControlName="support">
+        
             <mat-radio-button value="1">1</mat-radio-button>
             <mat-radio-button value="2">2</mat-radio-button>
             <mat-radio-button value="3">3</mat-radio-button>
             <mat-radio-button value="4">4</mat-radio-button>
             <mat-radio-button value="5">5</mat-radio-button>
+          
         </mat-radio-group>
     </div>    
     <div id="card03">
         <h3>Evaluer le formateur</h3>
-        <div class="container">
-            <div class="radio-tile-group">
+        <!-- <div class="container">
+            <mat-radio-group class="radio-tile-group" formControlName="formateur">
         
               <div class="input-container">
-                <input id="walk" type="radio" name="radio">
+                <input id="1" type="radio" name="formateur" value="1">
                 <div class="radio-tile">
                 
                   <label for="walk">1</label>
@@ -43,7 +45,7 @@
               </div>
         
               <div class="input-container">
-                <input id="bike" type="radio" name="radio">
+                <input id="2" type="radio" name="formateur" value="2">
                 <div class="radio-tile">
                
                   <label for="bike">2</label>
@@ -51,7 +53,7 @@
               </div>
         
               <div class="input-container">
-                <input id="car" type="radio" name="radio">
+                <input id="3" type="radio" name="formateur" value="3">
                 <div class="radio-tile">
                  
                   <label for="car">3</label>
@@ -59,25 +61,36 @@
               </div>
         
               <div class="input-container">
-                <input id="fly" type="radio" name="radio">
+                <input id="4" type="radio" name="formateur" value="4">
                 <div class="radio-tile">
                   
                   <label for="4">4</label>
                 </div>
               </div>
               <div class="input-container">
-                <input id="fly" type="radio" name="radio">
+                <input id="5" type="radio" name="formateur" value="5">
                 <div class="radio-tile">
                   
                   <label for="5">5</label>
                 </div>
               </div>
         
-            </div>
+            </mat-radio-group>
           
         
-        </div>
-    </div>
+        </div> -->
+        <mat-radio-group 
+        class="card-radio-group"
+        formControlName="formateur">
+        
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+          
+        </mat-radio-group>
+    </div> 
     <div class="cta">
         <button type="submit" id="bouton-submit">Soumettre mon évaluation</button>
     </div>
