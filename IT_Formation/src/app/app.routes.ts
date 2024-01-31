@@ -4,7 +4,7 @@ import { PageFormulaireEvaluationComponent } from './pages/page-formulaire-evalu
 import { FormulaireEvaluationComponent } from './pages/page-formulaire-evaluation/formulaire-evaluation/formulaire-evaluation.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'home-page', pathMatch:'full'},
+    {path: '', redirectTo: 'evaluation', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
     {path:'evaluation', component: PageFormulaireEvaluationComponent},
     {path:'eval', component: FormulaireEvaluationComponent},
