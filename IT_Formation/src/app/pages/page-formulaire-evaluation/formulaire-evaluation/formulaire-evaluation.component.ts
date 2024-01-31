@@ -1,11 +1,14 @@
 import { Component, EventEmitter, Output, NgModule } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatButtonModule} from '@angular/material/button'; 
+import {MatIconModule} from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-formulaire-evaluation',
   standalone: true,
-  imports: [ReactiveFormsModule, MatRadioModule, FormsModule],
+  imports: [ReactiveFormsModule, MatRadioModule, FormsModule, MatButtonModule,MatIconModule],
   templateUrl: './formulaire-evaluation.component.html',
   styleUrl: './formulaire-evaluation.component.css'
 })
@@ -17,7 +20,8 @@ export class FormulaireEvaluationComponent {
 
 submitted: boolean = false;
 
- constructor(private formBuilder: FormBuilder) {}
+ constructor(private formBuilder: FormBuilder,
+ ) {}
 
   eval: FormGroup = this.formBuilder.group({
     salle: ['',Validators.required],
@@ -25,9 +29,11 @@ submitted: boolean = false;
     formateur: ['',Validators.required],
   })
 
+  
 onSubmit(): void {
   this.submitted = true;
   console.log(this.eval.value)
+  console.log(this.eval.get('formateur')?.value)
   if(this.eval.valid) {
    
    this.evaluations.push(this.eval.get('salle')?.value)
@@ -37,12 +43,15 @@ onSubmit(): void {
     console.log(this.evaluations)
     this.eval.reset();
     this.submitted = false
-  }else{
+     }else{
     console.log('Pas valide');
+   
   }
 }
 
 get form(){
   return this.eval.controls;
 }
+
+
 }

@@ -4,10 +4,15 @@ import { PageFormulaireEvaluationComponent } from './pages/page-formulaire-evalu
 import { PageContactComponent } from './pages/page-contact/page-contact.component';
 import { PageAProposComponent } from './pages/page-a-propos/page-a-propos.component';
 
+import { FormulaireEvaluationComponent } from './pages/page-formulaire-evaluation/formulaire-evaluation/formulaire-evaluation.component';
+
+
 export const routes: Routes = [
-    {path: '', redirectTo: 'a-propos', pathMatch:'full'},
+    {path: '', redirectTo: 'home-page', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
     {path:'evaluation', component: PageFormulaireEvaluationComponent},
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
+  
+    
 ];
