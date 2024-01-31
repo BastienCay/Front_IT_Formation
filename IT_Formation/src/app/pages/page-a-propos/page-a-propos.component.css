@@ -1,0 +1,69 @@
+h2{
+    font-size: 45px;
+}
+
+#banniere{
+    background-image: url("../../../assets/background/background-header-title-01.png");
+    width: 100vw;
+    height: 360px;
+}
+
+.assombrir{
+    position: absolute;
+    background-color: rgba(43, 45, 66, 0.65);
+    width: 100%;
+    height: 360px;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section h2{
+    position: absolute;
+    color: white;
+    text-align: center;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.70);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#block_a_propos{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows:10vh 45vh 7vh 45vh 10vh;
+    align-items: center;
+    background-color: var(--couleur_neutre);
+}
+
+#block_text1{
+    grid-row-start:2;
+    grid-column-start: 4;
+    grid-column-end: 10;
+}
+
+#block_text2{
+    grid-row-start:4;
+    grid-column-start: 4;
+    grid-column-end: 10;
+    
+}
+
+.block{
+    height: 100%;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
+.block_de_texte{
+    display: flex;
+    flex-direction: column;
+}

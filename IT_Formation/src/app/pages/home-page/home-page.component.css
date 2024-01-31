@@ -1,11 +1,3 @@
-h1, h2, h3, p, a{
-    font-family: "Montserrat";
-}
-
-.neutre_2{
-    background: #EDF2F4;
-}
-
 #banniere{
     background-image: url("../../../assets/background/background-header-title-01.png");
     width: 100vw;
@@ -25,7 +17,7 @@ section{
     justify-content: center;
 }
 
-section p{
+#banniere_presentation h2{
     position: absolute;
     color: white;
     text-align: center;
@@ -64,18 +56,21 @@ section p{
 #partener{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 20vh 10vh 10vh 10vh 30vh;
+    grid-template-rows: 20vh 10vh 20vh 20vh;
 }
 
 #partener app-card-parteners{
-    grid-row-start:4;
-    grid-column-start: 6;
+    grid-row-start:3;
+    grid-column-start: 4;
+    grid-column-end: 10;
 }
 
 #partener h2{
-    grid-row-start:2;
-    grid-column-start: 4;
-    grid-column-end: 8;
+    grid-row-start:1;
+    grid-column-start: 3;
+    grid-column-end: 10;
+    margin: 0;
+    align-self: flex-end;
     font-size: 45px;
     font-style: normal;
     font-weight: 500;
@@ -85,6 +80,7 @@ section p{
 #notation{
     padding-top: 15vh;
     padding-bottom: 15vh;
+    background-color: var(--couleur_neutre);
 }
 
 @media only screen and (max-width: 1000px){
