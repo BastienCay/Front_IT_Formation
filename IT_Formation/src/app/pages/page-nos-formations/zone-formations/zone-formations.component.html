@@ -1,3 +1,21 @@
-<div id="block_formations">
-    <app-card-formation-presentation></app-card-formation-presentation>
+<div id="block_filtre">
+    <div id="filtre_1">
+        
+    </div>
 </div>
+<div id="block_formations">
+    <div id="liste_formations">
+        @if (formations) {
+            @for (formation of formations; track formation) {
+                <app-card-formation-presentation [formation]="formation"></app-card-formation-presentation>
+            }
+        }@else {
+            <div id="pas_de_formation">
+                <p>test</p>
+                <p>Pas de formation</p>
+            </div>
+        }
+        
+    </div>
+</div>
+

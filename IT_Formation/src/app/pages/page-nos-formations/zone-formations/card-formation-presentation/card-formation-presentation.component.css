@@ -8,7 +8,7 @@
     box-shadow: none;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 20px;
+    margin-top: 24px;
 }
 
 mat-card-header{
@@ -19,6 +19,7 @@ mat-card-header>div{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 button{
@@ -47,14 +48,22 @@ button:hover{
     align-items: flex-end;
 }
 
+#prix_ref h1{
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
 #prix_ref p{
     margin: 0;
 }
 
 mat-card-content{
-    padding-bottom: 0px;
     padding-left: 0px;
     padding-right: 0px;
+}
+
+mat-card-content.mat-mdc-card-content{
+    padding-bottom: 0;
 }
 
 mat-card-content div{
@@ -63,9 +72,21 @@ mat-card-content div{
 }
 
 #block1{
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+}
+
+#block1 p{
+    padding-top: 15px;
 }
 
 #block2{
-    margin-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+img{
+    margin-right: 10px;
+    width: 30px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
 }

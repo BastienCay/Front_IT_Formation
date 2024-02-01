@@ -10,6 +10,17 @@ nav {
     justify-content: space-evenly;
 }
 
+#logo_title_header button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#logo_title_header img{
+    width: 60px;
+    height: 48px;
+}
+
 #nos_formation{
     display: flex;
     align-items: center;
@@ -19,16 +30,6 @@ nav {
     margin-left: 1vh;
 }
 
-#logo_title_header button{
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-#logo_title_header img{
-    width: 70px;
-    height: 58px;
-}
 
 #logo_title_header h1, #nos_formation{
     color: white;
