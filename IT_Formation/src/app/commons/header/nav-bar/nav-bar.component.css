@@ -1,5 +1,5 @@
-button p{
-    font-family: "Montserrat";
+nav{
+    font-family: "Montserrat",  Roboto, "Helvetica Neue", sans-serif;
 }
 
 nav {
@@ -26,8 +26,8 @@ nav {
 }
 
 #logo_title_header img{
-    width: 70px;
-    height: 58px;
+    width: 50px;
+    height: 40px;
 }
 
 #logo_title_header h1, #nos_formation{
@@ -115,9 +115,9 @@ nav {
     color: white;
     text-align: center;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    
+    font-weight: 500;
+    
 }
 
 .nav_text img{
@@ -140,9 +140,88 @@ button{
     border: transparent;
 }
 
-.hover_ombre:hover p{
+/* .hover_ombre:hover p{
     text-shadow: 5px 5px 10px black;
+} */
+
+.menu-wrap {
+    margin-left: 23px;
 }
+
+.menu, .drop-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    display: inline-block;
+    background-color: transparent;
+    position: relative;
+    border-radius: 20px;
+}
+
+.menu-item button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 160px;
+    height: 35px;
+    flex-shrink: 0;
+    background-color: transparent;
+    color: white;
+    
+    border-radius: 10px;
+}
+#button-espace-client{
+    border: 1px solid white!important;
+}
+#button-espace-client:hover {
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+#button-espace-client:hover #User_blanc{
+    display: none;
+}
+
+#button-espace-client:hover #User_black{
+    display: block;
+}
+
+.drop-menu {
+    display: none;
+    position: absolute;
+    
+    min-width: 100px;
+    background-color: #2B2D42;
+    border-radius: 10px;
+    /* border-color: transparent; */
+}
+
+.drop-menu-item {
+    width: 100%;
+    /* border-color: transparent; */
+}
+
+.drop-menu-item:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    
+}
+
+.drop-menu-item button:hover {
+    cursor: pointer;
+    background-color: white;
+    color:black;
+}
+
+.menu-item:hover .drop-menu {
+    display: block;
+    
+}
+
 
 @media only screen and (max-width: 950px){
 
@@ -186,11 +265,12 @@ button{
         justify-content: space-evenly;
     }
 
-    #page_formation_contact_apropos #lien_page p{
+    /* #page_formation_contact_apropos #lien_page p{
         font-size: 2.5vw;
-    }
+    } */
 
     .hover_ombre:hover{
         background-color: #32333f;
     }
+
 }
