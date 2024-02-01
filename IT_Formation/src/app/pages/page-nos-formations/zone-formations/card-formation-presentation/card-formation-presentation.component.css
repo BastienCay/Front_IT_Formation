@@ -1,0 +1,71 @@
+.example-card{
+    background-color: var(--couleur_neutre);
+    width: 880px;
+    height: 324px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 24px;
+    box-shadow: none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+mat-card-header{
+    padding: 0;
+}
+
+mat-card-header>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    width: 260px;
+    height: 50px;
+    border-radius: 30px;
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #EF233C;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #EF233C;
+    background-color: #EDF2F4;
+    border: 2px solid #EF233C;
+}
+
+#prix_ref{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#prix_ref p{
+    margin: 0;
+}
+
+mat-card-content{
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+mat-card-content div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#block1{
+    margin-bottom: 30px;
+}
+
+#block2{
+    margin-bottom: 0;
+}
