@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { CardFormationPresentationComponent } from "./card-formation-presentation/card-formation-presentation.component";
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { MatPseudoCheckboxModule } from '@angular/material/core';
 
 @Component({
     selector: 'app-zone-formations',
     standalone: true,
     templateUrl: './zone-formations.component.html',
     styleUrl: './zone-formations.component.css',
-    imports: [CardFormationPresentationComponent]
+    imports: [FormsModule, ReactiveFormsModule, MatPseudoCheckboxModule, JsonPipe,CardFormationPresentationComponent]
 })
 export class ZoneFormationsComponent {
 
@@ -57,5 +60,13 @@ export class ZoneFormationsComponent {
         preRequis: 1
     }
     ];
+
+    toppings = this._formBuilder.group({
+        pepperoni: false,
+        extracheese: false,
+        mushroom: false,
+      });
+    
+    constructor(private _formBuilder: FormBuilder) {}
 
 }
