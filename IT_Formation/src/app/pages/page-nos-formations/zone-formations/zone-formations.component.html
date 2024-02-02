@@ -1,22 +1,16 @@
 <div id="block_filtre">
-    <form action="" [formGroup]="eval" (ngSubmit)="onSubmit()">
-        <section class="filtre_1" [formGroup]="toppings">
-            <h4>Select your toppings:</h4>
-            <p><mat-checkbox formControlName="1">Presentiel</mat-checkbox></p>
-            <p><mat-checkbox formControlName="2">Distanciel</mat-checkbox></p>
-        </section>
-    </form>
+    
 </div>
 <div id="block_formations">
     <div id="liste_formations">
-        @if (formations) {
+        @if (isFormation(formations)) {
             @for (formation of formations; track formation) {
                 <app-card-formation-presentation [formation]="formation"></app-card-formation-presentation>
             }
         }@else {
             <div id="pas_de_formation">
-                <p>test</p>
-                <p>Pas de formation</p>
+                <p>0 résultats (0,18 secondes) </p>
+                <h1>Pas de formations disponible</h1>
             </div>
         }
         
