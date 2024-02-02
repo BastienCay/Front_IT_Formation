@@ -1,0 +1,151 @@
+#banniere{
+    background-image: url("../../../assets/background/background-header-title-01.png");
+    width: 100vw;
+    height: 480px;
+    
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titre{
+    position: absolute;
+    font-family: "Montserrat";
+    color: white;
+    text-align: center;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.70);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.assombrir{
+    position: absolute;
+    background-color: rgba(43, 45, 66, 0.65);
+    width: 100%;
+    height: 480px;
+}
+
+/* #grille-presentation{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows:30vh 45vh 7vh 45vh 10vh;
+    align-items: center;
+    background-color: var(--couleur_neutre);
+} */
+
+#block_presentation{
+    /* grid-row-start:1;
+    grid-column-start: 4;
+    grid-column-end: 10; */
+    
+    
+    position: absolute;
+    height: 220px;
+    width: 960px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+    padding-right: 55px;
+    margin-top: 480px;
+    justify-content: space-between;
+}
+
+.block_de_texte p {
+    justify-items: center;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+.quote{
+    font-weight: 600;
+    font-size: 64px;
+    z-index: 2;
+    margin: 0;
+    
+}
+
+#quote1{
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+#quote2{
+    align-self: flex-end;
+}
+#spacing{
+    height: 200px;
+    
+}
+.neutre2{
+    background-color: #EDF2F4;
+    display: flex;
+    flex-direction: column;
+}
+
+.informations{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+}
+.card-information{
+    background-color: white;
+    width: 300px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 24px;
+    margin: 24px;
+    
+}
+mat-icon{
+    color: #EF233C;
+    scale: 2 ;
+    margin-top: 30px;
+}
+
+.titre-info{
+    margin-bottom: -10px;
+    font-size: 18px;
+}
+
+.cta{
+    margin-bottom: 75px;
+
+}
+
+button{
+    align-self: flex-end;
+    width: 140px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid #EF233C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #EDF2F4;
+    color: #EF233C;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: #EF233C;
+    color: white;
+    cursor: pointer;
+}

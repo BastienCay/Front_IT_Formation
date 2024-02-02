@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BurgerMenuNavComponent } from './burger-menu-nav.component';
+import { PageFormationComponent } from './page-formation.component';
 
-describe('BurgerMenuNavComponent', () => {
-  let component: BurgerMenuNavComponent;
-  let fixture: ComponentFixture<BurgerMenuNavComponent>;
+describe('PageFormationComponent', () => {
+  let component: PageFormationComponent;
+  let fixture: ComponentFixture<PageFormationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BurgerMenuNavComponent]
+      imports: [PageFormationComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BurgerMenuNavComponent);
+    fixture = TestBed.createComponent(PageFormationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
