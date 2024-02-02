@@ -4,13 +4,14 @@ import { FooterComponent } from "../../commons/footer/footer.component";
 import { CardPartenersComponent } from "../../commons/cards/card-parteners/card-parteners.component";
 import { CardHomePageTypeFormationComponent } from "../../commons/cards/card-home-page-type-formation/card-home-page-type-formation.component";
 import { CardNotationComponent } from "../../commons/cards/card-notation/card-notation.component";
+import { SearchBarComponent } from "../../commons/search-bar/search-bar.component";
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
-    imports: [HeaderComponent, FooterComponent, CardPartenersComponent, CardHomePageTypeFormationComponent, CardNotationComponent]
+    imports: [HeaderComponent, FooterComponent, CardPartenersComponent, CardHomePageTypeFormationComponent, CardNotationComponent, SearchBarComponent]
 })
 export class HomePageComponent {
 

@@ -1,0 +1,68 @@
+.blocGris{
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+
+    width:              580 px;
+    height:             50 px;
+    border-radius:      30 px;
+    flex-shrink:        0;
+    
+    background:         1px solid #EDF2F4;
+
+    grid-row-start:     2 px;
+    grid-column-start:  2 px;
+    /*width:              35vw;
+    height:             5vh;*/
+    padding-left:       15px;
+}
+
+.blocBlanc{
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+
+    width:              fixed 640 px;
+    height:             fixed 120 px;
+    border-radius:      20px;
+    flex-shrink:        0;
+    background:         #FFF;
+
+    grid-column-start:  5;
+    grid-column-end:    9;
+    grid-row-start:     3;
+ }
+
+ input{
+    width:              319px;
+    height:             20px;
+    flex-shrink:        0;
+    color:              black;
+
+    font-family:        Montserrat;
+    font-size:          16px;
+    font-style:         normal;
+    font-weight:        600;
+    line-height:        normal;
+    padding-left:       10px;
+
+    display:            flex;
+    align-items:        center;
+    justify-content:    center;
+    border-radius:      20px;
+    flex-shrink:        0;
+ } 
+
+ input:hover{
+    outline:            none;
+    border-color:       #EF233C; /* Couleur de la bordure lorsqu'il est en focus */
+    box-shadow:         0 0 2px black;
+ }
+
+ input::placeholder{
+    color:              #EF233C;
+    font-size:          16px;
+    font-style:         normal;
+    font-weight:        600;
+    line-height:        normal;
+}

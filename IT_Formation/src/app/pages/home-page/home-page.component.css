@@ -4,6 +4,12 @@
     height: 360px;
 }
 
+app-search-bar{
+    position:           absolute;
+    width:              fixed 640 px;
+    height:             fixed 120 px;
+}
+
 .assombrir{
     position: absolute;
     background-color: rgba(43, 45, 66, 0.65);
