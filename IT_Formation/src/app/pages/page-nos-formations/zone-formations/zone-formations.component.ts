@@ -61,10 +61,9 @@ export class ZoneFormationsComponent {
     }
     ];
 
-    toppings = this._formBuilder.group({
+    typeCours = this._formBuilder.group({
         pepperoni: false,
         extracheese: false,
-        mushroom: false,
       });
     
     constructor(private _formBuilder: FormBuilder) {}

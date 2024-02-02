@@ -1,18 +1,10 @@
 <div id="block_filtre">
     <form action="" [formGroup]="eval" (ngSubmit)="onSubmit()">
-        <div id="filtre_1">
-            <mat-radio-group class="card-radio-group" formControlName="salle">
-                <mat-radio-button value="1">Presentiel</mat-radio-button>
-                <mat-radio-button value="2">Distanciel</mat-radio-button>
-            </mat-radio-group>
-        </div>
-
         <section class="filtre_1" [formGroup]="toppings">
             <h4>Select your toppings:</h4>
             <p><mat-checkbox formControlName="1">Presentiel</mat-checkbox></p>
             <p><mat-checkbox formControlName="2">Distanciel</mat-checkbox></p>
-          </section>
-
+        </section>
     </form>
 </div>
 <div id="block_formations">
