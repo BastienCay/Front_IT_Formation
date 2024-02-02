@@ -124,3 +124,7 @@ button:hover{
 #zone_textarea textarea:hover{
     border: 2px solid #EF233C;
 }
+
+.cta{
+    display: flex;
+}

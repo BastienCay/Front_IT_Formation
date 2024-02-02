@@ -126,25 +126,65 @@ mat-icon{
 
 .cta{
     margin-bottom: 75px;
-
+    display: flex;
+    flex-direction: row;
 }
 
-button{
+.cta button{
     align-self: flex-end;
-    width: 140px;
-    height: 50px;
     border-radius: 30px;
-    border: 2px solid #EF233C;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+#cta1{
+    
+    width: 140px;
+    height: 50px;
+    
+    border: 2px solid #EF233C;
+    
     
     background-color: #EDF2F4;
     color: #EF233C;
-    font-weight: bold;
+    
 }
 
-button:hover{
+#cta1:hover{
+    background-color: #EF233C;
+    color: white;
+    cursor: pointer;
+}
+
+#cta2{
+    
+    width: 240px;
+    height: 50px;
+    border: 2px solid #3f3f3f;
+    background-color: #EDF2F4;
+    color: #3f3f3f;
+    
+}
+
+#cta2:hover{
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+}
+
+#cta3{
+    width: 210px;
+    height: 50px;
+    border: 2px solid #EF233C;
+    
+    background-color: #EDF2F4;
+    color: #EF233C;
+}
+
+#cta3:hover{
     background-color: #EF233C;
     color: white;
     cursor: pointer;

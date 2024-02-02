@@ -22,9 +22,9 @@ section p{
     text-transform: uppercase;
 }
 
-/* .assombrir{
+.assombrir{
     position: absolute;
     background-color: rgba(43, 45, 66, 0.65);
     width: 100%;
     height: 360px;
-} */
+}
