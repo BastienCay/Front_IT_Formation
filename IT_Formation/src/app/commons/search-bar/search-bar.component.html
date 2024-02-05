@@ -1,8 +1,12 @@
-<div class="blocBlanc">
-    <div class="blocGris">
-        <!--<p>{{searchBar}}</p>-->
-        <input type="text" placeholder="Entrez le nom d'une formation" name="searchFormation" [(ngModel)]='searchBar'/>
-    </div>
+<div class="blocBlanc">  
+        <!--<mat-icon>search</mat-icon>-->
+        
+        <div class="blocGris">
+            <input type="text" 
+                placeholder="Entrez le nom d'une formation" 
+                name="searchFormation" 
+                [(ngModel)]='searchBar' 
+                maxlength="60" />
+                <mat-icon class="loupe">search</mat-icon>
+            </div>
 </div>
-
-

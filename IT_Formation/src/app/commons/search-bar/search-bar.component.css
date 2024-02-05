@@ -1,29 +1,25 @@
-.blocGris{
-    display:            flex;
-    align-items:        center;
-    justify-content:    center;
+/*.blocGris{
+    width:              35vw;
+    height:             5vh;
+    padding-left:       15px; 
+}*/
 
-    width:              580 px;
-    height:             50 px;
-    border-radius:      30 px;
-    flex-shrink:        0;
-    
-    background:         1px solid #EDF2F4;
-
-    grid-row-start:     2 px;
-    grid-column-start:  2 px;
-    /*width:              35vw;
-    height:             5vh;*/
-    padding-left:       15px;
-}
+/*#Ligne_vous{
+    width:              12vw;
+    height:             5vh;
+    padding-left:       45px;
+    stroke-width:       6px;
+    stroke:             #FFF;
+    filter:             drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.70));
+}*/
 
 .blocBlanc{
     display:            flex;
     align-items:        center;
     justify-content:    center;
 
-    width:              fixed 640 px;
-    height:             fixed 120 px;
+    width:              fixed 640px;
+    height:             fixed 120px;
     border-radius:      20px;
     flex-shrink:        0;
     background:         #FFF;
@@ -34,9 +30,12 @@
  }
 
  input{
-    width:              319px;
-    height:             20px;
+    width:              580px;
+    height:             50px;
+    border-radius:      30px;
     flex-shrink:        0;
+    
+    background:         1px solid #EDF2F4;
     color:              black;
 
     font-family:        Montserrat;
@@ -44,14 +43,28 @@
     font-style:         normal;
     font-weight:        600;
     line-height:        normal;
+    
     padding-left:       10px;
+    padding-right:      2Opx;
 
     display:            flex;
     align-items:        center;
     justify-content:    center;
     border-radius:      20px;
-    flex-shrink:        0;
+
+    grid-column-start:  5;
+    grid-column-end:    9;
+    grid-row-start:     3;
+
+    grid-row-start:     2 px;
+    grid-column-start:  2 px;
  } 
+
+ loupe{
+    color:              #EF233C;
+    position:           relative;
+    right:              45px;
+ }
 
  input:hover{
     outline:            none;
