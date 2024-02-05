@@ -1,0 +1,250 @@
+#banniere{
+    background-image: url("../../../assets/background/background-header-title-01.png");
+    width: 100vw;
+    height: 480px;
+    
+}
+
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titre{
+    position: absolute;
+    font-family: "Montserrat";
+    color: white;
+    text-align: center;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.70);
+    font-size: 65px;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+    align-items: center;
+}
+.petit-titre{
+    /* position: absolute; */
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: uppercase;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.assombrir{
+    position: absolute;
+    background-color: rgba(43, 45, 66, 0.65);
+    width: 100%;
+    height: 480px;
+}
+
+
+.detail-formation-grille{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin-bottom: 60px;
+}
+
+#block_presentation{
+    
+    position: absolute;
+    height: 220px;
+    width: 960px;
+    background-color: white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+    padding-right: 55px;
+    margin-top: 480px;
+    justify-content: space-between;
+}
+
+.block_de_texte p {
+    justify-items: center;
+    margin-top: -40px;
+    margin-bottom: -40px;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+    
+}
+
+.quote{
+    font-weight: 600;
+    font-size: 64px;
+    z-index: 2;
+    margin: 0;
+    
+}
+
+#quote1{
+    align-self: flex-start;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
+
+#quote2{
+    align-self: flex-end;
+}
+
+#spacing{
+    height: 200px;
+    width: 100vw;
+}
+
+#spacing2{
+    height: 260px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.neutre2{
+    background-color: #EDF2F4;
+    display: flex;
+    flex-direction: column;
+}
+.bleu-roi{
+    background-color: #ffffff;
+}
+
+.informations{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+}
+.card-information{
+    background-color: white;
+    width: 300px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 24px;
+    margin: 24px;
+    
+}
+mat-icon{
+    color: #EF233C;
+    scale: 2 ;
+    margin-top: 30px;
+}
+
+.titre-info{
+    margin-bottom: -10px;
+    font-size: 18px;
+}
+
+.cta{
+    margin-bottom: 75px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cta button{
+    align-self: flex-end;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 50px;
+}
+
+#cta1{
+    
+    width: 140px;
+    height: 50px;
+    
+    border: 2px solid #EF233C;
+    
+    
+    background-color: #EDF2F4;
+    color: #EF233C;
+    
+}
+
+#cta1:hover{
+    background-color: #EF233C;
+    color: white;
+    cursor: pointer;
+}
+
+#cta2{
+    
+    width: 240px;
+    height: 50px;
+    border: 2px solid #3f3f3f;
+    background-color: #EDF2F4;
+    color: #3f3f3f;
+    
+}
+
+#cta2:hover{
+    background-color: #3f3f3f;
+    color: white;
+    cursor: pointer;
+}
+
+#cta3{
+    width: 210px;
+    height: 50px;
+    border: 2px solid #EF233C;
+    
+    background-color: #EDF2F4;
+    color: #EF233C;
+}
+
+#cta3:hover{
+    background-color: #EF233C;
+    color: white;
+    cursor: pointer;
+}
+
+.formateur-referent{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.prenom{
+    margin-bottom: -5px;
+}
+
+
+.profil-pic{
+    width: 240px;
+    height: 240px;
+    background-color: #EF233C;
+    border-radius: 100%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.profil-pic-img{
+    width: 210px;
+    height: 210px;
+    align-self: center;
+    
+    border-radius: 100%;
+}
+
+.description-formation{
+    grid-column-start: 5;
+    grid-column-end: 11;
+    margin-left: 80px;
+}
