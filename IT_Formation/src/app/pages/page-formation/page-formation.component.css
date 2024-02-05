@@ -23,6 +23,18 @@ section{
     text-transform: uppercase;
     align-items: center;
 }
+.petit-titre{
+    /* position: absolute; */
+    font-family: "Montserrat";
+    color: black;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: uppercase;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
 
 .assombrir{
     position: absolute;
@@ -31,19 +43,14 @@ section{
     height: 480px;
 }
 
-/* #grille-presentation{
+
+.detail-formation-grille{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows:30vh 45vh 7vh 45vh 10vh;
-    align-items: center;
-    background-color: var(--couleur_neutre);
-} */
+    margin-bottom: 60px;
+}
 
 #block_presentation{
-    /* grid-row-start:1;
-    grid-column-start: 4;
-    grid-column-end: 10; */
-    
     
     position: absolute;
     height: 220px;
@@ -85,14 +92,28 @@ section{
 #quote2{
     align-self: flex-end;
 }
+
 #spacing{
     height: 200px;
-    
+    width: 100vw;
 }
+
+#spacing2{
+    height: 260px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .neutre2{
     background-color: #EDF2F4;
     display: flex;
     flex-direction: column;
+}
+.bleu-roi{
+    background-color: #ffffff;
 }
 
 .informations{
@@ -188,4 +209,42 @@ mat-icon{
     background-color: #EF233C;
     color: white;
     cursor: pointer;
+}
+
+.formateur-referent{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.prenom{
+    margin-bottom: -5px;
+}
+
+
+.profil-pic{
+    width: 240px;
+    height: 240px;
+    background-color: #EF233C;
+    border-radius: 100%;
+    display: flex;
+    
+    justify-content: center;
+}
+
+.profil-pic-img{
+    width: 210px;
+    height: 210px;
+    align-self: center;
+    
+    border-radius: 100%;
+}
+
+.description-formation{
+    grid-column-start: 5;
+    grid-column-end: 11;
+    margin-left: 80px;
 }
