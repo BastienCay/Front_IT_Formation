@@ -30,7 +30,6 @@ nav {
     margin-left: 1vh;
 }
 
-
 #logo_title_header button{
     display: flex;
     align-items: center;
@@ -41,8 +40,6 @@ nav {
     width: 50px;
     height: 40px;
 }
-
-
 
 #logo_title_header h1, #nos_formation{
     color: white;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CardFormationPresentationComponent } from "./card-formation-presentation/card-formation-presentation.component";
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule, FormArray } from '@angular/forms';
+import { SessionFormationService } from '../../../services/session-formation.service';
 
 @Component({
     selector: 'app-zone-formations',
@@ -11,56 +12,21 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule, F
 })
 export class ZoneFormationsComponent {
 
-    formations: any[] = [
-    // {
-    //     titre: "Développeur Full Stack Java",
-    //     reference: "TQT22",
-    //     prix: 2123,
-    //     theme: "Développement java",
-    //     duree: 120,
-    //     type: "Distanciel / Presentiel",
-    //     preRequis: 2
-    // },
-    // {
-    //     titre: "Développement Java",
-    //     reference: "DE5TR",
-    //     prix: 1950,
-    //     theme: "Développement java",
-    //     duree: 245,
-    //     type: "Presentiel",
-    //     preRequis: 1
-    // },
-    // {
-    //     titre: "Développement Python",
-    //     reference: "EO8D6",
-    //     prix: 860,
-    //     theme: "Développement python",
-    //     duree: 12,
-    //     type: "Distanciel",
-    //     preRequis: 1
-    // },
-    // {
-    //     titre: "Développement Java",
-    //     reference: "DE5TR",
-    //     prix: 1950,
-    //     theme: "Développement java",
-    //     duree: 245,
-    //     type: "Presentiel",
-    //     preRequis: 1
-    // },
-    // {
-    //     titre: "Développement Python",
-    //     reference: "EO8D6",
-    //     prix: 860,
-    //     theme: "Développement python",
-    //     duree: 12,
-    //     type: "Distanciel",
-    //     preRequis: 1
-    // }
-    ];
+    sessionFormations: any[] = [];
 
-    isFormation(listeFormation: any[]): boolean{
-        if(listeFormation.length === 0) return false;
+    constructor(private SessionFormationService: SessionFormationService){}
+
+    /**
+     * Methode qui ce lance une seule fois lors de la conception du components
+     */
+    ngOnInit(): void{
+        this.SessionFormationService.getFormations().subscribe((sessionFormations) => {
+            this.sessionFormations = sessionFormations;
+        });
+    }
+
+    isSessionFormation(listeSessionFormation: any[]): boolean{
+        if(listeSessionFormation.length === 0) return false;
         else return true;
     }
 
