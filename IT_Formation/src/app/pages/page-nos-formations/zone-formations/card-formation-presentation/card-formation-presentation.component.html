@@ -25,15 +25,23 @@
                     
             </div>
             <div id="type">
-                <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
-                <img src="../../../../../assets/others/Screen_black.svg" alt="">
-                <p>{{session.type}}</p>
+                @if (session.formation.typeFormation === "DISTANCIEL_PRESENTIEL") {
+                    <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
+                    <img src="../../../../../assets/others/Screen_black.svg" alt="">
+                    <p> Distanciel / Presentiel</p>
+                }@else if(session.formation.typeFormation === "PRESENTIEL"){
+                    <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
+                    <p>Presentiel</p>
+                }@else {
+                    <img src="../../../../../assets/others/Screen_black.svg" alt="">
+                    <p>Distanciel</p>
+                }
             </div>
             <div id="pre-requis">
-                @if (session.preRequis === 1) {
+                @if (session.formation.preRequis === "DEBUTANT") {
                     <img src="../../../../../assets/others/Smile.svg" alt="">
                     <p>Convient aux debutant</p>
-                }@else if (session.preRequis === 2) {
+                }@else{
                     <img src="../../../../../assets/others/Attention.svg" alt="">
                     <p>Nécessite un pré-requis</p>
                 }

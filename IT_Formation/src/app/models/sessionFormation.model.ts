@@ -8,9 +8,9 @@ export default interface SessionFormation {
         descript: String;
         prix: Number;
         reference: String;
-        typeFormation: Number;
-        preRequis: Number;
-        typeCertification: Number,
+        typeFormation: String;
+        preRequis: String;
+        typeCertification: String,
         metiers: String,
         adresse: {
             id: Number,
