@@ -3,9 +3,9 @@
 </div>
 <div id="block_formations">
     <div id="liste_formations">
-        @if (isFormation(formations)) {
-            @for (formation of formations; track formation) {
-                <app-card-formation-presentation [formation]="formation"></app-card-formation-presentation>
+        @if (isSessionFormation(sessionFormations)) {
+            @for (session of sessionFormations; track session) {
+                <app-card-formation-presentation [session]="session"></app-card-formation-presentation>
             }
         }@else {
             <div id="pas_de_formation">
