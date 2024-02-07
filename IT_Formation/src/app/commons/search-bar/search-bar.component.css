@@ -1,21 +1,11 @@
-/*#Ligne_vous{
-    width:              12vw;
-    height:             5vh;
-    padding-left:       45px;
-    stroke-width:       6px;
-    stroke:             #FFF;
-    filter:             drop-shadow(3px 4px 6px rgba(0, 0, 0, 0.70));
-}*/
-
 .blocBlanc{
     display:            flex;
     align-items:        center;
     justify-content:    center;
 
-    width:              fixed 640px;
-    height:             fixed 120px;
+    width:              640px;
+    height:             120px;
     border-radius:      20px;
-    flex-shrink:        0;
     background:         #FFF;
 
     grid-column-start:  5;
@@ -29,7 +19,7 @@
     border-radius:      30px;
     flex-shrink:        0;
     
-    background:         1px solid #EDF2F4;
+    background:         #EDF2F4;
     color:              black;
 
     font-family:        Montserrat;
@@ -58,13 +48,9 @@
     color:              #EF233C;
     position:           absolute;
     justify-content:    flex-end;
-    right:              15px;
+    right:              45px;
  }
 
- .blocGris{
-   display:             flex;
-   align-items:         center;
- }
  input:hover{
     outline:            none;
     border-color:       #EF233C; /* Couleur de la bordure lorsqu'il est en focus */

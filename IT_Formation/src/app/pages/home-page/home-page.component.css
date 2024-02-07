@@ -4,18 +4,19 @@
     height: 660px;
 }
 
-app-search-bar{
+#searchBar{
     position:           absolute;
     width:              fixed 640 px;
     height:             fixed 120 px;
+    /*display: flex;
+    align-items:        flex-end;*/
+    top:                525px;
 }
-
-.assombrir{
-    position: absolute;
-    background-color: rgba(43, 45, 66, 0.65);
-    width: 100%;
-    height: 360px;
-}
+/*app-search-bar{
+    position:           absolute;
+    width:              fixed 640 px;
+    height:             fixed 120 px;
+}*/
 
 section{
     display: flex;
