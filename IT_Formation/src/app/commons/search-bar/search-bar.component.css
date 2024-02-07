@@ -8,59 +8,44 @@
     border-radius:      20px;
     background:         #FFF;
 
-    grid-column-start:  5;
-    grid-column-end:    9;
-    grid-row-start:     3;
  }
 
  input{
-    width:              580px;
-    height:             50px;
-    border-radius:      30px;
-    flex-shrink:        0;
+   width:              550px;
+   height:             50px;
+   border-radius:      20px;
+   border-width: 0px;
+   border: #EF233C;
     
-    background:         #EDF2F4;
-    color:              black;
-
-    font-family:        Montserrat;
-    font-size:          16px;
-    font-style:         normal;
-    font-weight:        600;
-    line-height:        normal;
-    
-    padding-left:       10px;
-    padding-right:      2Opx;
-
-    display:            flex;
-    align-items:        center;
-    justify-content:    center;
-    border-radius:      20px;
-
-    grid-column-start:  5;
-    grid-column-end:    9;
-    grid-row-start:     3;
-
-    grid-row-start:     2px;
-    grid-column-start:  2px;
+   background:         #EDF2F4;
+   color:              #EF233C;
+   font-family:        Montserrat;
+   font-size:          16px;
+   font-weight:        600;
+   padding-left: 20px;
+   border-color: #EF233C;
  } 
 
  .loupe{
     color:              #EF233C;
     position:           absolute;
-    justify-content:    flex-end;
-    right:              45px;
+    right: 55px;
+    scale: 1.5 ;
  }
 
- input:hover{
-    outline:            none;
-    border-color:       #EF233C; /* Couleur de la bordure lorsqu'il est en focus */
-    box-shadow:         0 0 2px black;
- }
+ /* input:hover{
+    border-color:       #EF233C;
+    border-width: 2px;
+
+ } */
 
  input::placeholder{
     color:              #EF233C;
     font-size:          16px;
-    font-style:         normal;
     font-weight:        600;
-    line-height:        normal;
+    margin-left: 50px;
 }
+input:focus {
+   outline: none;
+   
+ }

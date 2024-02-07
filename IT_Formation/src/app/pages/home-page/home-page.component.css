@@ -5,18 +5,9 @@
 }
 
 #searchBar{
-    position:           absolute;
-    width:              fixed 640 px;
-    height:             fixed 120 px;
-    /*display: flex;
-    align-items:        flex-end;*/
-    top:                525px;
+    position: absolute;
+    top: 505px;
 }
-/*app-search-bar{
-    position:           absolute;
-    width:              fixed 640 px;
-    height:             fixed 120 px;
-}*/
 
 section{
     display: flex;

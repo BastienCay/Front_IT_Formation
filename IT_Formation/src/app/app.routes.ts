@@ -8,6 +8,7 @@ import { PageFormationComponent } from './pages/page-formation/page-formation.co
 
 
 
+
 export const routes: Routes = [
     {path: '', redirectTo: 'nos-formations', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
-    {path:'formation', component: PageFormationComponent}
+    {path:'formation', component: PageFormationComponent},
+
 ];
 
