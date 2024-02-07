@@ -2,6 +2,21 @@
     
 </div>
 <div id="block_formations">
+    <div id="filtre_formation">
+        <div id="filtre_1" class="block_filtre">
+            <p>Prix</p>
+            <mat-slider min="100" max="5000" discrete [displayWith]="affichageSlider">
+                <input matSliderStartThumb [value]="value">
+                <input matSliderEndThumb [value]="value2">
+            </mat-slider>
+        </div>
+        <div id="filtre_2" class="block_filtre">
+            <section [formGroup]="toppings">
+                <p><mat-checkbox formControlName="presentiel">Presentiel</mat-checkbox></p>
+                <p><mat-checkbox formControlName="distanciel">Distanciel</mat-checkbox></p>
+              </section>
+        </div>
+    </div>
     <div id="liste_formations">
         @if (isSessionFormation(sessionFormations)) {
             @for (session of sessionFormations; track session) {
@@ -13,7 +28,6 @@
                 <h1>Pas de formations disponible</h1>
             </div>
         }
-        
     </div>
 </div>
 
