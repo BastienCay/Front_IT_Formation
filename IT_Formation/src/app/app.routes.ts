@@ -7,9 +7,6 @@ import { PageNosFormationsComponent } from './pages/page-nos-formations/page-nos
 import { PageFormationComponent } from './pages/page-formation/page-formation.component';
 import { Page404Component } from './pages/page-404/page-404.component';
 
-
-
-
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
@@ -21,4 +18,3 @@ export const routes: Routes = [
     {path:'**', component: Page404Component},
 
 ];
-

@@ -1,35 +1,35 @@
     <mat-card class="example-card">
         <mat-card-header>
             <div>
-                <h2>{{session.formation.nom}}</h2>
+                <h2>{{formation.nom}}</h2>
                 <div id="prix_ref">
-                    <h1>{{numStr(session.formation.prix)}} € HT</h1>
-                    <p>Référence: {{session.formation.reference}}0</p>
+                    <h1>{{numStr(formation.prix)}} € HT</h1>
+                    <p>Référence: {{formation.reference}}0</p>
                 </div>
             </div>
         </mat-card-header>
         <mat-card-content>
             <div id="block1">
-                <p>{{session.formation.sousTheme.designation}}</p>
-                <button>Souscrire à cettre formation</button>
+                <p>{{formation.sousTheme.designation}}</p>
+                <button routerLink="">Souscrire à cettre formation</button>
             </div>
           <mat-divider></mat-divider>
           <div id="block2">
             <div id="duree">
                 <img src="../../../../../assets/others/Horloge.svg" alt="">
-                @if (nombreDeJour(session.dateDebut,session.dateFin) === 1) {
-                    <p>{{nombreDeJour(session.dateDebut,session.dateFin)}} jour</p>
+                @if (formation.nbrJour === 1) {
+                    <p>{{formation.nbrJour}} jour</p>
                 } @else {
-                    <p>{{nombreDeJour(session.dateDebut,session.dateFin)}} jours</p>
+                    <p>{{formation.nbrJour}} jours</p>
                 }
                     
             </div>
             <div id="type">
-                @if (session.formation.typeFormation === "DISTANCIEL_PRESENTIEL") {
+                @if (formation.typeFormation === "DISTANCIEL_PRESENTIEL") {
                     <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
                     <img src="../../../../../assets/others/Screen_black.svg" alt="">
                     <p> Distanciel / Presentiel</p>
-                }@else if(session.formation.typeFormation === "PRESENTIEL"){
+                }@else if(formation.typeFormation === "PRESENTIEL"){
                     <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
                     <p>Presentiel</p>
                 }@else {
@@ -38,7 +38,7 @@
                 }
             </div>
             <div id="pre-requis">
-                @if (session.formation.preRequis === "DEBUTANT") {
+                @if (formation.preRequis === "DEBUTANT") {
                     <img src="../../../../../assets/others/Smile.svg" alt="">
                     <p>Convient aux debutant</p>
                 }@else{

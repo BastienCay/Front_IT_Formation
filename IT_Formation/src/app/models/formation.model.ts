@@ -1,9 +1,12 @@
 export default interface Formation {
     id: Number,
     nom: String,
-    descript: String;
-    prix: Number;
-    reference: String;
+    descript: String,
+    prix: Number,
+    nbrJour: Number,
+    reference: String,
+    typeFormation: String,
+    preRequis: String,
     typeCertification: String,
     metiers: String,
     adresse: {

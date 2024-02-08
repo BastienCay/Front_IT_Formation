@@ -9,26 +9,16 @@ import {MatCardModule} from '@angular/material/card';
 @Component({
   selector: 'app-card-formation-presentation',
   standalone: true,
-  imports: [CommonModule,RouterModule,MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
+  imports: [CommonModule,RouterModule,MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule,RouterModule],
   templateUrl: './card-formation-presentation.component.html',
   styleUrl: './card-formation-presentation.component.css'
 })
 export class CardFormationPresentationComponent {
 
   @Input()
-  session!: any;
+  formation!: any;
 
   resultat!: String;
-
-  nombreDeJour(date1: string, date2: string): Number{
-    let dateDebut = new Date(date1);
-    let dateFin = new Date(date2);
-
-    let difference_en_temps = dateFin.getTime() - dateDebut.getTime();
-    let difference_en_jours = difference_en_temps / (1000 * 3600 * 24);
-
-    return difference_en_jours;
-  }
 
   numStr(nbrNonSeparer: any): String {
     nbrNonSeparer = '' + nbrNonSeparer;
