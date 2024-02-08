@@ -1,0 +1,21 @@
+h1, h2, h3, p, a, label, span{
+    font-family: "Montserrat";
+}
+
+#zone_formulaire{
+    background-color: #EDF2F4;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows:5vh 20vh 105vh 10vh;
+}
+
+p{
+    grid-row-start:2;
+    grid-column-start: 5;
+    grid-column-end: 9;
+    text-align: center;
+    font-size: 3vh;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;    
+}
