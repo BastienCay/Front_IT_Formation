@@ -1,0 +1,40 @@
+h2{
+  font-size: 45px;
+}
+
+#banniere{
+  background-image: url("../../../assets/background/baniere-it-formation-01.jpg");
+  width: 100vw;
+  height: 360px;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section h2{
+  position: absolute;
+  color: white;
+  text-align: center;
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.70);
+  font-size: 65px;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.quatre{
+  position: absolute;
+  font-size: 500px;
+  opacity: 100%;
+  word-spacing: 300px;
+  color: #8D99AE;
+}
+
+.deadfish{
+  margin-bottom: 60px;
+  z-index: 2;
+}
+

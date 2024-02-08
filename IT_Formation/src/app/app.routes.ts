@@ -5,18 +5,20 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageAProposComponent } from './pages/page-a-propos/page-a-propos.component';
 import { PageNosFormationsComponent } from './pages/page-nos-formations/page-nos-formations.component';
 import { PageFormationComponent } from './pages/page-formation/page-formation.component';
+import { Page404Component } from './pages/page-404/page-404.component';
 
 
 
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'nos-formations', pathMatch:'full'},
+    {path: '', redirectTo: 'home-page', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
     {path:'evaluation', component: PageFormulaireEvaluationComponent},
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
     {path:'formation', component: PageFormationComponent},
+    {path:'**', component: Page404Component},
 
 ];
 
