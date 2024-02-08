@@ -6,6 +6,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {JsonPipe} from '@angular/common';
+import SessionFormation from '../../../models/sessionFormation.model';
 
 @Component({
     selector: 'app-zone-formations',
@@ -17,7 +18,8 @@ import {JsonPipe} from '@angular/common';
 })
 export class ZoneFormationsComponent {
 
-    sessionFormations: any[] = [];
+    sessionFormationsMemoire: SessionFormation[] = [];
+    sessionFormationsActif: SessionFormation[] = [];
 
     constructor(private SessionFormationService: SessionFormationService,private _formBuilder: FormBuilder){}
 
@@ -26,11 +28,12 @@ export class ZoneFormationsComponent {
      */
     ngOnInit(): void{
         this.SessionFormationService.getFormations().subscribe((sessionFormations) => {
-            this.sessionFormations = sessionFormations;
+            this.sessionFormationsMemoire = sessionFormations;
+            this.sessionFormationsActif = sessionFormations;
         });
     }
 
-    isSessionFormation(listeSessionFormation: any[]): boolean{
+    isEmpty(listeSessionFormation: SessionFormation[]): boolean{
         if(listeSessionFormation.length === 0) return false;
         else return true;
     }
@@ -42,22 +45,24 @@ export class ZoneFormationsComponent {
         return value + "€";
     }
 
-    formationsListe!: any[];
-
-    filtrePrix(){
-        for (let index = 0; index < this.sessionFormations.length; index++) {
-            
-            if(this.sessionFormations[index].formation.prix >= this.value && this.sessionFormations[index].formation.prix <= this.value2){
-                this.formationsListe.push(this.sessionFormations[index]);
-            }
-        }
-        console.log(this.formationsListe);
-        this.sessionFormations = this.formationsListe;
-    }
-
     toppings = this._formBuilder.group({
         presentiel: false,
         distanciel: false,
     });
 
+    tableauTemporaire!: SessionFormation[];
+
+    public filterPrixFormation(){
+        this.sessionFormationsActif.pop();
+        this.sessionFormationsActif = this.sessionFormationsMemoire;
+
+        console.log("Avant " + this.sessionFormationsActif.length);
+
+        this.tableauTemporaire = this.sessionFormationsActif.filter(
+            (session) => session.formation.prix >= this.value && session.formation.prix <= this.value2
+        );
+        
+        this.sessionFormationsActif = this.tableauTemporaire;
+        console.log("Apres " +this.sessionFormationsActif.length);
+    } 
  }

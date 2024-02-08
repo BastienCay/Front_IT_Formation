@@ -6,7 +6,7 @@ export default interface SessionFormation {
         id: Number,
         nom: String,
         descript: String;
-        prix: Number;
+        prix: number;
         reference: String;
         typeFormation: String;
         preRequis: String;

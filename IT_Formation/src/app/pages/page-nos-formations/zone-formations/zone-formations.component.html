@@ -6,8 +6,8 @@
         <div id="filtre_1" class="block_filtre">
             <p>Prix</p>
             <mat-slider min="100" max="5000" discrete [displayWith]="affichageSlider">
-                <input matSliderStartThumb [value]="value">
-                <input matSliderEndThumb [value]="value2">
+                <input matSliderStartThumb [value]="value" (change)="filterPrixFormation()">
+                <input matSliderEndThumb [value]="value2" (change)="filterPrixFormation()">
             </mat-slider>
         </div>
         <div id="filtre_2" class="block_filtre">
@@ -18,8 +18,8 @@
         </div>
     </div>
     <div id="liste_formations">
-        @if (isSessionFormation(sessionFormations)) {
-            @for (session of sessionFormations; track session) {
+        @if (isEmpty(sessionFormationsActif)) {
+            @for (session of sessionFormationsActif; track session) {
                 <app-card-formation-presentation [session]="session"></app-card-formation-presentation>
             }
         }@else {
