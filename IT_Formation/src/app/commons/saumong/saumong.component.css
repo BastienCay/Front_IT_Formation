@@ -10,7 +10,70 @@
   opacity: 1;
   transition: all .2s ease-in-out;
 }
+
+.button-saumong{
+  background-color: transparent;
+  border-color: transparent;
+
+
+}
+
+.button-saumong:hover{
+  cursor: pointer;
+  scale: 1.2;
+  animation: rotate 1s ease-in-out both;
+}
+
+.button-saumong:focus{
+  scale: 1.2;
+  animation: swim 2s ease-in ;
+}
+
+@keyframes rotate
+{
+  0%
+  {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  20%
+  {
+    transform: rotate(5deg) translate3d(0, 0, 0);
+  }
+  40%
+  {
+    transform: rotate(-5deg) translate3d(0, 0, 0);
+  }
+  60%
+  {
+    transform: rotate(2deg) translate3d(0, 0, 0);
+  }
+  80%
+  {
+    transform: rotate(-2deg) translate3d(0, 0, 0);
+  }
+  100%
+  {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes swim
+{
+  0%
+  {
+    transform: rotate(0deg) translateY(0px);
+    opacity: 1;
+  }
+  100%
+  {
+    transform: rotate(0deg) translateY(-1500px);
+    opacity: 0;
+  }
+}
+
+
 .saumong{
   width: 50px;
   height: 60px;
+  transform: rotate(90deg);
 }

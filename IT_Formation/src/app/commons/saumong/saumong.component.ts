@@ -34,7 +34,7 @@ export class SaumongComponent {
       
       if (currentScroll > 0) {
         window.requestAnimationFrame(smoothscroll);
-        window.scrollTo(0, currentScroll - (currentScroll / 8));
+        window.scrollTo(0, currentScroll - (currentScroll / 16));
       }
 
     })();
