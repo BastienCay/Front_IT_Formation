@@ -15,5 +15,29 @@ export class FormulaireConnectionComponent {
     motDePasse:   ['',[Validators.minLength(2),Validators.required]],
   });
   constructor(private formBuilder: FormBuilder){}
+  
+  submitted: boolean = false;
 
+  connectionUtilisateurs: any[] = [];
+
+  addDemande(){
+    this.connectionUtilisateurs.push(this.connection.value);
+    this.submitted = false;
+    console.log(this.connection.value)
+    this.connection.reset();
+  }
+
+  onSubmit(): boolean{
+    this.submitted = true;
+    if(this.connection.invalid){
+      return false;
+    }else{
+      this.addDemande();
+      return true;
+    }
+  }
+
+  get form(){
+    return this.connection.controls;
+  }
 }
