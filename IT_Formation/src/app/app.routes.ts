@@ -5,6 +5,7 @@ import { PageContactComponent } from './pages/page-contact/page-contact.componen
 import { PageAProposComponent } from './pages/page-a-propos/page-a-propos.component';
 import { PageNosFormationsComponent } from './pages/page-nos-formations/page-nos-formations.component';
 import { PageFormationComponent } from './pages/page-formation/page-formation.component';
+import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
 
 
 
@@ -17,6 +18,6 @@ export const routes: Routes = [
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
     {path:'formation', component: PageFormationComponent},
+    {path:'connection', component: PageConnectionComponent},
 
 ];
-
