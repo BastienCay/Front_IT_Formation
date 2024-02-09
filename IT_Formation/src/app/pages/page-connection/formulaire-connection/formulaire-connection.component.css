@@ -7,7 +7,9 @@ h1, h2, h3, p, a, label, span{
     background-color:       #EDF2F4;
     display:                grid;
     grid-template-columns:  repeat(12,1fr);
-    grid-template-rows:     5vh 20vh 105vh 10vh;
+    /*grid-template-rows:     5vh 20vh 105vh 10vh;*/
+    grid-template-rows:     20vh 20vh 125vh 10vh;
+    height:                 675px; 
 }
 
 p{
@@ -16,15 +18,18 @@ p{
     font-family:            "Montserrat";
     color:                  black;
 
+    padding-top:            37px;
     font-size:              3vh;
     font-weight:            600;
     line-height:            normal;
-    height:                 50px; 
+    width:                  640px;
+    height:                 75px; 
     
-    grid-row-start:         2;
+    grid-row-start:         1;
     grid-column-start:      5;
     grid-column-end:        9;
     text-align:             center;
+    margin-top: 15px;
 
     font-style:             normal;
 }
@@ -43,19 +48,15 @@ span{
     line-height:            normal; 
 }
 
-#zone_formulaire{
-    height:                 650px; 
-}
-
 #formulaire{
-    grid-row-start:         3;
+    grid-row-start:         2;
     grid-column-start:      5;
     grid-column-end:        9;
 
     width:                  640px;
     height:                 325px; 
-    padding-top:            42px;
-    padding-bottom:         25px; 
+    padding-top:            35px;
+    padding-bottom:         15px; 
 
     background-color:       white;
     border-radius:          24px;
@@ -68,7 +69,7 @@ span{
     display:                flex;
     flex-direction:         column;
     justify-content:        space-around;
-    width:                  520px;
+    width:                  500px;
 }
 
 form div{
@@ -98,17 +99,20 @@ form div{
 }
 
 button{
+    display:                flex;
     align-self:             flex-end;
+    align-items:            center;
+    justify-content:        center;
+
     width:                  100px;
     height:                 50px;
     border-radius:          30px;
+    
     border:                 2px solid #EF233C;
-    display:                flex;
-    align-items:            center;
-    justify-content:        center;
     
     background-color:       #ffffff;
     color:                  #EF233C;
+
     font-weight:            bold;
 }
 
