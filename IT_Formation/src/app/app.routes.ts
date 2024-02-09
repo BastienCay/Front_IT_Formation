@@ -6,6 +6,9 @@ import { PageAProposComponent } from './pages/page-a-propos/page-a-propos.compon
 import { PageNosFormationsComponent } from './pages/page-nos-formations/page-nos-formations.component';
 import { PageFormationComponent } from './pages/page-formation/page-formation.component';
 import { Page404Component } from './pages/page-404/page-404.component';
+import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
+
+
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -14,7 +17,11 @@ export const routes: Routes = [
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
+    {path:'formation', component: PageFormationComponent},
+    {path:'connection', component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
     {path:'**', component: Page404Component},
 
+    
 ];
+
