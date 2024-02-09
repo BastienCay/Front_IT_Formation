@@ -7,16 +7,23 @@
         <form [formGroup]="connection" (ngSubmit)="onSubmit()">
             <!-- Désignation -->
             <div class="input-group">
-                <label class="label" for="identifiant"> Nom </label>
+                <label class="label" for="identifiant"> 
+                     Nom 
+                </label>
                 <input class="input" required type="text" formControlName="identifiant" id="identifiant"/>
+
                 <!-- Si submitted est true et le champ désignation est INVALIDE -->
                 @if(submitted && !form['identifiant'].valid){
-                    <span>* identifiant Invalide</span>
+                    <span>
+                        * identifiant Invalide
+                    </span>
                 }
             </div>
         
             <div class="input-group">
-                <label class="label" for="motDePasse"> Mot de passe </label>
+                <label class="label" for="motDePasse">
+                     Mot de passe 
+                </label>
                 <input class="input" required type="text" formControlName="motDePasse" id="motDePasse"/>
                 @if(submitted && !form['motDePasse'].valid){
                     <span>* Mot de passe Invalide</span>
@@ -24,7 +31,9 @@
             </div>
 
             <!-- Button -->
-            <button type="submit">Connexion</button>
+            <button type="submit">
+                Connexion
+            </button>
         </form>
     </div>    
 </div>
