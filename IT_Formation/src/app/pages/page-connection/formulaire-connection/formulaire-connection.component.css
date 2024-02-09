@@ -7,12 +7,16 @@ h1, h2, h3, p, a, label, span{
     background-color:       #EDF2F4;
     display:                grid;
     grid-template-columns:  repeat(12,1fr);
-    /*grid-template-rows:     5vh 20vh 105vh 10vh;*/
     grid-template-rows:     20vh 20vh 125vh 10vh;
     height:                 675px; 
 }
+.titre{
+    grid-row-start:         1;
+    grid-column-start:      5;
+    grid-column-end:        9;
+}
 
-p{
+h1{
     display:                absolute;
     justify-content:        center;
     font-family:            "Montserrat";
@@ -25,13 +29,9 @@ p{
     width:                  640px;
     height:                 75px; 
     
-    grid-row-start:         1;
-    grid-column-start:      5;
-    grid-column-end:        9;
+    
     text-align:             center;
     margin-top: 15px;
-
-    font-style:             normal;
 }
 
 .assombrir{
