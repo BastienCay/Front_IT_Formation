@@ -1,0 +1,117 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+}
+
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
+.button-saumong{
+  background-color: transparent;
+  border-color: transparent;
+
+}
+
+.button-saumong:hover{
+  cursor: pointer;
+  scale: 1.2;
+  animation: rotate 0.7s ease-in-out both infinite;
+}
+
+.animation-saumong{
+  scale: 1.2;
+  animation: rotate2 0.5s ease-in-out infinite, swim 1.8s ease-in !important ;
+  
+}
+
+@keyframes rotate
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  20%
+  {
+    transform: rotate(7deg);
+  }
+  40%
+  {
+    transform: rotate(-5deg);
+  }
+  60%
+  {
+    transform: rotate(3deg);
+  }
+  80%
+  {
+    transform: rotate(-2deg);
+  }
+  100%
+  {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swim
+{
+  0%
+  {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100%
+  {
+    transform: translateY(-1200px);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate2
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  20%
+  {
+    transform: rotate(8deg);
+  }
+  40%
+  {
+    transform: rotate(-8deg);
+  }
+  60%
+  {
+    transform: rotate(4deg);
+  }
+  80%
+  {
+    transform: rotate(-4deg);
+  }
+  100%
+  {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes disappear
+{
+  0%
+  {
+    opacity: 1;
+  }
+  100%
+  {
+    opacity: 0;
+  }
+}
+
+.saumong{
+  width: 50px;
+  height: 60px;
+}

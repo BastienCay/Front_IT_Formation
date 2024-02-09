@@ -33,12 +33,6 @@
     scale: 1.5 ;
  }
 
- /* input:hover{
-    border-color:       #EF233C;
-    border-width: 2px;
-
- } */
-
  input::placeholder{
     color:              #EF233C;
     font-size:          16px;

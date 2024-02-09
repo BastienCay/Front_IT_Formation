@@ -5,13 +5,14 @@ import { CardPartenersComponent } from "../../commons/cards/card-parteners/card-
 import { CardHomePageTypeFormationComponent } from "../../commons/cards/card-home-page-type-formation/card-home-page-type-formation.component";
 import { CardNotationComponent } from "../../commons/cards/card-notation/card-notation.component";
 import { SearchBarComponent } from "../../commons/search-bar/search-bar.component";
+import { SaumongComponent } from "../../commons/saumong/saumong.component";
 
 @Component({
     selector: 'app-home-page',
     standalone: true,
     templateUrl: './home-page.component.html',
     styleUrl: './home-page.component.css',
-    imports: [HeaderComponent, FooterComponent, CardPartenersComponent, CardHomePageTypeFormationComponent, CardNotationComponent, SearchBarComponent]
+    imports: [HeaderComponent, FooterComponent, CardPartenersComponent, CardHomePageTypeFormationComponent, CardNotationComponent, SearchBarComponent, SaumongComponent]
 })
 export class HomePageComponent {
 
