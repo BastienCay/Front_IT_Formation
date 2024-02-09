@@ -1,5 +1,5 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, Renderer2 } from '@angular/core';
 
 
 
@@ -14,7 +14,7 @@ export class SaumongComponent {
 
   windowScrolled: boolean = false;
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private renderer: Renderer2, private el: ElementRef) { }
 
   @HostListener("window:scroll", [])
 
@@ -38,6 +38,14 @@ export class SaumongComponent {
       }
 
     })();
+  }
+
+  animationSaumong() {
+    const bouton = this.el.nativeElement.querySelector('.button-saumong');
+    this.renderer.addClass(bouton, 'animation-saumong');
+    setTimeout(() => {
+      this.renderer.removeClass(bouton, 'animation-saumong');
+    }, 1800);
   }
 
   ngOnInit() {
