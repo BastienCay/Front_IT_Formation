@@ -1,7 +1,8 @@
 export default interface Formation {
     id: Number,
     nom: String,
-    descript: String,
+    descriptionMinimum: String,
+    descriptionDetailler: String,
     prix: Number,
     nbrJour: Number,
     reference: String,
@@ -21,7 +22,7 @@ export default interface Formation {
         designation: String,
         theme: {
             id: Number,
-            designation: String
+            designation: String,
         }
     }
 }

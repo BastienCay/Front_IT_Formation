@@ -14,7 +14,7 @@ export const routes: Routes = [
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
-    {path:'formation', component: PageFormationComponent},
+    {path:'formations/:id', component: PageFormationComponent},
     {path:'**', component: Page404Component},
 
 ];

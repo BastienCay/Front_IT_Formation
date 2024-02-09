@@ -1,18 +1,12 @@
 <app-header></app-header>
 <section id="banniere_presentation">
     <div id="banniere"></div>
-    <h1 id="titre">Nom de la formation</h1>
+    <h1 id="titre">{{formation.nom}}</h1>
     <div id="block_presentation" class="block">
         <p class="quote" id="quote1" >"</p>
         <div class="block_de_texte">
-            <p>Description de la formation ici avec les points clés.
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                Aliqua.
-                <br>
-                Ut enim ad minim veniam,
-                quis nostrud exercitation
+            <p>
+                {{formation.descriptionMinimum}}
             </p>      
         </div>
         <p class="quote" id="quote2">"</p>
@@ -24,25 +18,30 @@
         <div class="card-information">
             <mat-icon>alarm</mat-icon>
             <h4 class="titre-info">DURÉE</h4>
-            <p class="info-primaire">700 heures de cours</p>
+            <p class="info-primaire">{{formation.nbrJour}}</p>
             <p class="info-secondaire">test info</p>
         </div>
         <div class="card-information">
             <mat-icon>school</mat-icon>
             <h4 class="titre-info">CERTIFICATION</h4>
-            <p class="info-primaire">Diplomante</p>
+            <p class="info-primaire">{{formation.typeCertification}}</p>
             <p class="info-secondaire">test info</p>
         </div>
         <div class="card-information">
             <mat-icon> location_on</mat-icon>
             <h4 class="titre-info">MODALITÉS</h4>
-            <p class="info-primaire">100% Présentiel</p>
+            <p class="info-primaire">{{formation.typeFormation}}</p>
             <p class="info-secondaire">test info</p>
         </div>
         <div class="card-information">
             <mat-icon>business_center</mat-icon>
             <h4 class="titre-info">MÉTIERS</h4>
-            <p class="info-primaire">Liste des débouchées</p>
+            @if (formation.metiers === "") {
+                <p class="info-primaire">métiers inconnue</p>
+            } @else {
+                <p class="info-primaire">{{formation.metiers}}</p>
+            }
+            
             <p class="info-secondaire">test info</p>
         </div>
 
@@ -60,7 +59,7 @@
 </section>
 <section class="neutre2" >
     <h2 class="petit-titre">QU'ALLEZ-VOUS APPRENDRE PENDANT LA FORMATION <br>
-        *Nom de la formation* ?
+        {{formation.nom}} ?
     </h2>
     <div class="detail-formation-grille">
         <div class="formateur-referent">
@@ -72,18 +71,7 @@
         </div>
         <div class="description-formation">
             <h3>DESCRIPTION DETAILLÉE</h3>
-            <p>Lorem ipsum</p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-
+            <p>{{formation.descriptionDetailler}}</p>
         </div>
     </div>
     <div class="cta">
