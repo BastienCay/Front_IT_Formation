@@ -22,7 +22,21 @@ mat-card-header>div{
     align-items: center;
 }
 
-button{
+mat-card-header button{
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+mat-card-header button h2{
+    font-size: 25px;
+}
+
+.example-card:hover mat-card-header button h2{
+    text-decoration: underline #EF233C;
+}
+
+mat-card-content button{
     width: 260px;
     height: 50px;
     border-radius: 30px;
@@ -36,7 +50,7 @@ button{
     cursor: pointer;
 }
 
-button:hover{
+mat-card-content button:hover{
     color: #EF233C;
     background-color: #EDF2F4;
     border: 2px solid #EF233C;

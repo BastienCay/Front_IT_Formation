@@ -1,7 +1,10 @@
     <mat-card class="example-card">
         <mat-card-header>
             <div>
+                <button routerLink="/formations/{{formation.id}}">
                 <h2>{{formation.nom}}</h2>
+                </button>
+
                 <div id="prix_ref">
                     <h1>{{numStr(formation.prix)}} € HT</h1>
                     <p>Référence: {{formation.reference}}0</p>
@@ -11,7 +14,7 @@
         <mat-card-content>
             <div id="block1">
                 <p>{{formation.sousTheme.designation}}</p>
-                <button routerLink="">Souscrire à cettre formation</button>
+                <button>Souscrire à cettre formation</button>
             </div>
           <mat-divider></mat-divider>
           <div id="block2">
