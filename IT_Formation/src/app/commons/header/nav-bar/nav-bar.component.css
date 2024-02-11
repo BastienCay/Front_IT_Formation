@@ -212,14 +212,21 @@ button{
     
 }
 
-#nos_formation:hover .formation-dropdown {
-    display: block;
-    cursor: pointer;
+
+.formation-dropdown {
+    visibility: hidden;
+}
+#nos_formation:hover{
+    cursor: pointer!important;
+}
+.formations:hover .formation-dropdown {
+
+    visibility: visible;
     
 }
 
-
 .dropdown-content{
+    display: none;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row;
