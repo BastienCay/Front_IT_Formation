@@ -1,0 +1,73 @@
+<div id="zone_formulaire">
+  <p>Pour votre inscription,<br>
+      veuillez remplir le formulaire ci-dessous.</p>
+<div id="formulaire">
+
+  <form [formGroup]="inscription" (ngSubmit)="onSubmit()">
+      <!-- Désignation -->
+      <div class="input-group">
+          <label class="label" for="nom"> Nom <span>*</span></label>
+          <input class="input" required type="text" formControlName="nom" id="nom"/>
+          <!-- Si submitted est true et le champ désignation est INVALIDE -->
+          @if(submitted && !form['nom'].valid){
+              <span>* Nom Invalide</span>
+          }
+          
+      </div>
+      
+      <div class="input-group">
+          <label class="label" for="prenom"> Prenom <span>*</span></label>
+          <input class="input" required type="text" formControlName="prenom" id="prenom"/>
+          @if(submitted && !form['prenom'].valid){
+              <span>* Prenom Invalide</span>
+          }
+      </div>
+
+      <div class="input-group">
+          <label class="label" for="email"> Email <span>*</span></label>
+          <input class="input" required type="email" formControlName="email" id="email"/>
+          @if(submitted && !form['prenom'].valid){
+              <span>* Email Invalide</span>
+          }
+      </div>
+
+      <div class="input-group">
+          <label class="label" for="tel"> Telephone <span>*</span></label>
+          <input class="input" required type="tel" formControlName="telephone" id="tel"/>
+          @if(submitted && !form['telephone'].valid){
+              <span>* Telephone Invalide</span>
+          }
+      </div>
+
+      <div class="input-group">
+        <label class="label" for="prenom"> identifiant <span>*</span></label>
+        <input class="input" required type="text" formControlName="identifiant" id="identifiant"/>
+        @if(submitted && !form['identifiant'].valid){
+            <span>* Identifiant Invalide</span>
+        }
+      </div>
+
+      <div class="input-group">
+        <label class="label" for="prenom"> Mot de passe <span>*</span></label>
+        <input class="input" required type="password" formControlName="motDePasse" id="motDePasse"/>
+        @if(submitted && !form['motDePasse'].valid){
+            <span>* Mot de passe Invalide</span>
+        }
+      </div>
+
+      <div class="input-group">
+        <label class="label" for="prenom"> Confirmation mot de passe <span>*</span></label>
+        <input class="input" required type="password" formControlName="motDePasseVerif" id="motDePasseVerif"/>
+        @if(submitted && !form['motDePasseVerif'].valid){
+          <span>* Mot de passe Invalide</span>
+        }
+       </div>
+
+       <p>* champs obligatoire</p>
+      <!-- Button -->
+      <button type="submit">S'inscrire</button>
+      
+  </form>
+  
+</div>    
+</div>
