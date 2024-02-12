@@ -1,14 +1,16 @@
+import { Utilisateur } from "./utilisateur.model";
+
 export class Compte {
-  idCompte!: number;
+  id!: number;
   motDePasse: string;
   identifiant: string;
   typeCompte: string;
-  utilisateur: number;
+  utilisateur: Utilisateur;
 
-  constructor(motDePasse: string,identifiant: string,idUser: number){
+  constructor(motDePasse: string,identifiant: string,user: Utilisateur){
     this.identifiant = identifiant;
     this.motDePasse = motDePasse;
     this.typeCompte = "Users_Normal";
-    this.utilisateur = idUser;
+    this.utilisateur = user;
   }
 }

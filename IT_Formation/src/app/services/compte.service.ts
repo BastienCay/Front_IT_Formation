@@ -25,7 +25,7 @@ export class CompteService {
     }
     
     updateCompte(compte: Compte): Observable<Compte>{
-        return this.httpClient.post<Compte>(`${this.apiUrl}/comptes/${compte.idCompte}`,compte);
+        return this.httpClient.post<Compte>(`${this.apiUrl}/comptes/${compte.id}`,compte);
     }
     
     deleteCompte(id: number): Observable<Compte>{

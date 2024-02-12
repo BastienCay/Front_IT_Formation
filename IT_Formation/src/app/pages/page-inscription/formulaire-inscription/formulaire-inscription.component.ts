@@ -49,22 +49,20 @@ export class FormulaireInscriptionComponent {
                                           this.inscription.get('telephone')?.value);
 
     this.utilisateurService.createUtilisateur(newUtilisateur).subscribe((utilisateur) =>{
-      this.creationCompteAndStagiaire(utilisateur.idUser)
+      this.creationCompteAndStagiaire(utilisateur)
     });
   }
 
-  creationCompteAndStagiaire(idUtilisateur: number){
-    console.log(idUtilisateur);
-    
+  creationCompteAndStagiaire(utilisateur: Utilisateur){
     const newCompte = new Compte( this.inscription.get('motDePasse')?.value, 
                                   this.inscription.get('identifiant')?.value,
-                                  idUtilisateur);
+                                  utilisateur);
 
     this.compteService.createCompte(newCompte).subscribe({
       error: () => console.error("Erreur creation Compte")
     });
 
-    const newStagiaire = new Stagiaire(idUtilisateur);
+    const newStagiaire = new Stagiaire(utilisateur);
 
     this.stagiaireService.createStagiaire(newStagiaire).subscribe({
       error: () => console.error("Erreur creation stagiaire")
@@ -73,7 +71,7 @@ export class FormulaireInscriptionComponent {
     this.submitted = false;
     this.inscription.reset();
 
-    this.router.navigate(['connection']);
+    // this.router.navigate(['connection']);
   }
 
   onSubmit(): boolean{

@@ -1,8 +1,10 @@
+import { Utilisateur } from "./utilisateur.model";
+
 export class Stagiaire {
   id!: number;
-  utilisateur_id_user: number;
+  utilisateur: Utilisateur;
 
-  constructor(idUser: number){
-    this.utilisateur_id_user = idUser;
+  constructor(user: Utilisateur){
+    this.utilisateur = user;
   }
 }
