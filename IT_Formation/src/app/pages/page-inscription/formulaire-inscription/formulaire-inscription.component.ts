@@ -7,6 +7,7 @@ import { CompteService } from '../../../services/compte.service';
 import { Stagiaire } from '../../../models/stagiaire.model';
 import { StagiaireService } from '../../../services/stagiaire.service';
 import { Router } from '@angular/router';
+import { validTelephone } from '../../../commons/Validators/telephone.validator';
 
 @Component({
   selector: 'app-formulaire-inscription',
@@ -20,13 +21,13 @@ export class FormulaireInscriptionComponent {
   utilisateur!: Utilisateur;
 
   inscription: FormGroup = this.formBuilder.group({
-    nom: ['',[Validators.minLength(5),Validators.required]],
-    prenom: ['',[Validators.minLength(5),Validators.required]],
-    email: ['',Validators.required],
-    telephone: ['',[Validators.minLength(5),Validators.required]],
-    identifiant: ['',[Validators.minLength(5),Validators.required]],
-    motDePasse: ['',[Validators.minLength(5),Validators.required]],
-    motDePasseVerif: ['',[Validators.minLength(5),Validators.required]],
+    nom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50)]],
+    prenom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50)]],
+    email: ['',[Validators.required,Validators.email]],
+    telephone: ['',[Validators.minLength(10),Validators.maxLength(11),Validators.required,validTelephone()]],
+    identifiant: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
+    motDePasse: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
+    motDePasseVerif: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
   });
 
   submitted: boolean = false;
@@ -36,13 +37,20 @@ export class FormulaireInscriptionComponent {
     ,private stagiaireService: StagiaireService
     ,private router: Router){}
 
+   /**
+    * Fonction permettant de vérifier les données du formulaire
+    */ 
+  private verificationDonnée(){
+    this.verificationMotDePasse(this.inscription.get('motDePasse')?.value,this.inscription.get('motDePasseVerif')?.value);
+  }
+
   /**
    * Fonction regroupant toutes les métodes permettant de faire des requête pour la création d'un stagiaire
    * - Création de l'Utilisateur
-   * - Création du Compte
-   * - Création du Stagiaire
    */
   private CreationUtilisateur(){
+    this.verificationDonnée();
+
     const newUtilisateur = new Utilisateur( this.inscription.get('nom')?.value,
                                           this.inscription.get('prenom')?.value,
                                           this.inscription.get('email')?.value,
@@ -53,25 +61,33 @@ export class FormulaireInscriptionComponent {
     });
   }
 
+  /**
+   * Fonction regroupant toutes les métodes permettant de faire des requête pour la création d'un stagiaire
+   * - Création de l'Utilisateur
+   */
   creationCompteAndStagiaire(utilisateur: Utilisateur){
     const newCompte = new Compte( this.inscription.get('motDePasse')?.value, 
                                   this.inscription.get('identifiant')?.value,
                                   utilisateur);
 
     this.compteService.createCompte(newCompte).subscribe({
-      error: () => console.error("Erreur creation Compte")
+      error: () => (console.error("Erreur creation Compte"),
+                    this.utilisateurService.deleteUtilisateur(utilisateur.id)
+                  )
     });
 
     const newStagiaire = new Stagiaire(utilisateur);
 
     this.stagiaireService.createStagiaire(newStagiaire).subscribe({
-      error: () => console.error("Erreur creation stagiaire")
+      error: () => (console.error("Erreur creation stagiaire"),
+                  this.utilisateurService.deleteUtilisateur(utilisateur.id)
+                    )
     });
 
     this.submitted = false;
     this.inscription.reset();
 
-    // this.router.navigate(['connection']);
+    this.router.navigate(['connection']);
   }
 
   onSubmit(): boolean{
@@ -81,6 +97,12 @@ export class FormulaireInscriptionComponent {
     }else{
       this.CreationUtilisateur();
       return true;
+    }
+  }
+
+  private verificationMotDePasse(motDePasse: string, motDePasseVerif: string){
+    if(motDePasse !== motDePasseVerif){
+      throw new Error;
     }
   }
 

@@ -31,4 +31,5 @@ export class UtilisateurService {
     deleteUtilisateur(id: number): Observable<Utilisateur>{
         return this.httpClient.delete<Utilisateur>(`${this.apiUrl}/utilisateurs/${id}`);
     }
+
 }
