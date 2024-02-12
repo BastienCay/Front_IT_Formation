@@ -1,14 +1,14 @@
 export class Compte {
-  id!: number;
+  idCompte!: number;
   motDePasse: string;
   identifiant: string;
   typeCompte: string;
-  utilisateur_id_user: number;
+  utilisateur: number;
 
-  constructor(motDePasse: string,identifiant: string,utilisateur_id_user: number){
+  constructor(motDePasse: string,identifiant: string,idUser: number){
     this.identifiant = identifiant;
     this.motDePasse = motDePasse;
-    this.typeCompte = 'u';
-    this.utilisateur_id_user = utilisateur_id_user;
+    this.typeCompte = "Users_Normal";
+    this.utilisateur = idUser;
   }
 }

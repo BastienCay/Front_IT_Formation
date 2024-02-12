@@ -13,22 +13,22 @@ export class StagiaireService {
     constructor(private httpClient: HttpClient) {}
 
     getStagiaires(): Observable<Stagiaire[]>{
-        return this.httpClient.get<Stagiaire[]>(`${this.apiUrl}/Stagiaires/all`);
+        return this.httpClient.get<Stagiaire[]>(`${this.apiUrl}/stagiaires/all`);
     }
     
     getStagiaire(id:number): Observable<Stagiaire>{
-        return this.httpClient.get<Stagiaire>(`${this.apiUrl}/Stagiaires/${id}`);
+        return this.httpClient.get<Stagiaire>(`${this.apiUrl}/stagiaires/${id}`);
     }
     
     createStagiaire(stagiaire: Stagiaire): Observable<Stagiaire>{
-        return this.httpClient.post<Stagiaire>(`${this.apiUrl}/Stagiaires/add`,stagiaire);
+        return this.httpClient.post<Stagiaire>(`${this.apiUrl}/stagiaires/add`,stagiaire);
     }
     
     updateStagiaire(stagiaire: Stagiaire): Observable<Stagiaire>{
-        return this.httpClient.post<Stagiaire>(`${this.apiUrl}/Stagiaires/${stagiaire.id}`,stagiaire);
+        return this.httpClient.post<Stagiaire>(`${this.apiUrl}/stagiaires/${stagiaire.id}`,stagiaire);
     }
     
     deleteStagiaire(id: number): Observable<Stagiaire>{
-        return this.httpClient.delete<Stagiaire>(`${this.apiUrl}/Stagiaires/${id}`);
+        return this.httpClient.delete<Stagiaire>(`${this.apiUrl}/stagiaires/${id}`);
     }
 }

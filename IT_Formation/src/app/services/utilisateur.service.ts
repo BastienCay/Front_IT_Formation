@@ -25,7 +25,7 @@ export class UtilisateurService {
     }
     
     updateUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur>{
-        return this.httpClient.post<Utilisateur>(`${this.apiUrl}/utilisateurs/${utilisateur.id}`,utilisateur);
+        return this.httpClient.post<Utilisateur>(`${this.apiUrl}/utilisateurs/${utilisateur.idUser}`,utilisateur);
     }
     
     deleteUtilisateur(id: number): Observable<Utilisateur>{

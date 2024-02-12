@@ -17,6 +17,8 @@ import { Router } from '@angular/router';
 })
 export class FormulaireInscriptionComponent {
 
+  utilisateur!: Utilisateur;
+
   inscription: FormGroup = this.formBuilder.group({
     nom: ['',[Validators.minLength(5),Validators.required]],
     prenom: ['',[Validators.minLength(5),Validators.required]],
@@ -40,30 +42,32 @@ export class FormulaireInscriptionComponent {
    * - Création du Compte
    * - Création du Stagiaire
    */
-  private CreationUtilisateurStagiaire(){
+  private CreationUtilisateur(){
     const newUtilisateur = new Utilisateur( this.inscription.get('nom')?.value,
                                           this.inscription.get('prenom')?.value,
                                           this.inscription.get('email')?.value,
                                           this.inscription.get('telephone')?.value);
 
-    let idUtilisateur = 0; 
-    this.utilisateurService.createUtilisateur(newUtilisateur).subscribe({
-      next: (utilisateur) => idUtilisateur = utilisateur.id,
-      error: () => console.log("Erreur creation Utilisateur")
+    this.utilisateurService.createUtilisateur(newUtilisateur).subscribe((utilisateur) =>{
+      this.creationCompteAndStagiaire(utilisateur.idUser)
     });
+  }
 
-    const newCompte = new Compte( this.inscription.get('identifiant')?.value,
-                                  this.inscription.get('motDePasse')?.value,
+  creationCompteAndStagiaire(idUtilisateur: number){
+    console.log(idUtilisateur);
+    
+    const newCompte = new Compte( this.inscription.get('motDePasse')?.value, 
+                                  this.inscription.get('identifiant')?.value,
                                   idUtilisateur);
 
     this.compteService.createCompte(newCompte).subscribe({
-      error: () => console.log("Erreur creation Compte")
+      error: () => console.error("Erreur creation Compte")
     });
 
     const newStagiaire = new Stagiaire(idUtilisateur);
 
     this.stagiaireService.createStagiaire(newStagiaire).subscribe({
-      error: () => console.log("Erreur creation Compte")
+      error: () => console.error("Erreur creation stagiaire")
     });
 
     this.submitted = false;
@@ -77,7 +81,7 @@ export class FormulaireInscriptionComponent {
     if(this.inscription.invalid){
       return false;
     }else{
-      this.CreationUtilisateurStagiaire();
+      this.CreationUtilisateur();
       return true;
     }
   }

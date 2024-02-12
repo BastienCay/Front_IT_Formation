@@ -22,9 +22,11 @@ export class ZoneFormationsComponent {
      * Methode qui ce lance une seule fois lors de la conception du components
      */
     ngOnInit(): void{
-        this.FormationService.getFormations().subscribe((formations) => {
+        let formation = this.FormationService.getFormations().subscribe((formations) => {
             this.formations = formations;
         });
+
+        console.log(formation);
     }
 
     isVide(listeFormation: Formation[]): boolean{

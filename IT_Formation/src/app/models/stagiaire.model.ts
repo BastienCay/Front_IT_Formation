@@ -1,8 +1,8 @@
 export class Stagiaire {
   id!: number;
-  idUser: number;
+  utilisateur_id_user: number;
 
   constructor(idUser: number){
-    this.idUser = idUser;
+    this.utilisateur_id_user = idUser;
   }
 }

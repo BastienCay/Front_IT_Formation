@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Utilisateur } from '../models/utilisateur.model';
 import { Compte } from '../models/compte.model';
 
 @Injectable({
@@ -26,7 +25,7 @@ export class CompteService {
     }
     
     updateCompte(compte: Compte): Observable<Compte>{
-        return this.httpClient.post<Compte>(`${this.apiUrl}/comptes/${compte.id}`,compte);
+        return this.httpClient.post<Compte>(`${this.apiUrl}/comptes/${compte.idCompte}`,compte);
     }
     
     deleteCompte(id: number): Observable<Compte>{
