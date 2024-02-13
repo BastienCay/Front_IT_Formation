@@ -66,9 +66,10 @@ export class FormulaireInscriptionComponent {
    * - Création de l'Utilisateur
    */
   creationCompteAndStagiaire(utilisateur: Utilisateur){
-    const newCompte = new Compte( this.inscription.get('motDePasse')?.value, 
-                                  this.inscription.get('identifiant')?.value,
-                                  utilisateur);
+    const newCompte = new Compte();
+    newCompte.motDePasse = this.inscription.get('motDePasse')?.value;
+    newCompte.identifiant = this.inscription.get('identifiant')?.value;
+    newCompte.utilisateur = utilisateur;
 
     this.compteService.createCompte(newCompte).subscribe({
       error: () => (console.error("Erreur creation Compte"),

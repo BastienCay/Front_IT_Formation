@@ -26,7 +26,6 @@ export class ZoneFormationsComponent {
             this.formations = formations;
         });
 
-        console.log(formation);
     }
 
     isVide(listeFormation: Formation[]): boolean{
