@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FooterComponent } from "../../commons/footer/footer.component";
 import { HeaderComponent } from "../../commons/header/header.component";
 import {MatIconModule} from '@angular/material/icon'
-import Formation from '../../models/formation.model';
+import { Formation } from '../../models/formation.model';
 import { FormationService } from '../../services/formation.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 

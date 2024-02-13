@@ -43,7 +43,7 @@ export class FormulaireInscriptionComponent {
   private verificationDonnée(){
     this.verificationMotDePasse(this.inscription.get('motDePasse')?.value,this.inscription.get('motDePasseVerif')?.value);
   }
-
+  
   /**
    * Fonction regroupant toutes les métodes permettant de faire des requête pour la création d'un stagiaire
    * - Création de l'Utilisateur

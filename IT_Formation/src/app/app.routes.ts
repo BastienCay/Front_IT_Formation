@@ -8,6 +8,7 @@ import { PageFormationComponent } from './pages/page-formation/page-formation.co
 import { Page404Component } from './pages/page-404/page-404.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
+import { AjoutAdresseComponent } from './pages/page-admin/ajout-adresse/ajout-adresse.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -20,6 +21,8 @@ export const routes: Routes = [
     {path:'connection', component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
     {path:'inscription', component: PageInscriptionComponent},
+    {path:'ajout-adresse', component: AjoutAdresseComponent},
+    
     {path:'**', component: Page404Component},
 
 ];

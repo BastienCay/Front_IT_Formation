@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Formation from '../../../models/formation.model';
+import { Formation } from '../../../models/formation.model';
 import { FormationService } from '../../../services/formation.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';

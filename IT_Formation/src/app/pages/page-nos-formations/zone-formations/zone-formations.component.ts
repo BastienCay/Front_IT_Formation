@@ -3,7 +3,7 @@ import { CardFormationPresentationComponent } from "./card-formation-presentatio
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule, FormArray } from '@angular/forms';
 import { SessionFormationService } from '../../../services/session-formation.service';
 import { FormationService } from '../../../services/formation.service';
-import Formation from '../../../models/formation.model';
+import { Formation }  from '../../../models/formation.model';
 
 @Component({
     selector: 'app-zone-formations',

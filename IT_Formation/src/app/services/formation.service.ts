@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import Formation from '../models/formation.model';
+import {Formation } from '../models/formation.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
