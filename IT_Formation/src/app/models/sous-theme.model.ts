@@ -1,4 +1,8 @@
-export default interface SousTheme {
-        id: Number,
-        designation: String,
+export class SousTheme {
+        id!: Number;
+        designation: string;
+
+        constructor(designation: string){
+                this.designation = designation;
+        }
 }
