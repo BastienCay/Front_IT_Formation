@@ -37,6 +37,9 @@
           @if(submitted && !form['telephone'].valid){
               <span>* Telephone Invalide</span>
           }
+          @if (inscription.getError('')) {
+
+          }
       </div>
 
       <div class="input-group">

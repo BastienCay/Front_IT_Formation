@@ -4,7 +4,7 @@ export class Compte {
   id!: number;
   motDePasse!: string;
   identifiant!: string;
-  typeCompte: string = "Users_Normal";
+  typeCompte!: string;
   utilisateur!: Utilisateur;
 
 }

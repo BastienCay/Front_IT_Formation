@@ -21,13 +21,13 @@ export class FormulaireInscriptionComponent {
   utilisateur!: Utilisateur;
 
   inscription: FormGroup = this.formBuilder.group({
-    nom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50)]],
-    prenom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50)]],
-    email: ['',[Validators.required,Validators.email]],
-    telephone: ['',[Validators.minLength(10),Validators.maxLength(11),Validators.required,validTelephone()]],
-    identifiant: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
-    motDePasse: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
-    motDePasseVerif: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required]],
+    nom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50),Validators.nullValidator]],
+    prenom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50),Validators.nullValidator]],
+    email: ['',[Validators.required,Validators.email,Validators.nullValidator]],
+    telephone: ['',[Validators.minLength(10),Validators.maxLength(11),Validators.required,validTelephone(),Validators.nullValidator]],
+    identifiant: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
+    motDePasse: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
+    motDePasseVerif: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
   });
 
   submitted: boolean = false;
@@ -66,29 +66,33 @@ export class FormulaireInscriptionComponent {
    * - Création de l'Utilisateur
    */
   creationCompteAndStagiaire(utilisateur: Utilisateur){
-    const newCompte = new Compte();
-    newCompte.motDePasse = this.inscription.get('motDePasse')?.value;
-    newCompte.identifiant = this.inscription.get('identifiant')?.value;
-    newCompte.utilisateur = utilisateur;
+    
+    try {
+      const newCompte = new Compte();
+      newCompte.motDePasse = this.inscription.get('motDePasse')?.value;
+      newCompte.identifiant = this.inscription.get('identifiant')?.value;
+      newCompte.utilisateur = utilisateur;
 
-    this.compteService.createCompte(newCompte).subscribe({
-      error: () => (console.error("Erreur creation Compte"),
-                    this.utilisateurService.deleteUtilisateur(utilisateur.id)
-                  )
-    });
+      this.compteService.createCompte(newCompte).subscribe({
+      });
+  
+      const newStagiaire = new Stagiaire(utilisateur);
+  
+      this.stagiaireService.createStagiaire(newStagiaire).subscribe({
+      });
 
-    const newStagiaire = new Stagiaire(utilisateur);
+      this.submitted = false;
+      this.inscription.reset();
 
-    this.stagiaireService.createStagiaire(newStagiaire).subscribe({
-      error: () => (console.error("Erreur creation stagiaire"),
-                  this.utilisateurService.deleteUtilisateur(utilisateur.id)
-                    )
-    });
+      this.router.navigate(['connection']);
 
-    this.submitted = false;
-    this.inscription.reset();
+    } catch (error) {
+      
+      console.log(error)
+      this.utilisateurService.deleteUtilisateur(utilisateur.id)
 
-    this.router.navigate(['connection']);
+    }
+    
   }
 
   onSubmit(): boolean{

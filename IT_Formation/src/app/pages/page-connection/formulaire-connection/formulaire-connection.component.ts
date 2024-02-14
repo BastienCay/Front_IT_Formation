@@ -27,20 +27,16 @@ export class FormulaireConnectionComponent {
   connectionUtilisateur(){
 
     const newCompte = new Compte();
-    newCompte.id = 0;
     newCompte.identifiant = this.connection.get('identifiant')?.value;
     newCompte.motDePasse = this.connection.get('motDePasse')?.value;
 
     this.compteService.getbyCompte(newCompte).subscribe((compte) => {
-      this.compte = compte;
+      this.submitted = false;
+      this.connection.reset();
+
+      this.router.navigate(['/home-page/'+compte.id]);
     });
 
-    console.log('test 2 ' + this.compte.id);
-
-    this.submitted = false;
-    this.connection.reset();
-
-    this.router.navigate(['/home-page/'+this.compte.id]);
   }
 
   onSubmit(): boolean{
