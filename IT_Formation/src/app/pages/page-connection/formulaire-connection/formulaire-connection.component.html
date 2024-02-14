@@ -10,10 +10,10 @@
             <!-- Désignation -->
             <div class="input-group">
                 <label class="label" for="identifiant"> 
-                     Nom 
+                     Identifiant 
                 </label>
                 <input class="input" required type="text" formControlName="identifiant" id="identifiant"/>
-
+                
                 <!-- Si submitted est true et le champ désignation est INVALIDE -->
                 @if(submitted && !form['identifiant'].valid){
                     <span>
@@ -26,7 +26,7 @@
                 <label class="label" for="motDePasse">
                      Mot de passe 
                 </label>
-                <input class="input" required type="text" formControlName="motDePasse" id="motDePasse"/>
+                <input required type="password" class="input" formControlName="motDePasse" id="motDePasse"/>
                 @if(submitted && !form['motDePasse'].valid){
                     <span>* Mot de passe Invalide</span>
                 }

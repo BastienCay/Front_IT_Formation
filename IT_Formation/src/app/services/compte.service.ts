@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Compte } from '../models/compte.model';
@@ -18,6 +18,13 @@ export class CompteService {
     
     getCompte(id:number): Observable<Compte>{
         return this.httpClient.get<Compte>(`${this.apiUrl}/comptes/${id}`);
+    }
+
+    getbyCompte(compte:Compte): Observable<Compte>{
+        let queryParams = new HttpParams().append("identifiant",compte.identifiant)
+                                          .append("motDePasse",compte.motDePasse);
+
+        return this.httpClient.get<Compte>(`${this.apiUrl}/comptes/find`,{params:queryParams});
     }
     
     createCompte(compte: Compte): Observable<Compte>{

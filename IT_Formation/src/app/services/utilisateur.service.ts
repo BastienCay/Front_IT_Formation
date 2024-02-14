@@ -19,7 +19,7 @@ export class UtilisateurService {
     getUtilisateur(id:number): Observable<Utilisateur>{
         return this.httpClient.get<Utilisateur>(`${this.apiUrl}/utilisateurs/${id}`);
     }
-    
+
     createUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur>{
         return this.httpClient.post<Utilisateur>(`${this.apiUrl}/utilisateurs/add`,utilisateur);
     }
