@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Adresse } from '../../../models/adresse.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AdresseService } from '../../../services/adresse.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-adresse',
@@ -29,12 +28,15 @@ export class AjoutAdresseComponent {
 
   private creationAdresse(){
 
+
+
     const newAdresse = new Adresse(
       this.nouvelleAdresse.get('codePostal')?.value,
       this.nouvelleAdresse.get('ville')?.value,
       this.nouvelleAdresse.get('rue')?.value,
       this.nouvelleAdresse.get('pays')?.value);
     
+
     this.adresseService.createAdresse(newAdresse).subscribe(() => {
       console.log('adresse a bien été ajoutée');
       this.submitted = false;
