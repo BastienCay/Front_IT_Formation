@@ -19,13 +19,12 @@ export class AjoutAdresseComponent {
 
   nouvelleAdresse: FormGroup = this.formBuilder.group({
     codePostal: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(5)]],
-    ville: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50)]],
-    rue: ['',[Validators.minLength(3),Validators.maxLength(50),Validators.required]],
-    pays: ['',[Validators.minLength(3),Validators.maxLength(50),Validators.required]],
+    ville: ['',[Validators.required,Validators.maxLength(50)]],
+    rue: ['',[Validators.maxLength(50),Validators.required]],
+    pays: ['',[Validators.maxLength(50),Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder, private adresseService: AdresseService
-    ,private router: Router){}
+  constructor(private formBuilder: FormBuilder, private adresseService: AdresseService){}
 
 
   private creationAdresse(){
