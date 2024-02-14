@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import Theme  from '../models/theme.model';
+import { Theme } from '../models/theme.model';
 
 
 @Injectable({

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ThemeService } from '../../../services/theme.service';
-import Theme from '../../../models/theme.model';
+import { Theme } from '../../../models/theme.model';
 
 @Component({
   selector: 'app-ajout-theme',
@@ -17,7 +17,7 @@ export class AjoutThemeComponent {
   theme!: Theme;
 
   nouveauTheme: FormGroup = this.formBuilder.group({
-    designation: ['',[Validators.required,Validators.maxLength(50)]],
+    designation: ['',[Validators.required]],
   });
 
   constructor(private formBuilder: FormBuilder, private themeService: ThemeService){}
@@ -35,6 +35,7 @@ export class AjoutThemeComponent {
       this.addTheme();
     }
   }
+  
 
 
   public get form(){
