@@ -78,6 +78,7 @@
                 <ul class="drop-menu">
                     <div class="drop-menu-item" id="block"></div>
                     @if (typeCompte === "user") {
+                        <li class="drop-menu-item"><button routerLink="/mes-formations">MES FORMATIONS</button></li>
                         <li class="drop-menu-item"><button (click)="seDeconnecter()">SE DECONNECTER</button></li>
                     }@else {
                         <li class="drop-menu-item"><button routerLink="/connection">SE CONNECTER</button></li>
