@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { SousTheme } from '../../../models/sous-theme.model';
 import { SousThemeService } from '../../../services/sous-theme.service';
 import { AdresseService } from '../../../services/adresse.service';
+import { Adresse } from '../../../models/adresse.model';
+import { Theme } from '../../../models/theme.model';
 
 
 @Component({
@@ -22,29 +24,33 @@ export class AjoutFormationComponent implements OnInit {
       this.sousThemes = x.map(item => {
         return new SousTheme(
           item.designation,
+          new Theme(
+            "test"
+          )
+          );
+      })
+    });
+    this.adresseService.getAdresses().subscribe(x => {
+      this.adresses = x.map(item => {
+        return new Adresse(
+          item.codePostal,
+          item.ville,
+          item.rue,
+          item.pays
           );
       })
     });
   }
 
+  sousThemes = new Array<SousTheme>();
+  adresses = new Array<Adresse>();
+
   formation!: Formation;
-   
-  
-
-  sousThemes = new Array<Theme>();
-
-  
-  
-  sousTheme!: SousTheme;
-
 
   submitted: boolean = false;
 
 
- 
-  nouveauFormation: FormGroup = this.formBuilder.group({
-    designation: ['',[Validators.required]],
-    theme: ['',[Validators.required]],
+  nouvelleFormation: FormGroup = this.formBuilder.group({
     nom: ['',[Validators.required]],
     descriptionMinimum: ['',[Validators.required]],
     descriptionDetailler: ['',[Validators.required]],
@@ -64,36 +70,54 @@ export class AjoutFormationComponent implements OnInit {
 
   
 
-  private addSousTheme(): void {
+  private addFormation(): void {
 
-    const newSousTheme = new SousTheme(
-      this.nouveauSousTheme.get('designation')?.value,
-      this.nouveauSousTheme.get('theme')?.value
+    const newFormation = new Formation(
+      this.nouvelleFormation.value.nom,
+      this.nouvelleFormation.value.descriptionMinimum,
+      this.nouvelleFormation.value.descriptionDetailler,
+      this.nouvelleFormation.value.prix,
+      this.nouvelleFormation.value.nbrJour,
+      this.nouvelleFormation.value.reference,
+      this.nouvelleFormation.value.typeFormation,
+      this.nouvelleFormation.value.preRequis,
+      this.nouvelleFormation.value.typeCertification,
+      this.nouvelleFormation.value.metiers,
+      new Adresse(
+        this.nouvelleFormation.value.adresse,
+        this.nouvelleFormation.value.adresse,
+        this.nouvelleFormation.value.adresse,
+        this.nouvelleFormation.value.adresse
+      ),
+      new SousTheme(
+        this.nouvelleFormation.value.sousTheme,
+        this.nouvelleFormation.value.sousTheme
+      )
+      
     )
 
-    this.sousThemeService.createSousTheme(newSousTheme).subscribe((newSousTheme) => {
-      this.sousTheme = newSousTheme
+    this.formationService.createFormation(newFormation).subscribe((newFormation) => {
+      this.formation = newFormation
     });
     
-    this.nouveauSousTheme.reset();
+    this.nouvelleFormation.reset();
     this.submitted = false;
   }
   
 
   public onSubmit(): void{
-    console.log("cvalid");
+    console.log(this.nouvelleFormation);
     this.submitted = true;
-    if(this.nouveauSousTheme.valid){
-      console.log(this.nouveauSousTheme.get('designation')?.value);
-
-      this.addSousTheme();
+    if(this.nouvelleFormation.valid){
+      
+      this.addFormation();
     }
   }
   
   
 
   public get form(){
-    return this.nouveauSousTheme.controls;
+    return this.nouvelleFormation.controls;
   }
 
   

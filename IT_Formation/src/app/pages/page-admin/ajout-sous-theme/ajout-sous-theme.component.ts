@@ -44,23 +44,6 @@ export class AjoutSousThemeComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private themeService: ThemeService){}
 
-  
-
-  // private addSousTheme(): void {
-
-  //   const newSousTheme = new SousTheme(
-  //     this.nouveauSousTheme.get('designation')?.value,
-  //     this.nouveauSousTheme.get('theme')?.value
-  //   )
-
-  //   this.sousThemeService.createSousTheme(newSousTheme).subscribe((newSousTheme) => {
-  //     this.sousTheme = newSousTheme
-  //   });
-    
-  //   this.nouveauSousTheme.reset();
-  //   this.submitted = false;
-  // }
-
   private addSousTheme(): void{
     console.log(this.nouveauSousTheme.value.theme);
     this.sousTheme = new SousTheme(

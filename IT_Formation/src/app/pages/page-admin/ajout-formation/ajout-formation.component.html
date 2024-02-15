@@ -1,1 +1,159 @@
-<p>ajout-formation works!</p>
+<div id="zone_formulaire">
+  <p>Ajouter un nouveau Theme</p>
+<div id="formulaire">
+
+  <form [formGroup]="nouvelleFormation" (ngSubmit)="onSubmit()">
+      <!-- Nom -->
+      <div class="input-group">
+          <label class="label" for="nom"> Nom de la formation <span>*</span></label>
+          <input class="input" required type="text" formControlName="nom" id="nom"/>
+          <!-- Si submitted est true et le champ désignation est INVALIDE -->
+          @if(submitted && !form['nom'].valid){
+              <span>* Nom de thème invalide</span>
+          }
+      </div>
+      <!-- Description courte -->
+      <div class="input-group">
+        <label class="label" for="descriptionMinimum"> Description courte <span>*</span></label>
+        <input class="input" required type="text" formControlName="descriptionMinimum" id="descriptionMinimum"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['descriptionMinimum'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      <!-- Description détaillée -->
+      <div class="input-group">
+        <label class="label" for="descriptionDetailler"> Description détaillée <span>*</span></label>
+        <input class="input" required type="text" formControlName="descriptionDetailler" id="descriptionDetailler"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['descriptionDetailler'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      <!-- Prix -->
+      <div class="input-group">
+        <label class="label" for="prix"> Prix <span>*</span></label>
+        <input class="input" required type="text" formControlName="prix" id="prix"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['prix'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      <!-- Durée -->
+      <div class="input-group">
+        <label class="label" for="nbrJour"> Durée de la formation en Jours <span>*</span></label>
+        <input class="input" required type="text" formControlName="nbrJour" id="nbrJour"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['nbrJour'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      
+      <!-- Référence -->
+      <div class="input-group">
+        <label class="label" for="reference"> reference <span>*</span></label>
+        <input class="input" required type="text" formControlName="reference" id="reference"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['reference'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      <!-- Métiers -->
+      <div class="input-group">
+        <label class="label" for="metiers"> Métier visés <span>*</span></label>
+        <input class="input" required type="text" formControlName="metiers" id="metiers"/>
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['metiers'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+      <!-- Type de formation -->
+      <div class="input-group">
+        <label class="label" for="typeFormation"> Type de formation <span>*</span></label>
+ 
+        <select class="input" formControlName="typeFormation" id="typeFormation">
+            <option value="PRESENTIEL">Formation en présentiel</option>
+            <option value="DISTANCIEL">Formation en distanciel</option>
+            <option value="DISTANCIEL_PRESENTIEL">Présentiel & Distanciel</option>
+          
+        </select>
+       
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['typeFormation'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+        
+      </div>
+       <!-- Type de formation -->
+       <div class="input-group">
+        <label class="label" for="typeCertification"> Qualification de la formation <span>*</span></label>
+ 
+        <select class="input" formControlName="typeCertification" id="typeCertification">
+          <option value="DIPLOME">Formation diplomante</option>
+          <option value="CERTIFICATION">Formation certifiante</option>
+          <option value="RIEN">Formation qualifiante</option>
+        </select>
+       
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['typeCertification'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+      </div>
+    
+      <!-- Type de formation -->
+      <div class="input-group">
+      <label class="label" for="typeCertification"> Pré requis  <span>*</span></label>
+
+      <select class="input" formControlName="typeCertification" id="typeCertification">
+        <option value="DEBUTANT">Débutant</option>
+        <option value="NOTION_OBLIGATOIRE">Notions requises</option>
+        <option value="MAITRISE_OBLIGATOIRE">Bonne maîtrise exigée</option>
+      </select>
+      
+      <!-- Si submitted est true et le champ désignation est INVALIDE -->
+      @if(submitted && !form['typeCertification'].valid){
+          <span>* Nom de thème invalide</span>
+      }
+      </div>
+
+
+      <div class="input-group">
+        <label class="label" for="adresse">Adresse du centre<span>*</span></label>
+ 
+        <select class="input" formControlName="adresse" id="adresse">
+          @for(adresse of adresses; track adresse ){
+            <option value="{{adresse.ville}}">{{adresse.ville}}</option>
+          }
+        </select>
+       
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['adresse'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+        
+      </div>
+      <div class="input-group">
+        <label class="label" for="sousTheme">Thème de la formation<span>*</span></label>
+ 
+        <select class="input" formControlName="sousTheme" id="sousTheme">
+          @for(sousTheme of sousThemes; track sousTheme ){
+            <option value="{{sousTheme.designation}}">{{sousTheme.designation}}</option>
+          }
+        </select>
+       
+        <!-- Si submitted est true et le champ désignation est INVALIDE -->
+        @if(submitted && !form['sousTheme'].valid){
+            <span>* Nom de thème invalide</span>
+        }
+        
+      </div>
+      
+      <p>* champs obligatoire</p>
+      <!-- Button -->
+      <button type="submit">Ajouter</button>
+      
+  </form>
+  
+</div>    
+</div>
+

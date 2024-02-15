@@ -27,7 +27,7 @@ export class AdresseService {
     }
     
     updateAdresse(adresse: Adresse): Observable<Adresse>{
-        return this.httpClient.post<Adresse>(`${this.apiUrl}/adresses/${adresse.id}`,adresse);
+        return this.httpClient.post<Adresse>(`${this.apiUrl}/adresses/save`,adresse);
     }
     
     deleteAdresse(id: number): Observable<Adresse>{

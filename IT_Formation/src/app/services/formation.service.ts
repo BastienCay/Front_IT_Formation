@@ -25,7 +25,7 @@ export class FormationService {
     }
     
     updateFormation(formation: Formation): Observable<Formation>{
-        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/${formation.id}`,formation);
+        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/save`,formation);
     }
     
     deleteFormation(id: number): Observable<Formation>{
