@@ -1,0 +1,30 @@
+<nav>
+  <div id="logo_title_header" class="cursor_pointer"> 
+      <button routerLink="/home-page">
+          <img type="image/svg+xml" src="../../../../assets/Logo_IT_FORMATION/Logo_IT_Formation_white.svg" alt="Logo de la formation">
+          <h1>IT FORMATION</h1>
+      </button>
+  </div>
+
+  <div id="navigation">
+   
+  <h2>Compte administrateur</h2>
+
+  <div class="menu-wrap">
+      <ul class="menu">
+          <li class="menu-item">
+              <button class="cursor_pointer" id="button-espace-client">
+                  <img id="User_blanc" src="../../../assets/others/User_blanc.svg" alt="petit_personnage ">
+                  <img id="User_black" src="../../../assets/others/User_black.svg" alt="petit_personnage">
+                  <p>ESPACE CLIENT</p>
+              </button>
+              <ul class="drop-menu">
+                  <div class="drop-menu-item" id="block"></div>
+                  <li class="drop-menu-item"><button (click)="seDeconnecter()">SE DECONNECTER</button></li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+  </div>
+  
+</nav>

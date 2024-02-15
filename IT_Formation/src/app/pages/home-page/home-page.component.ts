@@ -27,4 +27,10 @@ export class HomePageComponent {
     urlImagePresentielBlack: String = "../../../assets/others/multi_personnage_noir.svg";
     urlImageDistancielBlack: String = "../../../assets/others/Screen_black.svg";
     urlImageSurMesureBlack: String = "../../../assets/others/User_time_black.svg";
+
+    typeCompte!: String | null;
+
+    ngOnInit(){
+        this.typeCompte = sessionStorage.getItem("typeCompte");
+    }
 }

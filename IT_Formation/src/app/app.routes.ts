@@ -12,7 +12,6 @@ import { PageConnectionComponent } from './pages/page-connection/page-connection
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
-    {path:'home-page/:idCompte', component: HomePageComponent},
     {path:'evaluation', component: PageFormulaireEvaluationComponent},
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
