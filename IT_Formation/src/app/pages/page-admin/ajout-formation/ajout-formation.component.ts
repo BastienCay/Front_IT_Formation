@@ -84,14 +84,17 @@ export class AjoutFormationComponent implements OnInit {
       this.nouvelleFormation.value.typeCertification,
       this.nouvelleFormation.value.metiers,
       new Adresse(
-        this.nouvelleFormation.value.adresse,
+        "00000",
         this.nouvelleFormation.value.adresse,
         this.nouvelleFormation.value.adresse,
         this.nouvelleFormation.value.adresse
       ),
       new SousTheme(
         this.nouvelleFormation.value.sousTheme,
-        this.nouvelleFormation.value.sousTheme
+        new Theme(
+          "desi"
+        )
+        
       )
       
     )

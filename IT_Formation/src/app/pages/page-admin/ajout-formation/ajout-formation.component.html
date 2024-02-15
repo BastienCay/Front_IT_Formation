@@ -102,16 +102,16 @@
     
       <!-- Type de formation -->
       <div class="input-group">
-      <label class="label" for="typeCertification"> Pré requis  <span>*</span></label>
+      <label class="label" for="preRequis"> Pré requis  <span>*</span></label>
 
-      <select class="input" formControlName="typeCertification" id="typeCertification">
+      <select class="input" formControlName="preRequis" id="preRequis">
         <option value="DEBUTANT">Débutant</option>
         <option value="NOTION_OBLIGATOIRE">Notions requises</option>
         <option value="MAITRISE_OBLIGATOIRE">Bonne maîtrise exigée</option>
       </select>
       
       <!-- Si submitted est true et le champ désignation est INVALIDE -->
-      @if(submitted && !form['typeCertification'].valid){
+      @if(submitted && !form['preRequis'].valid){
           <span>* Nom de thème invalide</span>
       }
       </div>
