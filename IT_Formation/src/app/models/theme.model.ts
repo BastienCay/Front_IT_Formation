@@ -6,7 +6,7 @@
 
 
 export class Theme {
-    id!: Number;
+
     designation: String;
 
     constructor(designation: String){

@@ -1,7 +1,7 @@
 import { Theme } from "./theme.model";
 
 export class SousTheme {
-        id!: Number;
+
         designation: string;
         theme: Theme;
 

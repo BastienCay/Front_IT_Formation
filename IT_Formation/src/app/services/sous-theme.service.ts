@@ -15,22 +15,22 @@ export class SousThemeService {
     constructor(private httpClient: HttpClient) {}
 
     getSousThemes(): Observable<SousTheme[]>{
-        return this.httpClient.get<SousTheme[]>(`${this.apiUrl}/sousThemes/all`);
+        return this.httpClient.get<SousTheme[]>(`${this.apiUrl}/sous-themes/all`);
     }
     
     getSousTheme(id:number): Observable<SousTheme>{
-        return this.httpClient.get<SousTheme>(`${this.apiUrl}/sousThemes/${id}`);
+        return this.httpClient.get<SousTheme>(`${this.apiUrl}/sous-themes/${id}`);
     }
     
     createSousTheme(sousTheme: SousTheme): Observable<SousTheme>{
-        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sousThemes/add`,sousTheme);
+        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sous-themes/add`,sousTheme);
     }
     
     updateSousTheme(sousTheme: SousTheme): Observable<SousTheme>{
-        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sousThemes/${sousTheme.id}`,sousTheme);
+        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sous-themes/save`,sousTheme);
     }
     
     deleteSousTheme(id: number): Observable<SousTheme>{
-        return this.httpClient.delete<SousTheme>(`${this.apiUrl}/sousThemes/${id}`);
+        return this.httpClient.delete<SousTheme>(`${this.apiUrl}/sous-themes/${id}`);
     }
 }

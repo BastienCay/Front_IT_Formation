@@ -23,7 +23,7 @@ export class AjoutSousThemeComponent implements OnInit {
     this.themeService.getThemes().subscribe(x => {
       this.themes = x.map(item => {
         return new Theme(
-          item.designation,
+          item.designation
           );
       })
     });
@@ -39,31 +39,46 @@ export class AjoutSousThemeComponent implements OnInit {
   nouveauSousTheme: FormGroup = this.formBuilder.group({
     designation: ['',[Validators.required]],
     theme: ['',[Validators.required]],
-
+    
   });
 
   constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private themeService: ThemeService){}
 
   
 
-  private addSousTheme(): void {
+  // private addSousTheme(): void {
 
-    const newSousTheme = new SousTheme(
-      this.nouveauSousTheme.get('designation')?.value,
-      this.nouveauSousTheme.get('theme')?.value
-    )
+  //   const newSousTheme = new SousTheme(
+  //     this.nouveauSousTheme.get('designation')?.value,
+  //     this.nouveauSousTheme.get('theme')?.value
+  //   )
 
-    this.sousThemeService.createSousTheme(newSousTheme).subscribe((newSousTheme) => {
-      this.sousTheme = newSousTheme
-    });
+  //   this.sousThemeService.createSousTheme(newSousTheme).subscribe((newSousTheme) => {
+  //     this.sousTheme = newSousTheme
+  //   });
     
+  //   this.nouveauSousTheme.reset();
+  //   this.submitted = false;
+  // }
+
+  private addSousTheme(): void{
+    console.log(this.nouveauSousTheme.value.theme);
+    this.sousTheme = new SousTheme(
+      this.nouveauSousTheme.value.designation,
+      new Theme(
+        this.nouveauSousTheme.value.theme
+      )
+    )
+   this.sousThemeService.createSousTheme(this.sousTheme).subscribe((nouveauSousTheme) => {
+      this.sousTheme = nouveauSousTheme
+  });
+
     this.nouveauSousTheme.reset();
     this.submitted = false;
-  }
-  
+}
 
   public onSubmit(): void{
-    console.log("cvalid");
+ 
     this.submitted = true;
     if(this.nouveauSousTheme.valid){
       console.log(this.nouveauSousTheme.get('designation')?.value);
