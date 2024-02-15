@@ -5,6 +5,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule}      from '@angular/material/button';
 import {MatDividerModule}     from '@angular/material/divider';
 import {MatCardModule}        from '@angular/material/card';
+import SessionUserDTO from '../../../../models/sessionUserDTO';
 
 @Component({
   selector: 'app-card-mes-formations',
@@ -16,26 +17,19 @@ import {MatCardModule}        from '@angular/material/card';
 export class CardMesFormationsComponent {
   
   @Input()
-  formation!: any;
+  session!: SessionUserDTO;
+  bool!: Boolean;
 
-  resultat!: String;
+  tempAvenir(date: string | number | Date): String{
+    const dateActuel: Date = new Date();
+    const dateSession: Date = new Date(date);
 
-  numStr(nbrNonSeparer: any): String {
-    nbrNonSeparer = '' + nbrNonSeparer;
-    //Permet de definir la chaine de caractere à utiliser comme séparateur
-    let separateur = ' '; 
-    separateur = separateur || ' ';
-
-    let resultat = '', d = 0;
-    while (nbrNonSeparer.match(/^0[0-9]/)) {
-      nbrNonSeparer = nbrNonSeparer.substr(1);
-    }
-
-    for (var i = nbrNonSeparer.length-1; i >= 0; i--) {
-      resultat = (d != 0 && d % 3 == 0) ? nbrNonSeparer[i] + separateur + resultat : nbrNonSeparer[i] + resultat;
-      d++;
-    }
-
-    return resultat;
+    if(dateSession < dateActuel) return "passer";
+    else return "avenir";
   }
+
+  ngOnInit(){
+    console.log(this.session);    
+  }
+
 }

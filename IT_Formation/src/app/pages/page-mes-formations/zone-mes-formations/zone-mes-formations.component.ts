@@ -1,39 +1,31 @@
 import { Component }                  from '@angular/core';
-import { FormGroup, 
-          FormBuilder, 
-          Validators, 
-          ReactiveFormsModule, 
-          FormsModule, 
-          FormArray }                 from '@angular/forms';
-import { SessionFormationService }    from '../../../services/session-formation.service';
-import { FormationService }           from '../../../services/formation.service';
-import Formation                      from '../../../models/formation.model';
+import { ReactiveFormsModule, FormsModule, }                 from '@angular/forms';
 import { CardMesFormationsComponent } from './card-mes-formations/card-mes-formations.component';
+import { CardFormationPresentationComponent } from "../../page-nos-formations/zone-formations/card-formation-presentation/card-formation-presentation.component";
+import { StagiaireSessionFormationService } from '../../../services/stagiaire-session-formation.service';
+import SessionUserDTO from '../../../models/sessionUserDTO';
 
 @Component({
-  selector: 'app-zone-mes-formations',
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,CardMesFormationsComponent],
-  templateUrl: './zone-mes-formations.component.html',
-  styleUrl: './zone-mes-formations.component.css'
+    selector: 'app-zone-mes-formations',
+    standalone: true,
+    templateUrl: './zone-mes-formations.component.html',
+    styleUrl: './zone-mes-formations.component.css',
+    imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent]
 })
 export class ZoneMesFormationsComponent {
 
-  mesformations: Formation[] = [];
+  sessionUsers: SessionUserDTO[] = [];
 
-  constructor(private FormationService: FormationService){}
+  constructor(private stagiaireSessionFormationService: StagiaireSessionFormationService){}
 
-  /**
-   * Methode qui ce lance une seule fois lors de la conception du components
-   */
   ngOnInit(): void{
-      let formation = this.FormationService.getFormations().subscribe((Formation) => {
-      });
 
-      console.log(formation);
+        this.stagiaireSessionFormationService.getFormations(1).subscribe((sessionUser) =>{
+            this.sessionUsers = sessionUser;
+        });
   }
 
-  isVide(listeFormation: Formation[]): boolean{
+  isVide(listeFormation: SessionUserDTO[]): boolean{
       if(listeFormation.length === 0) return false;
       else return true;
   }

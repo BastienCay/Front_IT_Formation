@@ -8,6 +8,8 @@ import { PageFormationComponent } from './pages/page-formation/page-formation.co
 import { Page404Component } from './pages/page-404/page-404.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
+import { PageMesFormationsComponent } from './pages/page-mes-formations/page-mes-formations.component';
+import { authGardGuard } from './commons/guards/auth-gard.guard';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -20,7 +22,7 @@ export const routes: Routes = [
     {path:'connection',     component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
     {path:'inscription',    component: PageInscriptionComponent},
-    {path:'PageMesFormationsComponent',    component: PageInscriptionComponent},
+    {path:'mes-formations',    component: PageMesFormationsComponent, canActivate:[authGardGuard]},
     {path:'**',             component: Page404Component},
 
 ];

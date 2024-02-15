@@ -1,13 +1,13 @@
 .example-card{
     background-color: var(--couleur_neutre);
     width: 880px;
-    height: 324px;
     display: flex;
-    justify-content: space-between;
     border-radius: 24px;
     box-shadow: none;
     padding-left: 40px;
     padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-top: 24px;
 }
 
@@ -37,8 +37,9 @@ mat-card-header button h2{
 }
 
 mat-card-content button{
-    width: 260px;
-    height: 50px;
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
     border-radius: 30px;
     border: transparent;
     display: flex;
@@ -54,21 +55,6 @@ mat-card-content button:hover{
     color: #EF233C;
     background-color: #EDF2F4;
     border: 2px solid #EF233C;
-}
-
-#prix_ref{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-#prix_ref h1{
-    font-size: 40px;
-    margin-bottom: 5px;
-}
-
-#prix_ref p{
-    margin: 0;
 }
 
 mat-card-content{
@@ -94,8 +80,9 @@ mat-card-content div{
 }
 
 #block2{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
 img{
@@ -103,4 +90,58 @@ img{
     width: 30px;
     aspect-ratio: 3/2;
     object-fit: contain;
+}
+
+#info_temp_noir{
+    background-color: black;
+    height: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#info_temp_noir span{
+    color: white;    
+}
+
+mat-card-header #info_temp_rouge{
+    background-color: #EF233C;
+    height: 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+}
+
+mat-card-header #info_temp_rouge span{
+    color: white;    
+}
+
+#etat_evaluation div{
+    background-color: black;
+    height: 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#etat_evaluation span{
+    color: white;
+}
+
+#duree{
+    font-weight: 500;
+}
+
+#date_debut{
+    font-weight: 500;
 }
