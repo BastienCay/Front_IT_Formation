@@ -1,0 +1,48 @@
+<div id="zone_formulaire">
+  <p>Ajouter une nouvelle adresse</p>
+<div id="formulaire">
+
+  <form [formGroup]="nouvelleAdresse" (ngSubmit)="onSubmit()">
+      <!-- Désignation -->
+      <div class="input-group">
+          <label class="label" for="codePostal"> codePostal <span>*</span></label>
+          <input class="input" required type="text" formControlName="codePostal" id="codePostal"/>
+          <!-- Si submitted est true et le champ désignation est INVALIDE -->
+          @if(submitted && !form['codePostal'].valid){
+              <span>* Code Postal Invalide</span>
+          }
+          
+      </div>
+      
+      <div class="input-group">
+          <label class="label" for="ville"> ville <span>*</span></label>
+          <input class="input" required type="text" formControlName="ville" id="ville"/>
+          @if(submitted && !form['ville'].valid){
+              <span>* Ville Invalide</span>
+          }
+      </div>
+
+      <div class="input-group">
+          <label class="label" for="rue"> Rue <span>*</span></label>
+          <input class="input" required type="text" formControlName="rue" id="rue"/>
+          @if(submitted && !form['rue'].valid){
+              <span>* Rue Invalide</span>
+          }
+      </div>
+
+      <div class="input-group">
+          <label class="label" for="pays"> pays <span>*</span></label>
+          <input class="input" required type="text" formControlName="pays" id="pays"/>
+          @if(submitted && !form['pays'].valid){
+              <span>* Pays Invalide</span>
+          }
+      </div>
+
+       <p>* champs obligatoire</p>
+      <!-- Button -->
+      <button type="submit">Ajouter</button>
+      
+  </form>
+  
+</div>    
+</div>

@@ -1,28 +1,34 @@
-export default interface Formation {
-    id: Number,
-    nom: String,
-    descriptionMinimum: String,
-    descriptionDetailler: String,
-    prix: Number,
-    nbrJour: Number,
-    reference: String,
-    typeFormation: String,
-    preRequis: String,
-    typeCertification: String,
-    metiers: String,
-    adresse: {
-        id: Number,
-        codePostal: String,
-        ville: String,
-        rue: String,
-        pays: String
-    },
-    sousTheme: {
-        id: Number,
-        designation: String,
-        theme: {
-            id: Number,
-            designation: String,
-        }
+import { Adresse } from "./adresse.model";
+import { SousTheme } from "./sous-theme.model";
+
+export class Formation {
+
+    nom: String;
+    descriptionMinimum: String;
+    descriptionDetailler: String;
+    prix: Number;
+    nbrJour: Number;
+    reference: String;
+    typeFormation: String;
+    preRequis: String;
+    typeCertification: String;
+    metiers: String;
+    adresse: Adresse;
+    sousTheme: SousTheme
+    
+
+    constructor(nom: String,descriptionMinimum: String, descriptionDetailler: String,prix: Number,nbrJour: Number,reference: String,typeFormation: String,preRequis: String,typeCertification: String,metiers: String, adresse:Adresse, sousTheme:SousTheme){
+        this.nom = nom;
+        this.descriptionMinimum = descriptionMinimum;
+        this.descriptionDetailler = descriptionDetailler;
+        this.prix = prix;
+        this.nbrJour = nbrJour;
+        this.reference = reference;
+        this.typeFormation = typeFormation;
+        this.preRequis = preRequis;
+        this.typeCertification = typeCertification;
+        this.metiers = metiers;
+        this.adresse = adresse;
+        this.sousTheme = sousTheme;
     }
 }

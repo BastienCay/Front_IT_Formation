@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CardFormationPresentationComponent } from "./card-formation-presentation/card-formation-presentation.component";
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule, FormArray } from '@angular/forms';
 import { FormationService } from '../../../services/formation.service';
-import Formation from '../../../models/formation.model';
+import { Formation }  from '../../../models/formation.model';
 
 @Component({
     selector: 'app-zone-formations',

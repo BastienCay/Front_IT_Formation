@@ -9,6 +9,11 @@ import { Page404Component } from './pages/page-404/page-404.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
 import { PageMesFormationsComponent } from './pages/page-mes-formations/page-mes-formations.component';
+import { AjoutAdresseComponent } from './pages/page-admin/ajout-adresse/ajout-adresse.component';
+import { AjoutThemeComponent } from './pages/page-admin/ajout-theme/ajout-theme.component';
+import { AjoutSousThemeComponent } from './pages/page-admin/ajout-sous-theme/ajout-sous-theme.component';
+import { AjoutFormationComponent } from './pages/page-admin/ajout-formation/ajout-formation.component';
+
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -20,9 +25,14 @@ export const routes: Routes = [
     {path:'formation',      component: PageFormationComponent},
     {path:'connection',     component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
+    {path:'ajout-adresse', component: AjoutAdresseComponent},
+    {path:'ajout-theme', component: AjoutThemeComponent},
+    {path:'ajout-sous-theme', component: AjoutSousThemeComponent},
+    {path:'ajout-formation', component: AjoutFormationComponent},
     {path:'inscription',    component: PageInscriptionComponent},
     {path:'mes-formations',    component: PageMesFormationsComponent},
-    {path:'**',             component: Page404Component},
+    {path:'**', component: Page404Component},
+
 
 ];
 

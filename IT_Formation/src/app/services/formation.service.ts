@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import Formation from '../models/formation.model';
+import {Formation } from '../models/formation.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -21,11 +21,11 @@ export class FormationService {
     }
     
     createFormation(formation: Formation): Observable<Formation>{
-        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/`,formation);
+        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/add`,formation);
     }
     
     updateFormation(formation: Formation): Observable<Formation>{
-        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/${formation.id}`,formation);
+        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/save`,formation);
     }
     
     deleteFormation(id: number): Observable<Formation>{
