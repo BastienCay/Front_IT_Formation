@@ -6,5 +6,4 @@ export class Compte {
   identifiant!: string;
   typeCompte!: string;
   utilisateur!: Utilisateur;
-
 }

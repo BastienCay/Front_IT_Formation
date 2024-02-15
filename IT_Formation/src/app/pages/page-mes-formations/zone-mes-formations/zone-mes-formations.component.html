@@ -1,0 +1,17 @@
+<div id="block_filtre">
+    
+</div>
+<div id="block_formations">
+    <div id="liste_formations">
+        @if (isVide(sessionUsers)) {
+            @for (session of sessionUsers; track session) {
+                <app-card-mes-formations [session]="session"></app-card-mes-formations>
+            }
+        }@else {
+            <div id="pas_de_formation">
+                <p>0 résultats (0,18 secondes) </p>
+                <h1>Pas de formations disponible</h1>
+            </div>
+        }
+    </div>
+</div>

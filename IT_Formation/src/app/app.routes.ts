@@ -8,20 +8,22 @@ import { PageFormationComponent } from './pages/page-formation/page-formation.co
 import { Page404Component } from './pages/page-404/page-404.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
+import { PageMesFormationsComponent } from './pages/page-mes-formations/page-mes-formations.component';
+import { authGardGuard } from './commons/guards/auth-gard.guard';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
     {path:'home-page', component: HomePageComponent},
-    {path:'home-page/:idCompte', component: HomePageComponent},
     {path:'evaluation', component: PageFormulaireEvaluationComponent},
     {path:'contact', component: PageContactComponent},
     {path:'a-propos', component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
-    {path:'formation', component: PageFormationComponent},
-    {path:'connection', component: PageConnectionComponent},
+    {path:'formation',      component: PageFormationComponent},
+    {path:'connection',     component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
-    {path:'inscription', component: PageInscriptionComponent},
-    {path:'**', component: Page404Component},
+    {path:'inscription',    component: PageInscriptionComponent},
+    {path:'mes-formations',    component: PageMesFormationsComponent, canActivate:[authGardGuard]},
+    {path:'**',             component: Page404Component},
 
 ];
 

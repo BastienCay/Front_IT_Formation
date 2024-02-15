@@ -68,10 +68,10 @@ export class FormulaireInscriptionComponent {
   creationCompteAndStagiaire(utilisateur: Utilisateur){
     
     try {
-      const newCompte = new Compte();
-      newCompte.motDePasse = this.inscription.get('motDePasse')?.value;
-      newCompte.identifiant = this.inscription.get('identifiant')?.value;
-      newCompte.utilisateur = utilisateur;
+    const newCompte = new Compte();
+    newCompte.identifiant = this.inscription.get('identifiant')?.value;
+    newCompte.motDePasse = this.inscription.get('motDePasse')?.value;
+    newCompte.utilisateur = utilisateur;
 
       this.compteService.createCompte(newCompte).subscribe({
       });

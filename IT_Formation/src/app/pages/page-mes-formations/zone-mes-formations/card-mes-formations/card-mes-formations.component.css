@@ -1,0 +1,147 @@
+.example-card{
+    background-color: var(--couleur_neutre);
+    width: 880px;
+    display: flex;
+    border-radius: 24px;
+    box-shadow: none;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 24px;
+}
+
+mat-card-header{
+    padding: 0;
+}
+
+mat-card-header>div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+mat-card-header button{
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+mat-card-header button h2{
+    font-size: 25px;
+}
+
+.example-card:hover mat-card-header button h2{
+    text-decoration: underline #EF233C;
+}
+
+mat-card-content button{
+    height: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 30px;
+    border: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #EF233C;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+mat-card-content button:hover{
+    color: #EF233C;
+    background-color: #EDF2F4;
+    border: 2px solid #EF233C;
+}
+
+mat-card-content{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+mat-card-content.mat-mdc-card-content{
+    padding-bottom: 0;
+}
+
+mat-card-content div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#block1{
+    margin-bottom: 5px;
+}
+
+#block1 p{
+    padding-top: 15px;
+}
+
+#block2{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+img{
+    margin-right: 10px;
+    width: 30px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+#info_temp_noir{
+    background-color: black;
+    height: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#info_temp_noir span{
+    color: white;    
+}
+
+mat-card-header #info_temp_rouge{
+    background-color: #EF233C;
+    height: 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    opacity: 0.8;
+}
+
+mat-card-header #info_temp_rouge span{
+    color: white;    
+}
+
+#etat_evaluation div{
+    background-color: black;
+    height: 25px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+#etat_evaluation span{
+    color: white;
+}
+
+#duree{
+    font-weight: 500;
+}
+
+#date_debut{
+    font-weight: 500;
+}

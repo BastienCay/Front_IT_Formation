@@ -1,0 +1,47 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div>
+            <h2>{{session.nomFormation}}</h2>
+            @if(tempAvenir(session.dateDebut) === "passer"){
+            <div id="info_temp_noir">
+                <span >Passé</span>
+            </div>
+            }@else {
+            <div id="info_temp_rouge">
+                <span >A venir</span>
+            </div>
+            }
+            
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <div id="block1">
+            <p>{{session.themeFormation}}</p>
+        </div>
+      <mat-divider></mat-divider>
+      <div id="block2">
+        <div id="duree">
+            <img src="../../../../../assets/others/Horloge.svg" alt="">
+            @if(session.dureeFormation > 1) {
+                <p>{{session.dureeFormation}} jour</p>
+            }@else {
+                <p>{{session.dureeFormation}} jours</p>
+            }
+        </div>
+        <div id="date_debut">
+            <p>{{session.dateDebut}}</p>
+        </div>
+        <div id="etat_evaluation">
+            @if (tempAvenir(session.dateDebut) === "passer") {
+                @if (session.evaluee === false) {
+                    <button routerLink="/evaluation">Evaluer cette formation</button>
+                }@else {
+                    <div>
+                        <span>Evaluation envoyée</span>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    </mat-card-content>
+  </mat-card>
