@@ -1,1 +1,5 @@
-<app-nav-bar></app-nav-bar>
+@if (typeCompte === "admin") {
+  <app-nav-bar-admin></app-nav-bar-admin>
+}@else {
+  <app-nav-bar [typeCompte]="typeCompte"></app-nav-bar>
+}

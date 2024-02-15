@@ -1,0 +1,344 @@
+h2{
+  color: white;
+}
+
+nav{
+  font-family: "Montserrat",  Roboto, "Helvetica Neue", sans-serif;
+}
+
+nav {
+  background-color: #2B2D42;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo_title_header button{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#logo_title_header img{
+  width: 60px;
+  height: 48px;
+}
+
+#nos_formation{
+  display: flex;
+  align-items: center;
+}
+
+#nos_formation img{
+  margin-left: 1vh;
+}
+
+#logo_title_header button{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#logo_title_header img{
+  width: 50px;
+  height: 40px;
+}
+
+#logo_title_header h1, #nos_formation{
+  color: white;
+  margin-left: 15px;
+}
+
+#User_black{
+  display: none;
+}
+
+#navigation{
+  display: flex;
+  align-items: center;
+}
+
+#navigation #page_formation_contact_apropos{
+  display: flex;
+  align-items: center;
+}
+
+#navigation #page_formation_contact_apropos #lien_page{
+  display: flex;
+  align-items: center;
+}
+
+#logo_drop_down_liens{
+  display: none;
+  padding: 1vh;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#page_connection_client button{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 160px;
+  height: 35px;
+  flex-shrink: 0;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+}  
+
+#page_connection_client #drop_down{
+  display: none;
+}
+
+#page_connection_client button:hover{
+  background-color: white;
+}
+
+#page_connection_client button:hover p{
+  color: black;
+}
+
+#page_connection_client button:hover #User_blanc{
+  display: none;
+}
+
+#page_connection_client button:hover #User_black{
+  display: block;
+}
+
+#barre_blanche {
+  width  : 1px;
+  height : 25px;
+  background : white;
+}
+
+#icon_burger_menu{
+  display: block;
+  cursor: pointer;
+  color: white;
+}
+
+.cursor_pointer{
+  cursor: pointer;
+}
+
+.nav_text{
+  display: flex;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  
+  font-weight: 500;
+  
+}
+
+.nav_text img{
+  margin-left: 10px;
+}
+.menu .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.separation {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+button{
+  background-color: transparent;
+  border: transparent;
+}
+
+
+.menu-wrap {
+  margin-left: 23px;
+}
+
+.menu, .drop-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: inline-block;
+  background-color: transparent;
+  position: relative;
+  border-radius: 20px;
+}
+
+.menu-item button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 160px;
+  height: 35px;
+  flex-shrink: 0;
+  background-color: transparent;
+  color: white;
+  
+  border-radius: 10px;
+}
+#button-espace-client{
+  border: 1px solid white!important;
+}
+#button-espace-client:hover {
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+#button-espace-client:hover #User_blanc{
+  display: none;
+}
+
+#button-espace-client:hover #User_black{
+  display: block;
+}
+
+.formation-dropdown {
+
+  display: block;
+  
+  position: absolute;
+  
+  margin-left: -240px;
+
+
+  min-width: 800px;
+  background-color: #2B2D42;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  visibility: hidden;
+}
+
+
+#nos_formation:hover{
+  cursor: pointer!important;
+}
+.formations:hover .formation-dropdown {
+  visibility: visible;   
+}
+
+.dropdown-content{
+  display: none;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.formation-dropdown-div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.formation-dropdown-item{
+
+  height: 40px;
+  color: white;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.formation-dropdown-item:hover{
+  cursor: pointer;
+  text-decoration: underline ;
+  text-decoration-color: #EF233C ;
+  color: rgb(255, 244, 244);
+}
+
+#categorie-formation{
+  font-weight: 600;
+}
+
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  
+  min-width: 100px;
+  background-color: #2B2D42;
+  border-radius: 10px;
+}
+
+.drop-menu-item {
+  width: 100%;
+
+}
+
+.drop-menu-item:hover {
+  cursor: pointer;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+  
+}
+
+.drop-menu-item button:hover {
+  cursor: pointer;
+  background-color: white;
+  color:black;
+}
+
+.menu-item:hover .drop-menu {
+  display: block;
+  
+}
+
+
+@media only screen and (max-width: 950px){
+
+  #navigation #page_formation_contact_apropos{
+      margin-right: 3vw;
+      margin-left: 3vw;
+  }
+
+  #navigation #page_formation_contact_apropos:hover{
+      background-color: #212333;
+  }
+
+  #icon_burger_menu{
+      display: block;
+  }
+
+  #icon_burger_menu:before{
+      content: "\2630";
+  }
+
+  #barre_blanche{
+      display: none;
+  }
+
+  #logo_drop_down_liens{
+      display: block;
+  }
+
+  #page_formation_contact_apropos{
+      justify-content: center;
+  }
+
+  #page_formation_contact_apropos #lien_page{
+      position: absolute;
+      top: -100px;
+      left: 5vw;
+      right: 5vw;
+      background-color: #2B2D42;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .hover_ombre:hover{
+      background-color: #32333f;
+  }
+
+}

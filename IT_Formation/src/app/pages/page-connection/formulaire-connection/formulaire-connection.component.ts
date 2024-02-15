@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CompteService } from '../../../services/compte.service';
 import { Compte } from '../../../models/compte.model';
 import { Router } from '@angular/router';
-import { Utilisateur } from '../../../models/utilisateur.model';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-formulaire-connection',
@@ -34,7 +34,13 @@ export class FormulaireConnectionComponent {
       this.submitted = false;
       this.connection.reset();
 
-      this.router.navigate(['/home-page/'+compte.id]);
+      if(compte.typeCompte === "Users_Normal"){
+        sessionStorage.setItem("typeCompte","user");
+      }else{
+        sessionStorage.setItem("typeCompte","admin");
+      }
+      
+      this.router.navigate(['/home-page']);
     });
 
   }

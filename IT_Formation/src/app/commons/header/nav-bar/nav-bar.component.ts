@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import {RouterModule } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import {Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,4 +11,15 @@ import {RouterModule } from '@angular/router';
 })
 export class NavBarComponent {
 
+  @Input()
+  typeCompte!: String | null;
+
+  constructor(private router: Router){}
+
+  seDeconnecter(){
+    sessionStorage.clear();
+    window.location.reload();
+    this.router.navigate(['/home-page'])
+  }
+  
 }
