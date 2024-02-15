@@ -19,6 +19,7 @@ import { Theme } from '../../../models/theme.model';
 })
 export class AjoutFormationComponent implements OnInit {
 
+  //Fonction qui se lance lorsque l'on arrive sur la page
   ngOnInit(): void {
     this.sousThemeService.getSousThemes().subscribe(x => {
       this.sousThemes = x.map(item => {
@@ -41,7 +42,7 @@ export class AjoutFormationComponent implements OnInit {
       })
     });
   }
-
+  //Création des tableaux vides à remplir pour les afficher en front
   sousThemes = new Array<SousTheme>();
   adresses = new Array<Adresse>();
 
@@ -49,7 +50,7 @@ export class AjoutFormationComponent implements OnInit {
 
   submitted: boolean = false;
 
-
+  //Récupération et validation des champs du formulaire
   nouvelleFormation: FormGroup = this.formBuilder.group({
     nom: ['',[Validators.required]],
     descriptionMinimum: ['',[Validators.required]],
@@ -69,9 +70,10 @@ export class AjoutFormationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private formationService: FormationService, private adresseService: AdresseService){}
 
   
-
+// Fonction lancé au onSubmit pour ajouter la formation remplie
   private addFormation(): void {
 
+    // Création de l'objet formation à partir du formGroup
     const newFormation = new Formation(
       this.nouvelleFormation.value.nom,
       this.nouvelleFormation.value.descriptionMinimum,
@@ -98,7 +100,7 @@ export class AjoutFormationComponent implements OnInit {
       )
       
     )
-
+    //Envoi de la formation au service pour Srping
     this.formationService.createFormation(newFormation).subscribe((newFormation) => {
       this.formation = newFormation
     });
@@ -107,7 +109,7 @@ export class AjoutFormationComponent implements OnInit {
     this.submitted = false;
   }
   
-
+// Fonction qui se lance avec le bouton submit en bas du formulaire
   public onSubmit(): void{
     console.log(this.nouvelleFormation);
     this.submitted = true;
