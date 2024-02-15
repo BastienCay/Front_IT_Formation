@@ -11,16 +11,17 @@ import { PageConnectionComponent } from './pages/page-connection/page-connection
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
-    {path:'home-page', component: HomePageComponent},
-    {path:'evaluation', component: PageFormulaireEvaluationComponent},
-    {path:'contact', component: PageContactComponent},
-    {path:'a-propos', component: PageAProposComponent},
+    {path:'home-page',      component: HomePageComponent},
+    {path:'evaluation',     component: PageFormulaireEvaluationComponent},
+    {path:'contact',        component: PageContactComponent},
+    {path:'a-propos',       component: PageAProposComponent},
     {path:'nos-formations', component: PageNosFormationsComponent},
-    {path:'formation', component: PageFormationComponent},
-    {path:'connection', component: PageConnectionComponent},
+    {path:'formation',      component: PageFormationComponent},
+    {path:'connection',     component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
-    {path:'inscription', component: PageInscriptionComponent},
-    {path:'**', component: Page404Component},
+    {path:'inscription',    component: PageInscriptionComponent},
+    {path:'PageMesFormationsComponent',    component: PageInscriptionComponent},
+    {path:'**',             component: Page404Component},
 
 ];
 

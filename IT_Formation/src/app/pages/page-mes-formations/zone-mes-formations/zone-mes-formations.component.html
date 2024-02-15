@@ -1,0 +1,18 @@
+<div id="block_filtre">
+    
+</div>
+<div id="block_formations">
+    <div id="liste_formations">
+        @if (isVide(formations)) {
+            @for (formation of formations; track formation) {
+                <app-card-formation-presentation [formation]="formation"></app-card-formation-presentation>
+            }
+        }@else {
+            <div id="pas_de_formation">
+                <p>0 résultats (0,18 secondes) </p>
+                <h1>Pas de formations disponible</h1>
+            </div>
+        }
+        
+    </div>
+</div>

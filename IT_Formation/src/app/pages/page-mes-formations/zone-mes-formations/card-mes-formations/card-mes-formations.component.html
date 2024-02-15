@@ -1,0 +1,54 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div>
+            <button routerLink="/formations/{{formation.id}}">
+            <h2>{{formation.nom}}</h2>
+            </button>
+
+            <div id="prix_ref">
+                <h1>{{numStr(formation.prix)}} € HT</h1>
+                <p>Référence: {{formation.reference}}0</p>
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content>
+        <div id="block1">
+            <p>{{formation.sousTheme.designation}}</p>
+            <button>Souscrire à cettre formation</button>
+        </div>
+      <mat-divider></mat-divider>
+      <div id="block2">
+        <div id="duree">
+            <img src="../../../../../assets/others/Horloge.svg" alt="">
+            @if (formation.nbrJour === 1) {
+                <p>{{formation.nbrJour}} jour</p>
+            } @else {
+                <p>{{formation.nbrJour}} jours</p>
+            }
+                
+        </div>
+        <div id="type">
+            @if (formation.typeFormation === "DISTANCIEL_PRESENTIEL") {
+                <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
+                <img src="../../../../../assets/others/Screen_black.svg" alt="">
+                <p> Distanciel / Presentiel</p>
+            }@else if(formation.typeFormation === "PRESENTIEL"){
+                <img src="../../../../../assets/others/multi_personnage_noir.svg" alt="">
+                <p>Presentiel</p>
+            }@else {
+                <img src="../../../../../assets/others/Screen_black.svg" alt="">
+                <p>Distanciel</p>
+            }
+        </div>
+        <div id="pre-requis">
+            @if (formation.preRequis === "DEBUTANT") {
+                <img src="../../../../../assets/others/Smile.svg" alt="">
+                <p>Convient aux debutant</p>
+            }@else{
+                <img src="../../../../../assets/others/Attention.svg" alt="">
+                <p>Nécessite un pré-requis</p>
+            }
+        </div>
+    </div>
+    </mat-card-content>
+  </mat-card>
