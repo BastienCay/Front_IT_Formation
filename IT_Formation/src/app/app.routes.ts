@@ -7,13 +7,13 @@ import { PageNosFormationsComponent } from './pages/page-nos-formations/page-nos
 import { PageFormationComponent } from './pages/page-formation/page-formation.component';
 import { Page404Component } from './pages/page-404/page-404.component';
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
-import { PageConnectionComponent, PageConnectionComponent } from './pages/page-connection/page-connection.component';
 import { PageMesFormationsComponent } from './pages/page-mes-formations/page-mes-formations.component';
 import { AjoutAdresseComponent } from './pages/page-admin/ajout-adresse/ajout-adresse.component';
 import { AjoutThemeComponent } from './pages/page-admin/ajout-theme/ajout-theme.component';
 import { AjoutSousThemeComponent } from './pages/page-admin/ajout-sous-theme/ajout-sous-theme.component';
 import { AjoutFormationComponent } from './pages/page-admin/ajout-formation/ajout-formation.component';
 import { PageSessionFormationComponent } from './pages/page-session-formation/page-session-formation.component';
+import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},

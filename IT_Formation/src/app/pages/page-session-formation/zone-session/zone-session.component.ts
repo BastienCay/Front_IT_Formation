@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { CardSessionComponent } from "./card-session/card-session.component";
+import { Component, Input } from '@angular/core';
 import SessionFormation from '../../../models/sessionFormation.model';
+import { CardSessionComponent } from './card-session/card-session.component';
 import { SessionFormationService } from '../../../services/session-formation.service';
 
 @Component({

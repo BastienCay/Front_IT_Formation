@@ -1,4 +1,4 @@
-import Formation from "./formation.model";
+import { Formation } from "./formation.model";
 
 export default interface SessionFormation {
     dateDebut: String,

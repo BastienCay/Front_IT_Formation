@@ -23,12 +23,4 @@ export class SessionFormationService {
     createFormation(sessionFormation: SessionFormation): Observable<SessionFormation>{
         return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/`,sessionFormation);
     }
-    
-    updateFormation(sessionFormation: SessionFormation): Observable<SessionFormation>{
-        return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/${sessionFormation.id_session}`,sessionFormation);
-    }
-    
-    deleteFormation(id: number): Observable<SessionFormation>{
-        return this.httpClient.delete<SessionFormation>(`${this.apiUrl}/sessions-formations/${id}`);
-    }
 }

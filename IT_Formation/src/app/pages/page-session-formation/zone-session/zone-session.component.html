@@ -1,8 +1,8 @@
 <div id="block_sessions">
   <div id="liste_session">
-      @if (isVide(formations)) {
-          @for (formation of formations; track formation) {
-              <app-card-session [formation]="formation"></app-card-session>
+      @if (isVide(sessions)) {
+          @for (session of sessions; track session) {
+              <app-card-session [session]="session"></app-card-session>
           }
       }@else {
           <div id="pas_de_formation">
