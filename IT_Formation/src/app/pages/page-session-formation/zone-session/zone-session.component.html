@@ -1,0 +1,15 @@
+<div id="block_sessions">
+  <div id="liste_session">
+      @if (isVide(formations)) {
+          @for (formation of formations; track formation) {
+              <app-card-session [formation]="formation"></app-card-session>
+          }
+      }@else {
+          <div id="pas_de_formation">
+              <p>0 résultats (0,18 secondes) </p>
+              <h1>Pas de session disponible, pour cette formation</h1>
+          </div>
+      }
+      
+  </div>
+</div>

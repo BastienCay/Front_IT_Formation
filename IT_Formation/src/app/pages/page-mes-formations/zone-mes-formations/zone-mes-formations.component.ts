@@ -1,4 +1,4 @@
-import { Component }                  from '@angular/core';
+import { Component, Input }                  from '@angular/core';
 import { ReactiveFormsModule, FormsModule, }                 from '@angular/forms';
 import { CardMesFormationsComponent } from './card-mes-formations/card-mes-formations.component';
 import { CardFormationPresentationComponent } from "../../page-nos-formations/zone-formations/card-formation-presentation/card-formation-presentation.component";
@@ -13,7 +13,7 @@ import SessionUserDTO from '../../../models/sessionUserDTO';
     imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent]
 })
 export class ZoneMesFormationsComponent {
-
+    
   sessionUsers: SessionUserDTO[] = [];
 
   constructor(private stagiaireSessionFormationService: StagiaireSessionFormationService){}

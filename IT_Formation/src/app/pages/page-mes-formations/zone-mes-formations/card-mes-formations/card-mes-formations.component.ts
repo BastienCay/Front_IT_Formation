@@ -18,7 +18,6 @@ export class CardMesFormationsComponent {
   
   @Input()
   session!: SessionUserDTO;
-  bool!: Boolean;
 
   tempAvenir(date: string | number | Date): String{
     const dateActuel: Date = new Date();
@@ -26,10 +25,6 @@ export class CardMesFormationsComponent {
 
     if(dateSession < dateActuel) return "passer";
     else return "avenir";
-  }
-
-  ngOnInit(){
-    console.log(this.session);    
   }
 
 }
