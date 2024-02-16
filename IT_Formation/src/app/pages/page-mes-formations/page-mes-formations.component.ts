@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from "../../commons/header/header.component";
 import { FooterComponent } from "../../commons/footer/footer.component";
 import { ZoneMesFormationsComponent } from "./zone-mes-formations/zone-mes-formations.component";

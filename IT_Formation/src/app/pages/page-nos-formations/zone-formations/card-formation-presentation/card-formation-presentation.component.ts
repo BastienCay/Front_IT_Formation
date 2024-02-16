@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,6 +20,8 @@ export class CardFormationPresentationComponent {
 
   resultat!: String;
 
+  constructor(private router: Router){}
+
   numStr(nbrNonSeparer: any): String {
     nbrNonSeparer = '' + nbrNonSeparer;
     //Permet de definir la chaine de caractere à utiliser comme séparateur
@@ -37,5 +39,13 @@ export class CardFormationPresentationComponent {
     }
 
     return resultat;
+  }
+
+  onClick(){
+    if(sessionStorage.getItem("typeCompte")){
+      this.router.navigate(['/session-formation/'+this.formation.id]);
+    }else{
+      this.router.navigate(['/connection']);
+    }
   }
 }

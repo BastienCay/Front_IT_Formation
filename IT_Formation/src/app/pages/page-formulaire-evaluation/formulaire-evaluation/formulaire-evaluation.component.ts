@@ -18,7 +18,7 @@ export class FormulaireEvaluationComponent {
 
   evaluations: any[] = [];
 
-submitted: boolean = false;
+  submitted: boolean = false;
 
  constructor(private formBuilder: FormBuilder,
  ) {}
