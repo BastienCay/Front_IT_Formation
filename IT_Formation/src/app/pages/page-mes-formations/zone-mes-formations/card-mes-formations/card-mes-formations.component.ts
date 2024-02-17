@@ -10,7 +10,7 @@ import SessionUserDTO from '../../../../models/sessionUserDTO';
 @Component({
   selector: 'app-card-mes-formations',
   standalone: true,
-  imports: [CommonModule,RouterModule,MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule,RouterModule],
+  imports: [CommonModule,RouterModule,MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule],
   templateUrl: './card-mes-formations.component.html',
   styleUrl: './card-mes-formations.component.css'
 })

@@ -7,13 +7,17 @@ import SessionUserDTO from '../../../models/sessionUserDTO';
 import {MatSliderModule} from '@angular/material/slider';
 import {JsonPipe} from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatButtonModule}      from '@angular/material/button';
+import {MatDividerModule}     from '@angular/material/divider';
+import {MatCardModule}        from '@angular/material/card';
 
 @Component({
     selector: 'app-zone-mes-formations',
     standalone: true,
     templateUrl: './zone-mes-formations.component.html',
     styleUrl: './zone-mes-formations.component.css',
-    imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent,MatSliderModule, MatCheckboxModule, JsonPipe]
+    imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent,MatSliderModule, MatCheckboxModule, JsonPipe,MatCardModule, MatDividerModule, MatButtonModule, MatProgressBarModule,]
 })
 export class ZoneMesFormationsComponent {
     
@@ -27,7 +31,6 @@ export class ZoneMesFormationsComponent {
   constructor(private stagiaireSessionFormationService: StagiaireSessionFormationService,private _formBuilder: FormBuilder){}
 
   ngOnInit(): void{
-
         this.stagiaireSessionFormationService.getFormations(1).subscribe((sessionUser) =>{
             this.sessionUsers = sessionUser;
         });
