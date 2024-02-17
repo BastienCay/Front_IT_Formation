@@ -14,24 +14,24 @@ export class SessionFormationService {
     constructor(private httpClient: HttpClient) {}
 
     getSessionFormations(): Observable<SessionFormation[]>{
-      return this.httpClient.get<SessionFormation[]>(`${this.apiUrl}/sessions-formationss/all`);
+      return this.httpClient.get<SessionFormation[]>(`${this.apiUrl}/sessions-formations/all`);
   }
   
   getSessionFormation(id:number): Observable<SessionFormation>{
-      return this.httpClient.get<SessionFormation>(`${this.apiUrl}/sessions-formationss/${id}`);
+      return this.httpClient.get<SessionFormation>(`${this.apiUrl}/sessions-formations/${id}`);
   }
   
   createSessionFormation(sessionFormation: SessionFormation, telephone:string): Observable<SessionFormation>{
-    const queryParams = `?telephone=${telephone}`;
-      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formationss/add`,sessionFormation + queryParams);
+    const queryParams = `?telephone=${telephone}`
+      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/add`+ queryParams,sessionFormation);
   }
   
   updateSessionFormation(sessionFormation: SessionFormation): Observable<SessionFormation>{
-      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formationss/save`,sessionFormation);
+      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/save`,sessionFormation);
   }
   
   deleteSessionFormation(id: number): Observable<SessionFormation>{
-      return this.httpClient.delete<SessionFormation>(`${this.apiUrl}/sessions-formationss/${id}`);
+      return this.httpClient.delete<SessionFormation>(`${this.apiUrl}/sessions-formations/${id}`);
   }
 
 //   addStagiaire(id: Number, nom: String): Observable<SessionFormation>{
