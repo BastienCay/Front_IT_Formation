@@ -3,12 +3,14 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule, FormsModule } 
 import { MatRadioModule } from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatIconModule} from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-formulaire-evaluation',
   standalone: true,
-  imports: [ReactiveFormsModule, MatRadioModule, FormsModule, MatButtonModule,MatIconModule],
+  imports: [ReactiveFormsModule, MatRadioModule, FormsModule, MatButtonModule,MatIconModule,CommonModule,RouterModule],
   templateUrl: './formulaire-evaluation.component.html',
   styleUrl: './formulaire-evaluation.component.css'
 })

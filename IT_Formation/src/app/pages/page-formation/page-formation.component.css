@@ -2,7 +2,6 @@
     background-image: url("../../../assets/background/baniere-it-formation-home.jpg");
     width: 100vw;
     height: 480px;
-    
 }
 
 section{
@@ -95,12 +94,12 @@ section{
 
 #spacing{
     height: 200px;
-    width: 100vw;
+    width: 100%;
 }
 
 #spacing2{
     height: 260px;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 30px;

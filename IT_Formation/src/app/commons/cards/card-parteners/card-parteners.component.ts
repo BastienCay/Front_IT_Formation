@@ -10,9 +10,7 @@ import { CardPartenerComponent } from "./card-partener/card-partener.component";
 })
 export class CardPartenersComponent {
 
-  logoGoogle: String = "../../../../assets/Partener/Logo_Google.png";
-  logoApple: String = "../../../../assets/Partener/Logo_Apple.png";
-  logoFacebook: String = "../../../../assets/Partener/Logo_facebook.png";
-  logoAmazon: String = "../../../../assets/Partener/Logo_Amazon.png";
-  logoMicrosoft: String = "../../../../assets/Partener/Logo_Microsoft.png";
+  logoIbCegos: String = "../../../../assets/Partener/logo-ib.png";
+  logoPoleEmploi: String = "../../../../assets/Partener/Logo_pole_emploi.png"
+  logoHautDeFrance: String = "../../../../assets/Partener/Logo_haut_de_france.svg";
 }

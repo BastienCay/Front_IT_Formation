@@ -13,15 +13,119 @@
         </div>
     </div>
     <div id="liste_formations">
+        <!--  
         @if (isVide(sessionUsers)) {
-            @for (session of sessionUsers; track session) {
-                <app-card-mes-formations [session]="session"></app-card-mes-formations>
-            }
+            @for (session of sessionUsers; track session) {-->
+                <!-- <app-card-mes-formations [session]="session"></app-card-mes-formations> -->
+
+                <div id="formation_1">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div>
+                                <h2>Développeur Full Stack</h2>
+                                <div id="info_temp_rouge">
+                                    <span >A venir</span>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div id="block1">
+                                <p>Développement Java</p>
+                            </div>
+                          <mat-divider></mat-divider>
+                          <div id="block2">
+                            <div id="duree">
+                                <img src="../../../../../assets/others/Horloge.svg" alt="">
+                                <p>275 Jours</p>
+                            </div>
+                            <div id="date_debut">
+                                <p>07-05-2024</p>
+                            </div>
+                            <div id="etat_evaluation">
+                                <button disabled routerLink="/evaluation">Evaluer cette formation</button>
+                            </div>
+                        </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+
+                <div id="formation_2">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div>
+                                <h2>Développeur Cobol</h2>
+                                <div id="info_temp_noir">
+                                    <span >Passé</span>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div id="block1">
+                                <p>Développement</p>
+                            </div>
+                          <mat-divider></mat-divider>
+                          <div id="block2">
+                            <div id="duree">
+                                <img src="../../../../../assets/others/Horloge.svg" alt="">
+                                <p> 75 Jours</p>
+                            </div>
+                            <div id="date_debut">
+                                <p>05-10-2023</p>
+                            </div>
+                            <div id="etat_evaluation">
+                                @if (isValider === false) {
+                                    <button routerLink="/evaluation" (click)="onClick() ">Evaluer cette formation</button>
+                                }@else {
+                                    <div>
+                                        <span>Evaluation envoyée</span>
+                                    </div>
+                                }
+                                
+                            </div>
+                        </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+
+                <div id="formation_3">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                            <div>
+                                <h2>Management de Projet</h2>
+                                <div id="info_temp_noir">
+                                    <span >Passé</span>
+                                </div>
+                            </div>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div id="block1">
+                                <p>Gestion de projet</p>
+                            </div>
+                          <mat-divider></mat-divider>
+                          <div id="block2">
+                            <div id="duree">
+                                <img src="../../../../../assets/others/Horloge.svg" alt="">
+                                <p> 124 Jours</p>
+                            </div>
+                            <div id="date_debut">
+                                <p>12-06-2022</p>
+                            </div>
+                            <div id="etat_evaluation">
+                                <div>
+                                    <span>Evaluation envoyée</span>
+                                </div>
+                            </div>
+                        </div>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+
+            <!-- }
         }@else {
             <div id="pas_de_formation">
                 <p>0 résultats (0,18 secondes) </p>
                 <h1>Pas de formations disponible</h1>
             </div>
-        }
+        } -->
     </div>
 </div>

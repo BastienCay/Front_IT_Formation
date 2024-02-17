@@ -1,3 +1,4 @@
 #liste_partener{
     display: flex;
+    justify-content: space-around;
 }
