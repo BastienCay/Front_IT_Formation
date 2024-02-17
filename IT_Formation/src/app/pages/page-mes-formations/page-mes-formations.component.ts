@@ -12,4 +12,8 @@ import { ZoneMesFormationsComponent } from "./zone-mes-formations/zone-mes-forma
 })
 export class PageMesFormationsComponent {
 
+    ngOnInt(){
+        sessionStorage.setItem("isEvaluer","0");
+    }
+
 }

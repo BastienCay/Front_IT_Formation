@@ -10,7 +10,7 @@ import { CardPartenerComponent } from "./card-partener/card-partener.component";
 })
 export class CardPartenersComponent {
 
-  logoIbCegos: String = "../../../../assets/Partener/Logo-ib.png";
+  logoIbCegos: String = "../../../../assets/Partener/logo-ib.png";
   logoPoleEmploi: String = "../../../../assets/Partener/Logo_pole_emploi.png"
   logoHautDeFrance: String = "../../../../assets/Partener/Logo_haut_de_france.svg";
 }

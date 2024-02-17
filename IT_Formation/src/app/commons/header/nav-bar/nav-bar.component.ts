@@ -18,8 +18,7 @@ export class NavBarComponent {
 
   seDeconnecter(){
     sessionStorage.clear();
-    window.location.reload();
-    this.router.navigate(['/home-page'])
+    this.router.navigate(['/home-page']);
   }
   
 }

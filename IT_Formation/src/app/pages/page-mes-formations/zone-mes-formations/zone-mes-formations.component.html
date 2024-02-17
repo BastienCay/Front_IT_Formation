@@ -73,7 +73,14 @@
                                 <p>05-10-2023</p>
                             </div>
                             <div id="etat_evaluation">
-                                <button routerLink="/evaluation">Evaluer cette formation</button>
+                                @if (isValider === false) {
+                                    <button routerLink="/evaluation" (click)="onClick() ">Evaluer cette formation</button>
+                                }@else {
+                                    <div>
+                                        <span>Evaluation envoyée</span>
+                                    </div>
+                                }
+                                
                             </div>
                         </div>
                         </mat-card-content>
