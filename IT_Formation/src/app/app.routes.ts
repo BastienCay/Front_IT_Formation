@@ -14,6 +14,7 @@ import { AjoutSousThemeComponent } from './pages/page-admin/ajout-sous-theme/ajo
 import { AjoutFormationComponent } from './pages/page-admin/ajout-formation/ajout-formation.component';
 import { PageSessionFormationComponent } from './pages/page-session-formation/page-session-formation.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
+import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -26,6 +27,7 @@ export const routes: Routes = [
     {path:'connection',     component: PageConnectionComponent},
     {path:'formations/:id', component: PageFormationComponent},
     {path:'ajout-adresse', component: AjoutAdresseComponent},
+    {path:'page-admin', component: PageAdminComponent},
     {path:'ajout-theme', component: AjoutThemeComponent},
     {path:'ajout-sous-theme', component: AjoutSousThemeComponent},
     {path:'ajout-formation', component: AjoutFormationComponent},
