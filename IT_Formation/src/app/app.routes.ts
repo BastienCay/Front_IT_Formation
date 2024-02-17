@@ -15,6 +15,7 @@ import { AjoutFormationComponent } from './pages/page-admin/ajout-formation/ajou
 import { PageSessionFormationComponent } from './pages/page-session-formation/page-session-formation.component';
 import { PageConnectionComponent } from './pages/page-connection/page-connection.component';
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
+import { AjoutSessionComponent } from './pages/page-admin/ajout-session/ajout-session.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home-page', pathMatch:'full'},
@@ -31,6 +32,7 @@ export const routes: Routes = [
     {path:'ajout-theme', component: AjoutThemeComponent},
     {path:'ajout-sous-theme', component: AjoutSousThemeComponent},
     {path:'ajout-formation', component: AjoutFormationComponent},
+    {path:'ajout-session', component: AjoutSessionComponent},   
     {path:'inscription',    component: PageInscriptionComponent},
     {path:'mes-formations',    component: PageMesFormationsComponent},
     {path:'session-formation/:id',    component: PageSessionFormationComponent},

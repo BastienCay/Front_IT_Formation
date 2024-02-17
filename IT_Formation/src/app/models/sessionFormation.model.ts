@@ -1,7 +1,19 @@
+import { Formateur } from "./formateur.model";
 import { Formation } from "./formation.model";
 
-export default interface SessionFormation {
-    dateDebut: String,
-    dateFin: String,
-    formation: Formation,
+export class SessionFormation {
+    id:Number;
+    dateDebut: Date;
+    dateFin: Date;
+    formation: Formation;
+    formateur: Formateur;
+
+    constructor(id:Number,dateDebut: Date,dateFin: Date,formation: Formation,formateur: Formateur){
+        this.id = id;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        this.formation = formation;
+        this.formateur = formateur;
+    }
+
 }
