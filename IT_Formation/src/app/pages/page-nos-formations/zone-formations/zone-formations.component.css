@@ -5,6 +5,84 @@
     justify-items: center;
 }
 
+#block_filtre{
+    grid-row-start: 2;
+    grid-column-start:3;
+    grid-column-end: 5;
+    width: 100%;
+}
+
+#filtre_1{
+    background-color: var(--couleur_neutre);
+    border-radius: 20px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    --mdc-slider-handle-color: black;
+    --mdc-slider-focus-handle-color: black;
+    --mdc-slider-hover-handle-color: black;
+    --mdc-slider-active-track-color: black;
+    --mdc-slider-inactive-track-color: black;
+    --mdc-slider-with-tick-marks-inactive-container-color: black;
+    --mdc-slider-with-tick-marks-active-container-color: white;
+    --mdc-slider-disabled-active-track-color: #000;
+    --mdc-slider-disabled-handle-color: #000;
+    --mdc-slider-disabled-inactive-track-color: #000;
+    --mdc-slider-label-container-color: #000;
+    --mdc-slider-label-label-text-color: #fff;
+    --mdc-slider-with-overlap-handle-outline-color: #fff;
+    --mdc-slider-with-tick-marks-disabled-container-color: #000;
+    --mdc-slider-handle-elevation: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    --mat-slider-ripple-color: black;
+    --mat-slider-hover-state-layer-color: rgba(63, 81, 181, 0.05);
+    --mat-slider-focus-state-layer-color: rgba(63, 81, 181, 0.2);
+    --mat-slider-value-indicator-opacity: 0.6;
+}
+
+#filtre_1 p{
+    margin: 0;
+}
+
+#filtre_2{
+    background-color: var(--couleur_neutre);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+    --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+    --mdc-checkbox-selected-checkmark-color: #fff;
+    --mdc-checkbox-selected-focus-icon-color: #EF233C;
+    --mdc-checkbox-selected-hover-icon-color: #EF233C;
+    --mdc-checkbox-selected-icon-color: #EF233C;
+    --mdc-checkbox-selected-pressed-icon-color: #EF233C;
+    --mdc-checkbox-unselected-focus-icon-color: #212121;
+    --mdc-checkbox-unselected-hover-icon-color: #212121;
+    --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-checkbox-selected-focus-state-layer-color: #EF233C;
+    --mdc-checkbox-selected-hover-state-layer-color: #EF233C;
+    --mdc-checkbox-selected-pressed-state-layer-color: #EF233C;
+    --mdc-checkbox-unselected-focus-state-layer-color: black;
+    --mdc-checkbox-unselected-hover-state-layer-color: black;
+    --mdc-checkbox-unselected-pressed-state-layer-color: black;
+}
+
+#filtre_2 p{
+    margin: 0;
+}
+
 #liste_formations{
     grid-row-start: 2;
     grid-column-start:6;
@@ -25,8 +103,4 @@
 
 #pas_de_formation h1{
     margin: 0;
-}
-
-#filtre_1{
-    background-color: var(--couleur_neutre);
 }

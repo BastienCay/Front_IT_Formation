@@ -40,8 +40,6 @@ export class FormulaireConnectionComponent {
         sessionStorage.setItem("typeCompte","admin");
       }
 
-      console.log(compte.utilisateur);
-      
       this.router.navigate(['/home-page']);
     });
 

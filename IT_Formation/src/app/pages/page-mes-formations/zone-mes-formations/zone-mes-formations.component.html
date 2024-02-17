@@ -1,7 +1,17 @@
-<div id="block_filtre">
-    
-</div>
 <div id="block_formations">
+    <div id="block_filtre">
+        <div id="filtre_1">
+            <p>Prix :</p>
+            <mat-slider min="100" max="5000" discrete>
+                <input value="2000" matSliderStartThumb>
+                <input value="4000" matSliderEndThumb>
+            </mat-slider>
+        </div>
+        <div id="filtre_2" [formGroup]="toppings">
+            <p><mat-checkbox formControlName="presentiel">Présentiel</mat-checkbox></p>
+            <p><mat-checkbox formControlName="distanciel">Distanciel</mat-checkbox></p>
+        </div>
+    </div>
     <div id="liste_formations">
         @if (isVide(sessionUsers)) {
             @for (session of sessionUsers; track session) {

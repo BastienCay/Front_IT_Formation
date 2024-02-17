@@ -1,22 +1,30 @@
 import { Component, Input }                  from '@angular/core';
-import { ReactiveFormsModule, FormsModule, }                 from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormBuilder, }                 from '@angular/forms';
 import { CardMesFormationsComponent } from './card-mes-formations/card-mes-formations.component';
 import { CardFormationPresentationComponent } from "../../page-nos-formations/zone-formations/card-formation-presentation/card-formation-presentation.component";
 import { StagiaireSessionFormationService } from '../../../services/stagiaire-session-formation.service';
 import SessionUserDTO from '../../../models/sessionUserDTO';
+import {MatSliderModule} from '@angular/material/slider';
+import {JsonPipe} from '@angular/common';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @Component({
     selector: 'app-zone-mes-formations',
     standalone: true,
     templateUrl: './zone-mes-formations.component.html',
     styleUrl: './zone-mes-formations.component.css',
-    imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent]
+    imports: [FormsModule, ReactiveFormsModule, CardMesFormationsComponent, CardFormationPresentationComponent,MatSliderModule, MatCheckboxModule, JsonPipe]
 })
 export class ZoneMesFormationsComponent {
     
   sessionUsers: SessionUserDTO[] = [];
 
-  constructor(private stagiaireSessionFormationService: StagiaireSessionFormationService){}
+  toppings = this._formBuilder.group({
+    presentiel: false,
+    distanciel: false
+  });
+
+  constructor(private stagiaireSessionFormationService: StagiaireSessionFormationService,private _formBuilder: FormBuilder){}
 
   ngOnInit(): void{
 
