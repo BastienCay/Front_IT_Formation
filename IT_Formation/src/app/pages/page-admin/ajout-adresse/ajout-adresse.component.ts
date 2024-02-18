@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Adresse } from '../../../models/adresse.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AdresseService } from '../../../services/adresse.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-adresse',
@@ -23,7 +24,7 @@ export class AjoutAdresseComponent {
     pays: ['',[Validators.maxLength(50),Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder, private adresseService: AdresseService){}
+  constructor(private formBuilder: FormBuilder, private adresseService: AdresseService, private router: Router){}
 
 
   private creationAdresse(){
@@ -41,6 +42,7 @@ export class AjoutAdresseComponent {
       console.log('adresse a bien été ajoutée');
       this.submitted = false;
       this.nouvelleAdresse.reset();
+      this.router.navigate(['/page-admin']);
     });
 
     }

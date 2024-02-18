@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ThemeService } from '../../../services/theme.service';
 import { Theme } from '../../../models/theme.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-theme',
@@ -20,12 +21,14 @@ export class AjoutThemeComponent {
     designation: ['',[Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder, private themeService: ThemeService){}
+  constructor(private formBuilder: FormBuilder, private themeService: ThemeService,private router: Router){}
 
   private addTheme(): void {
     this.themeService.createTheme(this.nouveauTheme.value).subscribe((nouveauTheme) => {this.theme = nouveauTheme});
     this.nouveauTheme.reset();
     this.submitted = false;
+    this.router.navigate(['/page-admin']);
+
   }
   
 

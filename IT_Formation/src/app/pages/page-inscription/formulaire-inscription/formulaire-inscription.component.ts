@@ -25,8 +25,8 @@ export class FormulaireInscriptionComponent {
     prenom: ['',[Validators.minLength(2),Validators.required,Validators.maxLength(50),Validators.nullValidator]],
     email: ['',[Validators.required,Validators.email,Validators.nullValidator]],
     telephone: ['',[Validators.minLength(10),Validators.maxLength(11),Validators.required,validTelephone(),Validators.nullValidator]],
-    identifiant: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
-    motDePasse: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
+    identifiant: ['',[Validators.minLength(4),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
+    motDePasse: ['',[Validators.minLength(6),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
     motDePasseVerif: ['',[Validators.minLength(8),Validators.maxLength(50),Validators.required,Validators.nullValidator]],
   });
 

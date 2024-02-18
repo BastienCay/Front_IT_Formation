@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { SousThemeService } from '../../../services/sous-theme.service';
 import { Theme } from '../../../models/theme.model';
 import { ThemeService } from '../../../services/theme.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -42,7 +43,7 @@ export class AjoutSousThemeComponent implements OnInit {
     
   });
 
-  constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private themeService: ThemeService){}
+  constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private themeService: ThemeService,private router: Router){}
 
   private addSousTheme(): void{
     console.log(this.nouveauSousTheme.value.theme);
@@ -58,6 +59,7 @@ export class AjoutSousThemeComponent implements OnInit {
 
     this.nouveauSousTheme.reset();
     this.submitted = false;
+    this.router.navigate(['/page-admin']);
 }
 
   public onSubmit(): void{

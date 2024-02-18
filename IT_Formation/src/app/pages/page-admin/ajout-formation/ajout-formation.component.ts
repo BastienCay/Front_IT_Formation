@@ -67,7 +67,7 @@ export class AjoutFormationComponent implements OnInit {
 
   });
 
-  constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private formationService: FormationService, private adresseService: AdresseService){}
+  constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private formationService: FormationService, private adresseService: AdresseService,private router: Router){}
 
   
 // Fonction lancé au onSubmit pour ajouter la formation remplie
@@ -107,6 +107,7 @@ export class AjoutFormationComponent implements OnInit {
     
     this.nouvelleFormation.reset();
     this.submitted = false;
+    this.router.navigate(['/page-admin']);
   }
   
 // Fonction qui se lance avec le bouton submit en bas du formulaire

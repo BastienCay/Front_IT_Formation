@@ -37,7 +37,7 @@ export class FormulaireConnectionComponent {
       if(compte.typeCompte === "Users_Normal"){
         sessionStorage.setItem("typeCompte","user");
       }else{
-        sessionStorage.setItem("typeCompte","admin");
+        sessionStorage.setItem("typeCompte","Admin");
       }
 
       this.router.navigate(['/home-page']);

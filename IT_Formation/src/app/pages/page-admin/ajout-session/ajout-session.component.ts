@@ -10,6 +10,7 @@ import { SousTheme } from '../../../models/sous-theme.model';
 import { Theme } from '../../../models/theme.model';
 import { SessionFormationService } from '../../../services/session-formation.service';
 import { Utilisateur } from '../../../models/utilisateur.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout-session',
@@ -59,7 +60,7 @@ sessionformation!: SessionFormation;
 
 submitted: boolean = false;
 
-constructor(private formBuilder: FormBuilder, private formateurService: FormateurService, private formationService: FormationService, private sessionFormationService :SessionFormationService){}
+constructor(private formBuilder: FormBuilder, private formateurService: FormateurService, private formationService: FormationService, private sessionFormationService :SessionFormationService, private router: Router){}
 
 nouvelleSession: FormGroup = this.formBuilder.group({
   id: 0,
@@ -125,6 +126,7 @@ private addFormation(): void {
   
   this.nouvelleSession.reset();
   this.submitted = false;
+  this.router.navigate(['/page-admin']);
 }
 
 // Fonction qui se lance avec le bouton submit en bas du formulaire
