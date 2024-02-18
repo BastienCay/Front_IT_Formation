@@ -6,7 +6,7 @@ h1, h2, h3, p, a, label, span{
     background-color: #EDF2F4;
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows:5vh 15vh 130vh 10vh;
+    grid-template-rows:5vh 15vh 65vh 10vh;
   }
   
   p{
