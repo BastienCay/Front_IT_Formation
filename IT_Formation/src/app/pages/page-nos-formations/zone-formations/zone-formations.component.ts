@@ -28,6 +28,7 @@ export class ZoneFormationsComponent {
     ngOnInit(): void{
         this.FormationService.getFormations().subscribe((formations) => {
             this.formations = formations;
+            console.log(formations);
         });
     }
 
