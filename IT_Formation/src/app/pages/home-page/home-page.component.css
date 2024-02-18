@@ -54,7 +54,7 @@ section{
 #partener{
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    grid-template-rows: 20vh 10vh 20vh 20vh;
+    grid-template-rows: 20vh 10vh 20vh 15vh;
 }
 
 #partener app-card-parteners{
@@ -76,8 +76,8 @@ section{
 }
 
 #notation{
-    padding-top: 15vh;
-    padding-bottom: 15vh;
+    padding-top: 8vh;
+    padding-bottom: 10vh;
     background-color: var(--couleur_neutre);
 }
 
