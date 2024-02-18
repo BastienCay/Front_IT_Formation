@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import SessionFormation from '../../../../models/sessionFormation.model';
+import { SessionFormation } from '../../../../models/sessionFormation.model';
 
 @Component({
   selector: 'app-card-session',

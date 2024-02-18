@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import SessionFormation from '../../../models/sessionFormation.model';
+import { SessionFormation } from '../../../models/sessionFormation.model';
 import { CardSessionComponent } from './card-session/card-session.component';
 import { SessionFormationService } from '../../../services/session-formation.service';
 
@@ -17,8 +17,8 @@ export class ZoneSessionComponent {
     constructor(private sessionFormationService: SessionFormationService){}
     
     ngOnInit(): void{
-        this.sessionFormationService.getFormations().subscribe((sessions) => {
-            this.sessions = sessions;
+        this.sessionFormationService.getSessionFormations().subscribe((sessionsFormation) => {
+            this.sessions = sessionsFormation;
         });
     }
 

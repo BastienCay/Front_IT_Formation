@@ -5,7 +5,7 @@
   <form [formGroup]="nouveauSousTheme" (ngSubmit)="onSubmit()">
       <!-- Désignation -->
       <div class="input-group">
-          <label class="label" for="designation"> Désignation du thème <span>*</span></label>
+          <label class="label" for="designation"> Désignation du sous-thème <span>*</span></label>
           <input class="input" required type="text" formControlName="designation" id="designation"/>
           <!-- Si submitted est true et le champ désignation est INVALIDE -->
           @if(submitted && !form['designation'].valid){
@@ -14,7 +14,7 @@
           
       </div>
       <div class="input-group">
-        <label class="label" for="theme"> Désignation du sous-thème <span>*</span></label>
+        <label class="label" for="theme"> Désignation du thème <span>*</span></label>
  
         <select class="input" formControlName="theme" id="theme">
           @for(theme of themes; track theme ){
