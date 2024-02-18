@@ -28,6 +28,9 @@ export class HomePageComponent {
     urlImageDistancielBlack: String = "../../../assets/others/Screen_black.svg";
     urlImageSurMesureBlack: String = "../../../assets/others/User_time_black.svg";
 
+    nosformation: String = "/nos-formations";
+    contact: String = "/contact";
+
     typeCompte!: String | null;
 
     ngOnInit(){

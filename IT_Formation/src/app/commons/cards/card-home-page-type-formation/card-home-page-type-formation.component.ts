@@ -15,6 +15,8 @@ export class CardHomePageTypeFormationComponent {
   title!: String;
 
   @Input()
+  route!: String;
+  @Input()
   urlImageWhite!: String;
   @Input()
   urlImageBlack!: String;
@@ -24,5 +26,6 @@ export class CardHomePageTypeFormationComponent {
     else if (title === "Nos formations en distanciel") return "/formation-distanciel";
     else return "/formation-sur-mesure";
   }
+  
 
 }
