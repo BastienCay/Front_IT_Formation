@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { SousTheme } from '../../../models/sous-theme.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SousThemeService } from '../../../services/sous-theme.service';
-import { Theme } from '../../../models/theme.model';
 import { ThemeService } from '../../../services/theme.service';
 import { Router } from '@angular/router';
-
+import ThemeDTO from '../../../models/DTO/themeDTO.model';
+import SousThemeDTO from '../../../models/DTO/sousThemeDTO.model';
 
 @Component({
   selector: 'app-ajout-sous-theme',
@@ -16,68 +15,53 @@ import { Router } from '@angular/router';
 })
 export class AjoutSousThemeComponent implements OnInit {
   
-  
-
-  themes = new Array<Theme>();
+  themes = new Array<ThemeDTO>();
 
   ngOnInit(): void {
-    this.themeService.getThemes().subscribe(x => {
-      this.themes = x.map(item => {
-        return new Theme(
-          item.designation
-          );
-      })
+    this.themeService.getThemes().subscribe(themeDto => {
+      this.themes = themeDto;
     });
-  }
   
-  sousTheme!: SousTheme;
+  }
 
+  sousThemeDto!: SousThemeDTO;
 
   submitted: boolean = false;
-
-
  
   nouveauSousTheme: FormGroup = this.formBuilder.group({
     designation: ['',[Validators.required]],
-    theme: ['',[Validators.required]],
+    idTheme: ['',[Validators.required]],
     
   });
 
   constructor(private formBuilder: FormBuilder, private sousThemeService: SousThemeService, private themeService: ThemeService,private router: Router){}
 
-  private addSousTheme(): void{
-    console.log(this.nouveauSousTheme.value.theme);
-    this.sousTheme = new SousTheme(
-      this.nouveauSousTheme.value.designation,
-      new Theme(
-        this.nouveauSousTheme.value.theme
-      )
-    )
-   this.sousThemeService.createSousTheme(this.sousTheme).subscribe((nouveauSousTheme) => {
-      this.sousTheme = nouveauSousTheme
-  });
 
-    this.nouveauSousTheme.reset();
+private creationSousTheme(){
+
+  this.sousThemeDto = this.nouveauSousTheme.value;
+  console.log(this.sousThemeDto);
+  this.sousThemeService.createSousTheme(this.sousThemeDto).subscribe(() => {
     this.submitted = false;
+    this.nouveauSousTheme.reset();
     this.router.navigate(['/page-admin']);
+    });
+  
 }
 
-  public onSubmit(): void{
- 
-    this.submitted = true;
-    if(this.nouveauSousTheme.valid){
-      console.log(this.nouveauSousTheme.get('designation')?.value);
+onSubmit(): boolean{
 
-      this.addSousTheme();
-    }
+  this.submitted = true;
+  if(this.nouveauSousTheme.invalid){
+    return false;
+  }else{
+    this.creationSousTheme();
+    return true;
   }
-  
-  
+}
 
   public get form(){
     return this.nouveauSousTheme.controls;
   }
-
-  
 
 }

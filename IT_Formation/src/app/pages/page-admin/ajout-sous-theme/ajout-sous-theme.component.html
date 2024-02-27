@@ -16,14 +16,14 @@
       <div class="input-group">
         <label class="label" for="theme"> Désignation du thème <span>*</span></label>
  
-        <select class="input" formControlName="theme" id="theme">
+        <select class="input" formControlName="idTheme" id="idTheme">
           @for(theme of themes; track theme ){
-            <option value="{{theme.designation}}">{{theme.designation}}</option>
+            <option value="{{theme.id}}">{{theme.designation}}</option>
           }
         </select>
        
         <!-- Si submitted est true et le champ désignation est INVALIDE -->
-        @if(submitted && !form['theme'].valid){
+        @if(submitted && !form['idTheme'].valid){
             <span>* Nom de thème invalide</span>
         }
         

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SousTheme } from '../models/sous-theme.model';
+import SousThemeDTO from '../models/DTO/sousThemeDTO.model';
 
 
 
@@ -14,23 +14,23 @@ export class SousThemeService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getSousThemes(): Observable<SousTheme[]>{
-        return this.httpClient.get<SousTheme[]>(`${this.apiUrl}/sous-themes/all`);
+    getSousThemes(): Observable<SousThemeDTO[]>{
+        return this.httpClient.get<SousThemeDTO[]>(`${this.apiUrl}/sous-themes/all`);
     }
     
-    getSousTheme(id:number): Observable<SousTheme>{
-        return this.httpClient.get<SousTheme>(`${this.apiUrl}/sous-themes/${id}`);
+    getSousTheme(id:number): Observable<SousThemeDTO>{
+        return this.httpClient.get<SousThemeDTO>(`${this.apiUrl}/sous-themes/${id}`);
     }
     
-    createSousTheme(sousTheme: SousTheme): Observable<SousTheme>{
-        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sous-themes/add`,sousTheme);
+    createSousTheme(sousThemeDto: SousThemeDTO): Observable<SousThemeDTO>{
+        return this.httpClient.post<SousThemeDTO>(`${this.apiUrl}/sous-themes/add`,sousThemeDto);
     }
     
-    updateSousTheme(sousTheme: SousTheme): Observable<SousTheme>{
-        return this.httpClient.post<SousTheme>(`${this.apiUrl}/sous-themes/save`,sousTheme);
+    updateSousTheme(sousThemeDto: SousThemeDTO): Observable<SousThemeDTO>{
+        return this.httpClient.post<SousThemeDTO>(`${this.apiUrl}/sous-themes/save`,sousThemeDto);
     }
     
-    deleteSousTheme(id: number): Observable<SousTheme>{
-        return this.httpClient.delete<SousTheme>(`${this.apiUrl}/sous-themes/${id}`);
+    deleteSousTheme(id: number): Observable<SousThemeDTO>{
+        return this.httpClient.delete<SousThemeDTO>(`${this.apiUrl}/sous-themes/${id}`);
     }
 }

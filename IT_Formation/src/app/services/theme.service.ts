@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Theme } from '../models/theme.model';
+import ThemeDTO  from '../models/DTO/themeDTO.model';
 
 
 @Injectable({
@@ -14,23 +14,23 @@ export class ThemeService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getThemes(): Observable<Theme[]>{
-        return this.httpClient.get<Theme[]>(`${this.apiUrl}/themes/all`);
+    getThemes(): Observable<ThemeDTO[]>{
+        return this.httpClient.get<ThemeDTO[]>(`${this.apiUrl}/themes/all`);
     }
     
-    getTheme(id:number): Observable<Theme>{
-        return this.httpClient.get<Theme>(`${this.apiUrl}/themes/${id}`);
+    getTheme(id:number): Observable<ThemeDTO>{
+        return this.httpClient.get<ThemeDTO>(`${this.apiUrl}/themes/${id}`);
     }
     
-    createTheme(theme: Theme): Observable<Theme>{
-        return this.httpClient.post<Theme>(`${this.apiUrl}/themes/add`,theme);
+    createTheme(themeDto: ThemeDTO): Observable<ThemeDTO>{
+        return this.httpClient.post<ThemeDTO>(`${this.apiUrl}/themes/add`,themeDto);
     }
     
-    updateTheme(theme: Theme): Observable<Theme>{
-        return this.httpClient.post<Theme>(`${this.apiUrl}/themes/save`,theme);
+    updateTheme(themeDto: ThemeDTO): Observable<ThemeDTO>{
+        return this.httpClient.post<ThemeDTO>(`${this.apiUrl}/themes/save`,themeDto);
     }
     
-    deleteTheme(id: number): Observable<Theme>{
-        return this.httpClient.delete<Theme>(`${this.apiUrl}/themes/${id}`);
+    deleteTheme(id: number): Observable<ThemeDTO>{
+        return this.httpClient.delete<ThemeDTO>(`${this.apiUrl}/themes/${id}`);
     }
 }

@@ -15,8 +15,6 @@ import { from } from 'rxjs';
 })
 export class AjoutAdresseComponent {
 
-  adresse!: Adresse;
-
   adresseDto!: AdresseDTO;
 
   submitted: boolean = false;
@@ -32,11 +30,9 @@ export class AjoutAdresseComponent {
 
 
   private creationAdresse(){
-    console.log(this.nouvelleAdresse.get('codePostal')?.value);
-    
+
     this.adresseDto = this.nouvelleAdresse.value;
     
-
     this.adresseService.createAdresse(this.adresseDto).subscribe(() => {
       console.log('adresse a bien été ajoutée');
       this.submitted = false;
@@ -46,6 +42,7 @@ export class AjoutAdresseComponent {
 
     }
   onSubmit(): boolean{
+
     this.submitted = true;
     if(this.nouvelleAdresse.invalid){
       return false;
