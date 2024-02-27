@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Adresse } from '../models/adresse.model';
+import AdresseDTO from '../models/DTO/adresseDTO.model';
 
 
 
@@ -14,23 +14,23 @@ export class AdresseService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getAdresses(): Observable<Adresse[]>{
-        return this.httpClient.get<Adresse[]>(`${this.apiUrl}/adresses/all`);
+    getAdresses(): Observable<AdresseDTO[]>{
+        return this.httpClient.get<AdresseDTO[]>(`${this.apiUrl}/adresses/all`);
     }
     
-    getAdresse(id:number): Observable<Adresse>{
-        return this.httpClient.get<Adresse>(`${this.apiUrl}/adresses/${id}`);
+    getAdresse(id:number): Observable<AdresseDTO>{
+        return this.httpClient.get<AdresseDTO>(`${this.apiUrl}/adresses/${id}`);
     }
     
-    createAdresse(adresse: Adresse): Observable<Adresse>{
-        return this.httpClient.post<Adresse>(`${this.apiUrl}/adresses/add`,adresse);
+    createAdresse(adresseDto: AdresseDTO): Observable<AdresseDTO>{
+        return this.httpClient.post<AdresseDTO>(`${this.apiUrl}/adresses/add`,adresseDto);
     }
     
-    updateAdresse(adresse: Adresse): Observable<Adresse>{
-        return this.httpClient.post<Adresse>(`${this.apiUrl}/adresses/save`,adresse);
+    updateAdresse(adresseDto: AdresseDTO): Observable<AdresseDTO>{
+        return this.httpClient.post<AdresseDTO>(`${this.apiUrl}/adresses/save`,adresseDto);
     }
     
-    deleteAdresse(id: number): Observable<Adresse>{
-        return this.httpClient.delete<Adresse>(`${this.apiUrl}/adresses/${id}`);
+    deleteAdresse(id: number): Observable<AdresseDTO>{
+        return this.httpClient.delete<AdresseDTO>(`${this.apiUrl}/adresses/${id}`);
     }
 }

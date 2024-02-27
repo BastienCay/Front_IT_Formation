@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Adresse } from '../../../models/adresse.model';
+import AdresseDTO from '../../../models/DTO/adresseDTO.model';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AdresseService } from '../../../services/adresse.service';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-ajout-adresse',
@@ -14,6 +16,8 @@ import { Router } from '@angular/router';
 export class AjoutAdresseComponent {
 
   adresse!: Adresse;
+
+  adresseDto!: AdresseDTO;
 
   submitted: boolean = false;
 
@@ -28,17 +32,12 @@ export class AjoutAdresseComponent {
 
 
   private creationAdresse(){
-
-
-
-    const newAdresse = new Adresse(
-      this.nouvelleAdresse.get('codePostal')?.value,
-      this.nouvelleAdresse.get('ville')?.value,
-      this.nouvelleAdresse.get('rue')?.value,
-      this.nouvelleAdresse.get('pays')?.value);
+    console.log(this.nouvelleAdresse.get('codePostal')?.value);
+    
+    this.adresseDto = this.nouvelleAdresse.value;
     
 
-    this.adresseService.createAdresse(newAdresse).subscribe(() => {
+    this.adresseService.createAdresse(this.adresseDto).subscribe(() => {
       console.log('adresse a bien été ajoutée');
       this.submitted = false;
       this.nouvelleAdresse.reset();
