@@ -68,7 +68,7 @@ public onSubmit(): void{
   
   this.submitted = true;
   if(this.nouvelleSession.valid){
-    console.log("1", this.nouvelleSession);
+    console.log(this.nouvelleSession);
     this.addFormation();
   }
 }

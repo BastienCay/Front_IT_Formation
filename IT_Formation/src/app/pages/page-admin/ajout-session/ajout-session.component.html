@@ -7,14 +7,14 @@
         <div class="input-group">
             <label class="label" for="formation">Nom de la formation<span>*</span></label>
      
-            <select class="input" formControlName="formation" id="formation">
+            <select class="input" formControlName="idFormation" id="idFormation">
               @for(formation of formations; track formation ){
                 <option value="{{formation.id}}">{{formation.nom}}</option>
               }
             </select>
            
             <!-- Si submitted est true et le champ désignation est INVALIDE -->
-            @if(submitted && !form['formation'].valid){
+            @if(submitted && !form['idFormation'].valid){
                 <span>* Nom de thème invalide</span>
             }
             
@@ -23,14 +23,14 @@
         <div class="input-group">
             <label class="label" for="formateur">Assigner un formateur<span>*</span></label>
      
-            <select class="input" formControlName="formateur" id="formateur">
+            <select class="input" formControlName="idFormateur" id="idFormateur">
               @for(formateur of formateurs; track formateur ){
                 <option value="{{formateur.id}}">{{formateur.prenom}} {{formateur.nom}}</option>
               }
             </select>
            
             <!-- Si submitted est true et le champ désignation est INVALIDE -->
-            @if(submitted && !form['formateur'].valid){
+            @if(submitted && !form['idFormateur'].valid){
                 <span>* Nom de thème invalide</span>
             }
             
