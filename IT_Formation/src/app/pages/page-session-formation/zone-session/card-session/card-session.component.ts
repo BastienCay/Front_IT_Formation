@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SessionFormation } from '../../../../models/sessionFormation.model';
+import SessionFormationDTO from '../../../../models/DTO/sessionFormationDTO.model';
 
 @Component({
   selector: 'app-card-session',
@@ -11,6 +11,6 @@ import { SessionFormation } from '../../../../models/sessionFormation.model';
 export class CardSessionComponent {
 
   @Input()
-  session!: SessionFormation;
+  session!: SessionFormationDTO;
 
 } 

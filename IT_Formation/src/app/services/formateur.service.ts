@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Formateur } from '../models/formateur.model';
+import FormateurDTO from '../models/DTO/formateurDTO.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,23 +12,23 @@ export class FormateurService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getFormateurs(): Observable<Formateur[]>{
-        return this.httpClient.get<Formateur[]>(`${this.apiUrl}/formateurs/all`);
+    getFormateurs(): Observable<FormateurDTO[]>{
+        return this.httpClient.get<FormateurDTO[]>(`${this.apiUrl}/formateurs/all`);
       }
     
-    getFormateur(id:number): Observable<Formateur>{
-        return this.httpClient.get<Formateur>(`${this.apiUrl}/formateurs/${id}`);
+    getFormateur(id:number): Observable<FormateurDTO>{
+        return this.httpClient.get<FormateurDTO>(`${this.apiUrl}/formateurs/${id}`);
     }
     
-    createFormateur(formateur: Formateur): Observable<Formateur>{
-        return this.httpClient.post<Formateur>(`${this.apiUrl}/formateurs/add`,formateur);
+    createFormateur(formateurDto: FormateurDTO): Observable<FormateurDTO>{
+        return this.httpClient.post<FormateurDTO>(`${this.apiUrl}/formateurs/add`,formateurDto);
     }
     
-    updateFormateur(formateur: Formateur): Observable<Formateur>{
-        return this.httpClient.post<Formateur>(`${this.apiUrl}/formateurs/save`,formateur);
+    updateFormateur(formateurDto: FormateurDTO): Observable<FormateurDTO>{
+        return this.httpClient.post<FormateurDTO>(`${this.apiUrl}/formateurs/save`,formateurDto);
     }
     
-    deleteFormateur(id: number): Observable<Formateur>{
-        return this.httpClient.delete<Formateur>(`${this.apiUrl}/formateurs/${id}`);
+    deleteFormateur(id: number): Observable<FormateurDTO>{
+        return this.httpClient.delete<FormateurDTO>(`${this.apiUrl}/formateurs/${id}`);
     }
 }

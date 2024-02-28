@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Formation } from '../../../models/formation.model';
 import { FormationService } from '../../../services/formation.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SousTheme } from '../../../models/sous-theme.model';
 import { SousThemeService } from '../../../services/sous-theme.service';
 import { AdresseService } from '../../../services/adresse.service';
-import { Adresse } from '../../../models/adresse.model';
-import { Theme } from '../../../models/theme.model';
+import SousThemeDTO from '../../../models/DTO/sousThemeDTO.model';
+import AdresseDTO from '../../../models/DTO/adresseDTO.model';
+import FormationDTO from '../../../models/DTO/formationDTO.model';
 
 
 @Component({
@@ -21,32 +20,21 @@ export class AjoutFormationComponent implements OnInit {
 
   //Fonction qui se lance lorsque l'on arrive sur la page
   ngOnInit(): void {
-    this.sousThemeService.getSousThemes().subscribe(x => {
-      this.sousThemes = x.map(item => {
-        return new SousTheme(
-          item.designation,
-          new Theme(
-            "test"
-          )
-          );
-      })
-    });
-    this.adresseService.getAdresses().subscribe(x => {
-      this.adresses = x.map(item => {
-        return new Adresse(
-          item.codePostal,
-          item.ville,
-          item.rue,
-          item.pays
-          );
-      })
-    });
-  }
-  //Création des tableaux vides à remplir pour les afficher en front
-  sousThemes = new Array<SousTheme>();
-  adresses = new Array<Adresse>();
+    this.sousThemeService.getSousThemes().subscribe(sousThemeDTO => {
+      this.sousThemes = sousThemeDTO
+      });
 
-  formation!: Formation;
+    this.adresseService.getAdresses().subscribe(adresseDto => {
+      this.adresses = adresseDto;
+    });
+
+  }
+
+  //Création des tableaux vides à remplir pour les afficher en front
+  sousThemes = new Array<SousThemeDTO>();
+  adresses = new Array<AdresseDTO>();
+
+  formationDto!: FormationDTO;
 
   submitted: boolean = false;
 
@@ -54,7 +42,7 @@ export class AjoutFormationComponent implements OnInit {
   nouvelleFormation: FormGroup = this.formBuilder.group({
     nom: ['',[Validators.required]],
     descriptionMinimum: ['',[Validators.required]],
-    descriptionDetailler: ['',[Validators.required]],
+    descriptionDetaillee: ['',[Validators.required]],
     prix: ['',[Validators.required]],
     nbrJour: ['',[Validators.required]],
     reference: ['',[Validators.required]],
@@ -74,40 +62,16 @@ export class AjoutFormationComponent implements OnInit {
   private addFormation(): void {
 
     // Création de l'objet formation à partir du formGroup
-    const newFormation = new Formation(
-      this.nouvelleFormation.value.nom,
-      this.nouvelleFormation.value.descriptionMinimum,
-      this.nouvelleFormation.value.descriptionDetailler,
-      this.nouvelleFormation.value.prix,
-      this.nouvelleFormation.value.nbrJour,
-      this.nouvelleFormation.value.reference,
-      this.nouvelleFormation.value.typeFormation,
-      this.nouvelleFormation.value.preRequis,
-      this.nouvelleFormation.value.typeCertification,
-      this.nouvelleFormation.value.metiers,
-      new Adresse(
-        "00000",
-        this.nouvelleFormation.value.adresse,
-        this.nouvelleFormation.value.adresse,
-        this.nouvelleFormation.value.adresse
-      ),
-      new SousTheme(
-        this.nouvelleFormation.value.sousTheme,
-        new Theme(
-          "desi"
-        )
-        
-      )
-      
-    )
-    //Envoi de la formation au service pour Srping
-    this.formationService.createFormation(newFormation).subscribe((newFormation) => {
-      this.formation = newFormation
+    this.formationDto = this.nouvelleFormation.value;
+
+    //Envoi de la formation au service pour Spring
+    this.formationService.createFormation(this.formationDto).subscribe(() => {
+      this.submitted = false;
+      this.nouvelleFormation.reset();      
+      this.router.navigate(['/page-admin']);
     });
     
-    this.nouvelleFormation.reset();
-    this.submitted = false;
-    this.router.navigate(['/page-admin']);
+    
   }
   
 // Fonction qui se lance avec le bouton submit en bas du formulaire

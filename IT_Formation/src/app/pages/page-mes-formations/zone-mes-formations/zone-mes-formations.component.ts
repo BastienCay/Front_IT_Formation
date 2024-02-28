@@ -3,7 +3,7 @@ import { ReactiveFormsModule, FormsModule, FormBuilder, }                 from '
 import { CardMesFormationsComponent } from './card-mes-formations/card-mes-formations.component';
 import { CardFormationPresentationComponent } from "../../page-nos-formations/zone-formations/card-formation-presentation/card-formation-presentation.component";
 import { StagiaireSessionFormationService } from '../../../services/stagiaire-session-formation.service';
-import SessionUserDTO from '../../../models/sessionUserDTO';
+import SessionUserDTO from '../../../models/DTO/sessionUserDTO';
 import {MatSliderModule} from '@angular/material/slider';
 import {CommonModule, JsonPipe} from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';

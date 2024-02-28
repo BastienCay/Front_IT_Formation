@@ -5,7 +5,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule}      from '@angular/material/button';
 import {MatDividerModule}     from '@angular/material/divider';
 import {MatCardModule}        from '@angular/material/card';
-import SessionUserDTO from '../../../../models/sessionUserDTO';
+import SessionUserDTO from '../../../../models/DTO/sessionUserDTO';
 
 @Component({
   selector: 'app-card-mes-formations',

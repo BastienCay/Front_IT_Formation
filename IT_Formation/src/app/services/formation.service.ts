@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Formation } from '../models/formation.model';
+import FormationDTO from '../models/DTO/formationDTO.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,23 +12,23 @@ export class FormationService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getFormations(): Observable<Formation[]>{
-        return this.httpClient.get<Formation[]>(`${this.apiUrl}/formations/all`);
+    getFormations(): Observable<FormationDTO[]>{
+        return this.httpClient.get<FormationDTO[]>(`${this.apiUrl}/formations/all`);
       }
     
-    getFormation(id:number): Observable<Formation>{
-        return this.httpClient.get<Formation>(`${this.apiUrl}/formations/${id}`);
+    getFormation(id:number): Observable<FormationDTO>{
+        return this.httpClient.get<FormationDTO>(`${this.apiUrl}/formations/${id}`);
     }
     
-    createFormation(formation: Formation): Observable<Formation>{
-        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/add`,formation);
+    createFormation(formationDto: FormationDTO): Observable<FormationDTO>{
+        return this.httpClient.post<FormationDTO>(`${this.apiUrl}/formations/add`,formationDto);
     }
     
-    updateFormation(formation: Formation): Observable<Formation>{
-        return this.httpClient.post<Formation>(`${this.apiUrl}/formations/save`,formation);
+    updateFormation(formationDto: FormationDTO): Observable<FormationDTO>{
+        return this.httpClient.post<FormationDTO>(`${this.apiUrl}/formations/save`,formationDto);
     }
     
-    deleteFormation(id: number): Observable<Formation>{
-        return this.httpClient.delete<Formation>(`${this.apiUrl}/formations/${id}`);
+    deleteFormation(id: number): Observable<FormationDTO>{
+        return this.httpClient.delete<FormationDTO>(`${this.apiUrl}/formations/${id}`);
     }
 }

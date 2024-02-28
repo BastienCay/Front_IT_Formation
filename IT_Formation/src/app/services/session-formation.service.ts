@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SessionFormation } from '../models/sessionFormation.model';
+import SessionFormationDTO from '../models/DTO/sessionFormationDTO.model';
 import { Observable } from 'rxjs';
 import { Stagiaire } from '../models/stagiaire.model';
 
@@ -13,28 +13,27 @@ export class SessionFormationService {
 
     constructor(private httpClient: HttpClient) {}
 
-    getSessionFormations(): Observable<SessionFormation[]>{
-      return this.httpClient.get<SessionFormation[]>(`${this.apiUrl}/sessions-formations/all`);
+    getSessionFormations(): Observable<SessionFormationDTO[]>{
+      return this.httpClient.get<SessionFormationDTO[]>(`${this.apiUrl}/sessions-formations/all`);
   }
   
-  getSessionFormation(id:number): Observable<SessionFormation>{
-      return this.httpClient.get<SessionFormation>(`${this.apiUrl}/sessions-formations/${id}`);
+  getSessionFormation(id:number): Observable<SessionFormationDTO>{
+      return this.httpClient.get<SessionFormationDTO>(`${this.apiUrl}/sessions-formations/${id}`);
   }
   
-  createSessionFormation(sessionFormation: SessionFormation, telephone:string): Observable<SessionFormation>{
-    const queryParams = `?telephone=${telephone}`
-      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/add`+ queryParams,sessionFormation);
+  createSessionFormation(sessionFormationDto: SessionFormationDTO): Observable<SessionFormationDTO>{
+      return this.httpClient.post<SessionFormationDTO>(`${this.apiUrl}/sessions-formations/add`,sessionFormationDto);
   }
   
-  updateSessionFormation(sessionFormation: SessionFormation): Observable<SessionFormation>{
-      return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formations/save`,sessionFormation);
+  updateSessionFormation(sessionFormationDto: SessionFormationDTO): Observable<SessionFormationDTO>{
+      return this.httpClient.post<SessionFormationDTO>(`${this.apiUrl}/sessions-formations/save`,sessionFormationDto);
   }
   
-  deleteSessionFormation(id: number): Observable<SessionFormation>{
-      return this.httpClient.delete<SessionFormation>(`${this.apiUrl}/sessions-formations/${id}`);
+  deleteSessionFormation(id: number): Observable<SessionFormationDTO>{
+      return this.httpClient.delete<SessionFormationDTO>(`${this.apiUrl}/sessions-formations/${id}`);
   }
 
-//   addStagiaire(id: Number, nom: String): Observable<SessionFormation>{
-//     return this.httpClient.post<SessionFormation>(`${this.apiUrl}/sessions-formationss/inscription-stagiaire/${id},?nom=${nom}`);
+//   addStagiaire(id: Number, nom: String): Observable<SessionFormationDTO>{
+//     return this.httpClient.post<SessionFormationDTO>(`${this.apiUrl}/sessions-formationss/inscription-stagiaire/${id},?nom=${nom}`);
 // }
 }

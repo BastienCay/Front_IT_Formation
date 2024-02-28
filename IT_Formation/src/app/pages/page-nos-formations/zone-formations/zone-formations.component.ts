@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CardFormationPresentationComponent } from "./card-formation-presentation/card-formation-presentation.component";
 import { ReactiveFormsModule, FormsModule, FormBuilder} from '@angular/forms';
 import { FormationService } from '../../../services/formation.service';
-import { Formation }  from '../../../models/formation.model';
 import {MatSliderModule} from '@angular/material/slider';
 import {JsonPipe} from '@angular/common';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import FormationDTO from '../../../models/DTO/formationDTO.model';
 
 @Component({
     selector: 'app-zone-formations',
@@ -16,7 +16,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 })
 export class ZoneFormationsComponent {
 
-    formations: Formation[] = [];
+    formations: FormationDTO[] = [];
 
     toppings = this._formBuilder.group({
         presentiel: false,
@@ -32,7 +32,7 @@ export class ZoneFormationsComponent {
         });
     }
 
-    isVide(listeFormation: Formation[]): boolean{
+    isVide(listeFormation: FormationDTO[]): boolean{
         if(listeFormation.length === 0) return false;
         else return true;
     }

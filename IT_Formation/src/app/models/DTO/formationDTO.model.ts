@@ -1,19 +1,19 @@
 
-export interface FormationDTO {
+export default interface FormationDTO {
+    id?: Number;
     descriptionDetaillee:String ;
     descriptionMinimum :String ;
-    metier:String ;
-    nbreJour:Number ;
+    metiers:String ;
+    nbrJour:Number ;
     nom:String ;
-    prerequis:FormationDTO.PreRequis ;
+    preRequis:FormationDTOenum.PreRequis ;
     prix:Number ;
     reference:String ;
-    typeCertification:FormationDTO.TypeCertification ;
-    typeFormation:FormationDTO.TypeFormation ;
+    typeCertification:FormationDTOenum.TypeCertification ;
+    typeFormation:FormationDTOenum.TypeFormation ;
 
     //ADRESSE
     idAdresse: Number;
-
     //THEME
     idTheme:Number ;
     //SOUS-THEME
@@ -22,7 +22,8 @@ export interface FormationDTO {
 
 }
 
-export namespace FormationDTO{
+export namespace FormationDTOenum{
+
   export type PreRequis = 'DEBUTANT' | 'NOTION_OBLIGATOIRE'| 'MAITRISE_OBLIGATOIRE';
   export const PreRequis = {
     DEBUTANT: 'DEBUTANT' as PreRequis,

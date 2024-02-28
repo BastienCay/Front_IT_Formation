@@ -9,7 +9,7 @@
      
             <select class="input" formControlName="formation" id="formation">
               @for(formation of formations; track formation ){
-                <option value="{{formation.reference}}">{{formation.nom}}</option>
+                <option value="{{formation.id}}">{{formation.nom}}</option>
               }
             </select>
            
@@ -25,7 +25,7 @@
      
             <select class="input" formControlName="formateur" id="formateur">
               @for(formateur of formateurs; track formateur ){
-                <option value="{{formateur.utilisateur.telephone}}">{{formateur.utilisateur.prenom}} {{formateur.utilisateur.nom}}</option>
+                <option value="{{formateur.id}}">{{formateur.prenom}} {{formateur.nom}}</option>
               }
             </select>
            

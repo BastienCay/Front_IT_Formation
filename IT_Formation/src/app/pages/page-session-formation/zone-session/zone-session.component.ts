@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { SessionFormation } from '../../../models/sessionFormation.model';
 import { CardSessionComponent } from './card-session/card-session.component';
 import { SessionFormationService } from '../../../services/session-formation.service';
+import SessionFormationDTO from '../../../models/DTO/sessionFormationDTO.model';
 
 @Component({
     selector: 'app-zone-session',
@@ -12,17 +12,17 @@ import { SessionFormationService } from '../../../services/session-formation.ser
 })
 export class ZoneSessionComponent {
 
-    sessions: SessionFormation[] = [];
+    sessions: SessionFormationDTO[] = [];
 
     constructor(private sessionFormationService: SessionFormationService){}
     
     ngOnInit(): void{
-        this.sessionFormationService.getSessionFormations().subscribe((sessionsFormation) => {
-            this.sessions = sessionsFormation;
+        this.sessionFormationService.getSessionFormations().subscribe((sessionsFormationDto) => {
+            this.sessions = sessionsFormationDto;
         });
     }
 
-    isVide(listeSessions: SessionFormation[]): boolean{
+    isVide(listeSessions: SessionFormationDTO[]): boolean{
         if(listeSessions.length === 0) return false;
         else return true;
     }
